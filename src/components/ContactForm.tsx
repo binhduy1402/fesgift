@@ -10,6 +10,7 @@ interface ContactFormProps {
 export default function ContactForm({ prefilledProduct, onClearPrefill }: ContactFormProps) {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [isSubmitSuccess, setIsSubmitSuccess] = useState(false);
@@ -31,7 +32,11 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
     e.preventDefault();
     setErrMessage("");
 
-    if (!fullName.trim() || !email.trim() || !phone.trim()) {
+    if (
+  !fullName.trim() ||
+  !company.trim() ||
+  !phone.trim()
+  ) {
       setErrMessage("Vui lòng điện đầy đủ thông tin bắt buộc (*).");
       return;
     }
@@ -39,11 +44,12 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
     // Save mock submission to localStorage for demonstration
     const listInquiries = JSON.parse(localStorage.getItem("fesgift_inquiries") || "[]");
     const newInquiry = {
-      id: "inq_" + Date.now(),
-      fullName,
-      email,
-      phone,
-      message,
+  id: "inq_" + Date.now(),
+  fullName,
+  company,
+  email,
+  phone,
+  message,
       status: "new",
       createdAt: new Date().toISOString(),
     };
@@ -53,6 +59,7 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
     // Reset Form & Show Success Modal
     setIsSubmitSuccess(true);
     setFullName("");
+    setCompany("");
     setEmail("");
     setPhone("");
     setMessage("");
@@ -72,10 +79,10 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
             
             <div className="mb-8 text-left">
               <span className="text-[10px] font-bold tracking-widest text-[#7c142b] uppercase block mb-1">
-                LIÊN HỆ BÁO GIÁ
+                NHẬN TƯ VẤN MIỄN PHÍ
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl text-charcoal-text font-bold tracking-tight">
-                Kiến Tạo Dấu Ấn Thương Hiệu
+                Nhận giải pháp quà tặng phù hợp
               </h2>
               <p className="text-xs sm:text-sm text-charcoal-text/65 leading-relaxed mt-2 font-light">
                 Hãy để chúng tôi giúp bạn hiện thực hóa ý tưởng quà tặng đẳng cấp nhất. Để lại thông tin liên hệ, đội ngũ chuyên gia hỗ trợ dự án của FESGift sẽ liên hệ phản tư vấn ngay lập tức từ 1-2 tiếng làm việc.
@@ -123,37 +130,49 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  {/* Email Input */}
-                  <div>
-                    <label className="block text-[10px] font-bold tracking-wider text-charcoal-text/60 uppercase mb-1.5">
-                      Email (*)
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="example@domain.com"
-                      className="w-full px-4 py-3 bg-white border border-secondary-brand/10 hover:border-primary-brand/30 focus:border-primary-brand focus:outline-none rounded-sm text-sm text-charcoal-text font-light tracking-wide transition-all"
-                    />
-                  </div>
 
-                  {/* Phone Input */}
-                  <div>
-                    <label className="block text-[10px] font-bold tracking-wider text-charcoal-text/60 uppercase mb-1.5">
-                      Số điện thoại (*)
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      placeholder="090 123 4567"
-                      className="w-full px-4 py-3 bg-white border border-secondary-brand/10 hover:border-primary-brand/30 focus:border-primary-brand focus:outline-none rounded-sm text-sm text-charcoal-text font-light tracking-wide transition-all"
-                    />
-                  </div>
-                </div>
+  <div>
+    <label className="block text-[10px] font-bold tracking-wider text-charcoal-text/60 uppercase mb-1.5">
+      Tên doanh nghiệp (*)
+    </label>
+    <input
+      type="text"
+      required
+      value={company}
+      onChange={(e) => setCompany(e.target.value)}
+      placeholder="Công ty ABC"
+      className="w-full px-4 py-3 bg-white border border-secondary-brand/10 hover:border-primary-brand/30 focus:border-primary-brand focus:outline-none rounded-sm text-sm text-charcoal-text font-light tracking-wide transition-all"
+    />
+  </div>
 
+  <div>
+    <label className="block text-[10px] font-bold tracking-wider text-charcoal-text/60 uppercase mb-1.5">
+      Số điện thoại (*)
+    </label>
+    <input
+      type="tel"
+      required
+      value={phone}
+      onChange={(e) => setPhone(e.target.value)}
+      placeholder="0901234567"
+      className="w-full px-4 py-3 bg-white border border-secondary-brand/10 hover:border-primary-brand/30 focus:border-primary-brand focus:outline-none rounded-sm text-sm text-charcoal-text font-light tracking-wide transition-all"
+    />
+  </div>
+
+</div>
+
+<div>
+  <label className="block text-[10px] font-bold tracking-wider text-charcoal-text/60 uppercase mb-1.5">
+    Email
+  </label>
+  <input
+    type="email"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    placeholder="contact@company.com"
+    className="w-full px-4 py-3 bg-white border border-secondary-brand/10 hover:border-primary-brand/30 focus:border-primary-brand focus:outline-none rounded-sm text-sm text-charcoal-text font-light tracking-wide transition-all"
+  />
+</div>
                 {/* Message Box */}
                 <div>
                   <div className="flex justify-between items-center mb-1.5">
@@ -162,7 +181,7 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
                     </label>
                     {prefilledProduct && (
                       <span className="text-[10px] font-semibold text-primary-brand bg-primary-brand/10 px-2 py-0.5 rounded-sm">
-                        Đang chọn báo giá sỉ
+                        Đang quan tâm: {prefilledProduct}
                       </span>
                     )}
                   </div>
@@ -182,7 +201,7 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
                     className="w-full inline-flex items-center justify-center px-6 py-3.5 bg-primary-brand hover:brightness-110 text-white text-xs font-bold tracking-widest rounded-sm transition-all uppercase shadow-md hover:shadow-lg"
                     style={{ backgroundColor: "#7c142b" }}
                   >
-                    Gửi Yêu Cầu Báo Giá Miễn Phí
+                    Nhận tư vấn miễn phí
                   </button>
                 </div>
 
@@ -210,10 +229,10 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
                 <span className="font-serif text-sm font-semibold tracking-widest text-muted-gold leading-none">F</span>
               </div>
               <h3 className="font-serif text-xl sm:text-2xl font-bold tracking-wide">
-                Đồng Hành Kiến Tạo Giá Trị Đương Đại
+                Nhận Tư Vấn Từ Chuyên Gia FESGift
               </h3>
               <p className="text-xs text-white/60 leading-relaxed font-light mt-3 max-w-xs">
-                FESGift hân hạnh tư vấn giải pháp bao bì cao cấp, gia công bồi ép kim, in màu sắc chuẩn PANTONE nhận diện cho hàng trăm doanh nghiệp trong và ngoài nước.
+                Đội ngũ FESGift hỗ trợ xây dựng giải pháp quà tặng doanh nghiệp, thiết kế nhận diện thương hiệu và tối ưu ngân sách phù hợp cho từng chiến dịch.
               </p>
             </div>
 
