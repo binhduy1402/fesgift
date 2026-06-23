@@ -1,4 +1,4 @@
-mport { ArrowRight, Quote } from "lucide-react";
+import { ArrowRight, Quote } from "lucide-react";
 
 const testimonials = [
 {
