@@ -18,7 +18,7 @@ export default function Footer() {
   <img
     src={logo}
     alt="FESGift"
-    className="h-18 w-auto"
+    className="h-16 w-auto"
   />
 </a>
             <p className="text-xs text-white/55 leading-relaxed font-light max-w-sm">
@@ -138,11 +138,13 @@ export default function Footer() {
     <p className="text-white/80">
       090x xxx xxx
     </p>
-  </div>
 </div>
 
-        {/* Lower footer note */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/45">
+</div>
+</div>
+
+{/* Lower footer note */}
+<div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/45">
           <p className="font-light">
             © {currentYear} FESGift. All Rights Reserved. Designed with Heritage & Grace.
           </p>
