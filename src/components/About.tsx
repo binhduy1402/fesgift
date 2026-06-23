@@ -1,24 +1,6 @@
-import { Eye, Award } from "lucide-react";
+import { COMPANY_STATS } from "../data";
 
 export default function About() {
-const stats = [
-{
-value: "500+",
-label: "Dự án hoàn thành",
-},
-{
-value: "100+",
-label: "Khách hàng doanh nghiệp",
-},
-{
-value: "50.000+",
-label: "Sản phẩm đã giao",
-},
-{
-value: "5+",
-label: "Năm kinh nghiệm",
-},
-];
 
 return (
 <section id="our-story" className="bg-[#f8f5f0] py-20" >
@@ -26,22 +8,22 @@ return (
 
     <div className="text-center mb-14">
       <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#7c142b]">
-        FESGIFT QUA NHỮNG CON SỐ
+        NĂNG LỰC THỰC TẾ
       </span>
 
       <h2 className="mt-3 font-serif text-3xl sm:text-4xl font-bold text-charcoal-text">
-        Đối Tác Đồng Hành Của Nhiều Doanh Nghiệp
+        Fesgift Qua Những Con Số
       </h2>
 
       <p className="mt-4 max-w-2xl mx-auto text-sm leading-relaxed text-charcoal-text/70">
-        Chúng tôi mang đến các giải pháp quà tặng doanh nghiệp
-        được thiết kế riêng theo nhận diện thương hiệu và mục tiêu
-        của từng chiến dịch.
+        Những con số tiêu biểu phản ánh năng lực triển khai,
+        kinh nghiệm vận hành và mức độ tin tưởng của khách hàng
+        doanh nghiệp trên toàn quốc.
       </p>
     </div>
 
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {stats.map((item) => (
+      {COMPANY_STATS.map((item) => (
         <div
           key={item.label}
           className="
@@ -54,11 +36,11 @@ return (
             border-[#7c142b]/10
             transition-all
             duration-300
-            hover:-translate-y-2
+            hover:-translate-y-3
             hover:shadow-xl
           "
         >
-          <div className="text-4xl font-bold text-[#7c142b]">
+         <div className="text-5xl font-bold text-[#7c142b]">
             {item.value}
           </div>
 
