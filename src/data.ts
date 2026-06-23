@@ -8,6 +8,25 @@ export const BRAND_INFO = {
   address: "District 1, Ho Chi Minh City, Vietnam",
 };
 
+export const COMPANY_STATS = [
+{
+value: "34",
+label: "Tỉnh thành phục vụ",
+},
+{
+value: "200+",
+label: "Khách hàng doanh nghiệp",
+},
+{
+value: "50.000+",
+label: "Quà tặng mỗi năm",
+},
+{
+value: "8+",
+label: "Năm kinh nghiệm",
+},
+];
+
 export const NAVIGATION_LINKS = [
 { label: "Năng Lực", href: "#our-story" },
 { label: "Sản Phẩm", href: "#collections" },
