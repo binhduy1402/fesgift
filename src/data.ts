@@ -61,8 +61,10 @@ export const COLLECTIONS: Collection[] = [
 {
 id: "customer-gifts",
 title: "Quà Khách Hàng",
+tagline: "Tăng độ ghi nhớ thương hiệu",
+icon: "Users",
 description:
-"Giải pháp quà tặng giúp gia tăng trải nghiệm thương hiệu và xây dựng mối quan hệ bền vững với khách hàng.",
+"Giải pháp quà tặng giúp doanh nghiệp xây dựng mối quan hệ bền vững và tạo trải nghiệm tích cực cho khách hàng.",
 image:
 "https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=800&auto=format&fit=crop",
 badge: "KHÁCH HÀNG",
@@ -72,9 +74,12 @@ highlights: [
 "Tăng độ ghi nhớ thương hiệu",
 ],
 },
+
 {
 id: "event-gifts",
 title: "Quà Sự Kiện",
+tagline: "Đồng bộ mọi chiến dịch",
+icon: "CalendarDays",
 description:
 "Phù hợp cho hội nghị, workshop, activation, lễ ra mắt sản phẩm và các chương trình truyền thông doanh nghiệp.",
 image:
@@ -86,25 +91,31 @@ highlights: [
 "Tiến độ triển khai nhanh",
 ],
 },
+
 {
 id: "vip-gifts",
 title: "Quà VIP",
+tagline: "Khẳng định đẳng cấp đối tác",
+icon: "Crown",
 description:
 "Dòng quà tặng cao cấp dành cho đối tác chiến lược, khách hàng quan trọng và các chương trình tri ân đặc biệt.",
 image:
 "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=800&auto=format&fit=crop",
-badge: "CAO CẤP",
+badge: "VIP",
 highlights: [
 "Thiết kế sang trọng",
 "Cá nhân hóa theo yêu cầu",
 "Nâng tầm hình ảnh doanh nghiệp",
 ],
 },
+
 {
 id: "employee-gifts",
-title: "Quà Nhân Viên",
+title: "Quà Đội Ngũ",
+tagline: "Gắn kết và truyền cảm hứng",
+icon: "UsersRound",
 description:
-"Welcome kit, quà sinh nhật, lễ tết và các chương trình gắn kết nội bộ giúp nâng cao trải nghiệm nhân sự.",
+"Welcome Kit, quà sinh nhật, lễ tết và các chương trình nội bộ giúp nâng cao trải nghiệm nhân sự.",
 image:
 "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800&auto=format&fit=crop",
 badge: "NỘI BỘ",
