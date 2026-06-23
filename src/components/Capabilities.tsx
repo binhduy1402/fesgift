@@ -39,24 +39,16 @@ const clientLogos = [
   "CLIENT 06",
   "CLIENT 07",
   "CLIENT 08",
-
-  "CLIENT 09",
-  "CLIENT 10",
-  "CLIENT 11",
-  "CLIENT 12",
-  "CLIENT 13",
-  "CLIENT 14",
-  "CLIENT 15",
-  "CLIENT 16",
 ];
 
-const logosPerPage = 8;
+const logosPerPage = 4;
 
 const logoPages = [];
 
 for (let i = 0; i < clientLogos.length; i += logosPerPage) {
   logoPages.push(clientLogos.slice(i, i + logosPerPage));
 }
+
 
 export default function Capabilities() {
 const [logoPage, setLogoPage] = useState(0);
@@ -94,39 +86,61 @@ return (
       </p>
     </div>
 
-<div className="mb-16">
+<div className="relative mb-16">
 
-  <div className="flex items-center justify-center gap-4 mb-6">
+  <button
+  onClick={() =>
+    setLogoPage(
+      logoPage === 0
+        ? logoPages.length - 1
+        : logoPage - 1
+    )
+  }
+  className="
+    absolute
+    left-[-20px]
+    top-1/2
+    -translate-y-1/2
+    z-10
+    rounded-full
+    border
+    border-[#7c142b]/20
+    bg-white
+    p-3
+    shadow-sm
+    hover:bg-[#7c142b]/5
+  "
+>
+  <ChevronLeft className="h-5 w-5" />
+</button>
 
-    <button
-      onClick={() =>
-        setLogoPage(
-          logoPage === 0
-            ? logoPages.length - 1
-            : logoPage - 1
-        )
-      }
-      className="rounded-full border border-[#7c142b]/20 p-2 hover:bg-[#7c142b]/5"
-    >
-      <ChevronLeft className="h-5 w-5" />
-    </button>
-
-    <button
-      onClick={() =>
-        setLogoPage(
-          logoPage === logoPages.length - 1
-            ? 0
-            : logoPage + 1
-        )
-      }
-      className="rounded-full border border-[#7c142b]/20 p-2 hover:bg-[#7c142b]/5"
-    >
-      <ChevronRight className="h-5 w-5" />
-    </button>
-
-  </div>
-
-  <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
+<button
+  onClick={() =>
+    setLogoPage(
+      logoPage === logoPages.length - 1
+        ? 0
+        : logoPage + 1
+    )
+  }
+  className="
+    absolute
+    right-[-20px]
+    top-1/2
+    -translate-y-1/2
+    z-10
+    rounded-full
+    border
+    border-[#7c142b]/20
+    bg-white
+    p-3
+    shadow-sm
+    hover:bg-[#7c142b]/5
+  "
+>
+  <ChevronRight className="h-5 w-5" />
+</button>
+  
+  <div className="mx-14 grid gap-4 grid-cols-4">
     {logoPages[logoPage].map((logo) => (
       <div
         key={logo}
