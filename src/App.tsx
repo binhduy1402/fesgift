@@ -61,9 +61,9 @@ export default function App() {
 
       <Philosophy />
 
-      <Workflow />
-
       <Capabilities />
+
+      <Workflow />
 
       <ContactForm
         prefilledProduct={prefilledProduct}
