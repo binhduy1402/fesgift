@@ -44,7 +44,7 @@ export default function Hero({
             {/* USP */}
             <div className="mt-6 flex flex-wrap gap-3">
               <span className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-[#7c142b] shadow-sm border border-[#7c142b]/10">
-                ✓ Thiết kế 3D miễn phí
+                ✓ Tư vấn miễn phí
               </span>
 
               <span className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-[#7c142b] shadow-sm border border-[#7c142b]/10">
@@ -126,11 +126,11 @@ export default function Hero({
               {/* Floating Card */}
               <div className="absolute -bottom-6 left-6 rounded-xl border border-[#d4af37]/20 bg-white/95 p-5 shadow-xl backdrop-blur-md">
                 <div className="text-2xl font-serif font-bold text-[#7c142b]">
-                  24 - 48h
+                 TƯ VẤN MIỄN PHÍ
                 </div>
 
                 <div className="mt-1 text-xs font-semibold uppercase tracking-wider text-gray-500">
-                  Thiết kế concept miễn phí
+                  THEO NHẬN DIỆN THƯƠNG HIỆU
                 </div>
               </div>
             </div>
