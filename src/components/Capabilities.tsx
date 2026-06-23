@@ -1,21 +1,27 @@
 import { ArrowRight, Quote } from "lucide-react";
 
 const testimonials = [
-{
-company: "Doanh Nghiệp FMCG",
-content:
-"FESGift giúp chúng tôi triển khai hơn 2.000 phần quà khách hàng trong thời gian ngắn với chất lượng đồng đều và chuyên nghiệp.",
-},
-{
-company: "Tập Đoàn Công Nghệ",
-content:
-"Đội ngũ tư vấn nhanh, thiết kế chỉn chu và hiểu rõ cách truyền tải hình ảnh thương hiệu qua từng sản phẩm.",
-},
-{
-company: "Doanh Nghiệp Tài Chính",
-content:
-"Quà tặng cao cấp, đóng gói đẹp và đúng tiến độ. Đối tác của chúng tôi đánh giá rất cao trải nghiệm nhận quà.",
-},
+  {
+    name: "Nguyễn Minh Anh",
+    role: "Giám đốc Marketing",
+    company: "ABC Corporation",
+    content:
+      "FESGift giúp chúng tôi triển khai hơn 20.000 phần quà khách hàng trong thời gian ngắn với chất lượng đồng đều và chuyên nghiệp.",
+  },
+  {
+    name: "Trần Hoàng Nam",
+    role: "Trưởng phòng Nhân sự",
+    company: "XYZ Group",
+    content:
+      "Đội ngũ tư vấn nhanh, thiết kế chỉn chu và hiểu rõ cách truyền tải hình ảnh thương hiệu qua từng sản phẩm.",
+  },
+  {
+    name: "Lê Thanh Hương",
+    role: "Giám đốc Kinh doanh",
+    company: "Future Holdings",
+    content:
+      "Quà tặng cao cấp, đóng gói đẹp và đúng tiến độ. Đối tác của chúng tôi đánh giá rất cao trải nghiệm nhận quà.",
+  },
 ];
 
 const clientLogos = [
@@ -25,6 +31,8 @@ const clientLogos = [
 "CLIENT 04",
 "CLIENT 05",
 "CLIENT 06",
+"CLIENT 07",
+"CLIENT 08",
 ];
 
 export default function Capabilities() {
@@ -106,8 +114,18 @@ return (
           </p>
 
           <div className="mt-6 border-t border-[#7c142b]/10 pt-4">
-            <div className="text-xs font-bold tracking-widest text-[#7c142b] uppercase">
-              {item.company}
+            <div className="mt-6 border-t border-[#7c142b]/10 pt-4">
+              <div className="font-semibold text-[#2c2c2c]">
+                {item.name}
+              </div>
+            
+              <div className="mt-1 text-sm text-gray-500">
+                {item.role}
+              </div>
+            
+              <div className="mt-1 text-xs font-bold tracking-widest uppercase text-[#7c142b]">
+                {item.company}
+              </div>
             </div>
           </div>
         </div>
