@@ -1,108 +1,89 @@
-
-import { PHILOSOPHY_ITEMS } from "../data";
-import { Gift, Award, Fingerprint } from "lucide-react";
-
-const renderIcon = (name: string) => {
-  const props = {
-    className:
-      "w-7 h-7 text-[#d4af37] transition-transform duration-300 group-hover:scale-110",
-  };
-
-  switch (name) {
-    case "Gift":
-      return <Gift {...props} />;
-    case "Award":
-      return <Award {...props} />;
-    case "Fingerprint":
-      return <Fingerprint {...props} />;
-    default:
-      return <Gift {...props} />;
-  }
-};
-
-const shortTitles = ["TÂM", "TẦM", "TÍN"];
-
 export default function Philosophy() {
-  return (
-    <section
-      id="philosophy"
-      className="relative overflow-hidden bg-[#faf7f2] py-24"
-    >
-      <div className="absolute left-0 top-0 h-64 w-64 rounded-full bg-[#7c142b]/5 blur-3xl" />
-      <div className="absolute right-0 bottom-0 h-64 w-64 rounded-full bg-[#d4af37]/10 blur-3xl" />
+return (
+<section id="philosophy" className="relative overflow-hidden bg-white py-24" >
+<div className="absolute left-0 top-0 h-64 w-64 rounded-full bg-[#7c142b]/5 blur-3xl" />
+<div className="absolute right-0 bottom-0 h-64 w-64 rounded-full bg-[#d4af37]/10 blur-3xl" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+  <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 
-        {/* Heading */}
-        <div className="mx-auto mb-20 max-w-3xl text-center">
-          <span className="mb-2 block text-[11px] font-bold tracking-[0.3em] uppercase text-[#7c142b]">
-            TRIẾT LÝ THƯƠNG HIỆU
-          </span>
+    <div className="max-w-4xl mx-auto text-center">
 
-          <h2 className="font-serif text-4xl font-bold text-[#2c2c2c]">
-            Triết Lý 3T
-          </h2>
+      <span className="mb-3 block text-[11px] font-bold tracking-[0.3em] uppercase text-[#7c142b]">
+        CÂU CHUYỆN THƯƠNG HIỆU
+      </span>
 
-          <p className="mt-4 text-sm uppercase tracking-[0.2em] text-gray-500">
-            Tâm · Tầm · Tín
-          </p>
-        </div>
+      <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#2c2c2c]">
+        Mỗi Món Quà Là Một
+        <span className="block text-[#7c142b]">
+          Trải Nghiệm Thương Hiệu
+        </span>
+      </h2>
 
-        {/* Timeline */}
-        <div className="relative">
+      <p className="mt-8 text-lg leading-relaxed text-gray-600">
+        FESGift không chỉ cung cấp quà tặng doanh nghiệp.
+        Chúng tôi giúp doanh nghiệp truyền tải giá trị thương hiệu
+        thông qua những sản phẩm được thiết kế riêng,
+        chỉn chu và phù hợp với từng đối tượng nhận quà.
+      </p>
 
-          {/* Golden Line */}
-          <div className="absolute left-1/2 top-20 hidden h-[2px] w-[70%] -translate-x-1/2 bg-gradient-to-r from-transparent via-[#d4af37] to-transparent lg:block" />
+      <p className="mt-6 text-base leading-relaxed text-gray-500">
+        Từ ý tưởng, thiết kế, sản xuất đến giao hàng,
+        mọi chi tiết đều được chăm chút nhằm tạo nên
+        dấu ấn chuyên nghiệp và cảm xúc tích cực
+        cho người nhận.
+      </p>
 
-          <div className="grid gap-8 lg:grid-cols-3">
-            {PHILOSOPHY_ITEMS.map((item, index) => (
-              <div
-                key={item.id}
-                className="
-                  group
-                  relative
-                  overflow-hidden
-                  rounded-2xl
-                  border
-                  border-[#7c142b]/10
-                  bg-white
-                  p-8
-                  text-center
-                  shadow-sm
-                  transition-all
-                  duration-300
-                  hover:-translate-y-3
-                  hover:shadow-2xl
-                "
-              >
-                {/* Circle marker */}
-                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-[#d4af37]/30 bg-[#faf7f2] shadow-sm">
-                  {renderIcon(item.iconName)}
-                </div>
+    </div>
 
-                {/* Main Label */}
-                <div className="mb-2 font-serif text-3xl font-bold text-[#7c142b]">
-                  {shortTitles[index]}
-                </div>
+    <div className="mt-20">
 
-                {/* Title */}
-                <h3 className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-[#2c2c2c]">
-                  {item.title}
-                </h3>
+      <div className="grid gap-6 md:grid-cols-4">
 
-                {/* Description */}
-                <p className="text-sm leading-relaxed text-gray-600">
-                  {item.description}
-                </p>
-
-                {/* Bottom Accent */}
-                <div className="mt-6 h-[2px] w-0 bg-[#d4af37] transition-all duration-500 group-hover:w-full" />
-              </div>
-            ))}
+        <div className="rounded-2xl border border-[#7c142b]/10 bg-[#faf7f2] p-8 text-center">
+          <div className="text-4xl font-bold text-[#7c142b]">
+            01
           </div>
 
+          <h3 className="mt-4 font-semibold text-[#2c2c2c]">
+            Ý Tưởng
+          </h3>
         </div>
+
+        <div className="rounded-2xl border border-[#7c142b]/10 bg-[#faf7f2] p-8 text-center">
+          <div className="text-4xl font-bold text-[#7c142b]">
+            02
+          </div>
+
+          <h3 className="mt-4 font-semibold text-[#2c2c2c]">
+            Thiết Kế
+          </h3>
+        </div>
+
+        <div className="rounded-2xl border border-[#7c142b]/10 bg-[#faf7f2] p-8 text-center">
+          <div className="text-4xl font-bold text-[#7c142b]">
+            03
+          </div>
+
+          <h3 className="mt-4 font-semibold text-[#2c2c2c]">
+            Sản Xuất
+          </h3>
+        </div>
+
+        <div className="rounded-2xl border border-[#7c142b]/10 bg-[#faf7f2] p-8 text-center">
+          <div className="text-4xl font-bold text-[#7c142b]">
+            04
+          </div>
+
+          <h3 className="mt-4 font-semibold text-[#2c2c2c]">
+            Giao Hàng
+          </h3>
+        </div>
+
       </div>
-    </section>
-  );
+
+    </div>
+
+  </div>
+</section>
+);
 }
