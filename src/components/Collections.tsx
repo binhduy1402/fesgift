@@ -1,6 +1,13 @@
 
 import { COLLECTIONS } from "../data";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import {
+  ArrowRight,
+  Check,
+  Users,
+  CalendarDays,
+  Crown,
+  UsersRound,
+} from "lucide-react";
 import { Collection } from "../types";
 
 interface CollectionsProps {
@@ -10,6 +17,20 @@ interface CollectionsProps {
 export default function Collections({
   onSelectCollection,
 }: CollectionsProps) {
+    const getIcon = (icon?: string) => {
+    switch (icon) {
+      case "Users":
+        return <Users className="h-5 w-5" />;
+      case "CalendarDays":
+        return <CalendarDays className="h-5 w-5" />;
+      case "Crown":
+        return <Crown className="h-5 w-5" />;
+      case "UsersRound":
+        return <UsersRound className="h-5 w-5" />;
+      default:
+        return <Users className="h-5 w-5" />;
+    }
+  };
   return (
     <section id="collections" className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -18,45 +39,22 @@ export default function Collections({
         <div className="mb-14 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <span className="mb-2 block text-[11px] font-bold tracking-[0.25em] uppercase text-[#7c142b]">
-              BỘ SƯU TẬP ĐẶC TUYỂN
+              4 NHÓM SẢN PHẨM
             </span>
 
             <h2 className="font-serif text-3xl font-bold tracking-tight text-[#2c2c2c] sm:text-4xl">
-              Bộ Sưu Tập Quà Tặng Doanh Nghiệp
+              Giải Pháp Quà Tặng Theo Từng Mục Tiêu
             </h2>
 
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-600">
-              Thiết kế riêng theo thương hiệu, sản xuất theo yêu cầu và cá nhân
-              hóa cho từng chiến dịch marketing, tri ân khách hàng và đối tác.
+            4 nhóm sản phẩm chủ lực giúp doanh nghiệp xây dựng hình ảnh thương hiệu, tri ân khách hàng và nâng cao trải nghiệm đội ngũ.
             </p>
           </div>
 
-          <a
-            href="#projects"
-            className="
-              inline-flex
-              items-center
-              gap-2
-              border-b
-              border-[#7c142b]
-              pb-1
-              text-xs
-              font-bold
-              tracking-widest
-              uppercase
-              text-[#7c142b]
-              transition-colors
-              hover:border-[#d4af37]
-              hover:text-[#d4af37]
-            "
-          >
-            Xem Dự Án Tiêu Biểu
-            <ArrowUpRight className="h-4 w-4" />
-          </a>
         </div>
 
         {/* Collections Grid */}
-        <div className="grid gap-8 md:grid-cols-3">
+       <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
           {COLLECTIONS.map((col) => (
             <div
               key={col.id}
@@ -109,11 +107,15 @@ export default function Collections({
                   <h3 className="font-serif text-xl font-bold text-white">
                     {col.title}
                   </h3>
+                  <p className="mt-2 text-xs font-semibold tracking-[0.15em] uppercase text-[#d4af37]">{col.tagline}
+                  </p>
                 </div>
               </div>
 
               {/* Content */}
               <div className="flex h-full flex-col p-6">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#7c142b]/10 text-[#7c142b]">{getIcon(col.icon)}
+                </div>
                 <p className="text-sm leading-relaxed text-gray-600">
                   {col.description}
                 </p>
@@ -140,7 +142,7 @@ export default function Collections({
                 <div className="mt-6 border-t border-gray-100 pt-5">
                   <div className="flex items-center justify-between text-[#7c142b] transition-colors group-hover:text-[#d4af37]">
                     <span className="text-xs font-bold tracking-widest uppercase">
-                      Xem Bộ Sưu Tập
+                      Nhận Báo Giá 
                     </span>
 
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1.5" />
