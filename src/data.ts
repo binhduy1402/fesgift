@@ -39,30 +39,62 @@ export const PHILOSOPHY_ITEMS: PhilosophyItem[] = [
 ];
 
 export const COLLECTIONS: Collection[] = [
-  {
-    id: "corporate",
-    title: "Quà Doanh Nghiệp",
-    description: "Giải pháp quà tặng đối tác ngoại giao, khách hàng VIP tinh tế, tôn vinh giá trị văn hóa và nâng tầm mối quan hệ hợp tác lâu dài.",
-    image: "https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=800&auto=format&fit=crop",
-    badge: "BÁN CHẠY NHẤT",
-    highlights: ["Sản phẩm văn hoá chọn lọc", "Bao bì sơn mài cao cấp", "Thiết kế logo ép kim"],
-  },
-  {
-    id: "event",
-    title: "Quà Sự Kiện",
-    description: "Thiết kế đồng bộ theo chủ đề hội nghị, lễ kỷ niệm hay ra mắt sản phẩm mới. Tối ưu hóa độ nhận nhận diện thương hiệu tuyệt đối.",
-    image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800&auto=format&fit=crop",
-    badge: "ĐỘC ĐÁO & ẤN TƯỢNG",
-    highlights: ["Tùy biến theo chủ đề sự kiện", "Sản xuất nhanh, số lượng lớn", "Bộ Kit quà tặng đa dụng"],
-  },
-  {
-    id: "personalized",
-    title: "Quà Cá Nhân Hóa",
-    description: "Khắc tên, in dập nổi logo trên các chất liệu da thuộc, gỗ tự nhiên hay kim loại cao cấp. Mỗi món quà là một tác phẩm nghệ thuật duy nhất.",
-    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=800&auto=format&fit=crop",
-    badge: "ĐỘC BẢN SANG TRỌNG",
-    highlights: ["Khắc logo/Tên bằng Laser CNC", "Chất liệu cao cấp tự nhiên", "Thiết kế riêng cho từng cá nhân"],
-  },
+{
+id: "customer-gifts",
+title: "Quà Khách Hàng",
+description:
+"Giải pháp quà tặng giúp gia tăng trải nghiệm thương hiệu và xây dựng mối quan hệ bền vững với khách hàng.",
+image:
+"https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=800&auto=format&fit=crop",
+badge: "KHÁCH HÀNG",
+highlights: [
+"Giftset theo nhận diện thương hiệu",
+"Bao bì thiết kế riêng",
+"Tăng độ ghi nhớ thương hiệu",
+],
+},
+{
+id: "event-gifts",
+title: "Quà Sự Kiện",
+description:
+"Phù hợp cho hội nghị, workshop, activation, lễ ra mắt sản phẩm và các chương trình truyền thông doanh nghiệp.",
+image:
+"https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800&auto=format&fit=crop",
+badge: "SỰ KIỆN",
+highlights: [
+"Sản xuất số lượng lớn",
+"Đồng bộ concept chương trình",
+"Tiến độ triển khai nhanh",
+],
+},
+{
+id: "vip-gifts",
+title: "Quà VIP",
+description:
+"Dòng quà tặng cao cấp dành cho đối tác chiến lược, khách hàng quan trọng và các chương trình tri ân đặc biệt.",
+image:
+"https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=800&auto=format&fit=crop",
+badge: "CAO CẤP",
+highlights: [
+"Thiết kế sang trọng",
+"Cá nhân hóa theo yêu cầu",
+"Nâng tầm hình ảnh doanh nghiệp",
+],
+},
+{
+id: "employee-gifts",
+title: "Quà Nhân Viên",
+description:
+"Welcome kit, quà sinh nhật, lễ tết và các chương trình gắn kết nội bộ giúp nâng cao trải nghiệm nhân sự.",
+image:
+"https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800&auto=format&fit=crop",
+badge: "NỘI BỘ",
+highlights: [
+"Welcome Kit",
+"Quà sinh nhật nhân viên",
+"Quà lễ tết doanh nghiệp",
+],
+},
 ];
 
 export const WORKFLOW_STEPS: WorkflowStep[] = [
