@@ -124,7 +124,7 @@ export default function Hero({
               </div>
 
               {/* Floating Card */}
-              <div className="absolute -bottom-6 left-6 rounded-xl border border-[#d4af37]/20 bg-white/95 p-5 shadow-xl backdrop-blur-md">
+              <div className="absolute -bottom-6 left-6 rounded-xl border border-[#d4af37]/20 bg-white/95 px-6 py-5 shadow-xl backdrop-blur-md">
                 <div className="text-2xl font-serif font-bold text-[#7c142b]">
                  TƯ VẤN MIỄN PHÍ
                 </div>
