@@ -140,7 +140,7 @@ return (
   <ChevronRight className="h-5 w-5" />
 </button>
   
-  <div className="mx-14 grid gap-4 grid-cols-4">
+  <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
     {logoPages[logoPage].map((logo) => (
       <div
         key={logo}
