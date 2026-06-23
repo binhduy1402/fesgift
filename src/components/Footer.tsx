@@ -1,3 +1,4 @@
+import logo from "../assets/logo.png";
 import { BRAND_INFO, NAVIGATION_LINKS } from "../data";
 import { ArrowRight, Phone, Mail, Award, Globe, ShieldCheck } from "lucide-react";
 
@@ -13,19 +14,13 @@ export default function Footer() {
           
           {/* Logo & Brand profile column */}
           <div className="md:col-span-4 space-y-4">
-            <a href="#" className="inline-flex items-center gap-2">
-              <div className="w-10 h-10 rounded-sm bg-primary-brand flex items-center justify-center text-white font-serif text-lg font-bold shadow-md">
-                F
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif text-xl tracking-wider font-bold text-white">
-                  {BRAND_INFO.name}
-                </span>
-                <span className="text-[10px] uppercase tracking-widest text-[#ffbabf] font-semibold -mt-1">
-                  {BRAND_INFO.tagline}
-                </span>
-              </div>
-            </a>
+            <a href="#" className="inline-flex items-center">
+  <img
+    src={logo}
+    alt="FESGift"
+    className="h-18 w-auto"
+  />
+</a>
             <p className="text-xs text-white/55 leading-relaxed font-light max-w-sm">
               © {currentYear} FESGift. Crafting Heritage & Grace in Every Gift. Chúng tôi tự hào lưu giữ giá trị tinh hoa văn hoá thuần Việt và nâng tầm trải nghiệm gắn kết giữa các tập đoàn hàng đầu.
             </p>
@@ -34,7 +29,7 @@ export default function Footer() {
             <div className="flex items-center gap-4 pt-1 text-white/45 text-[10px]">
               <span className="flex items-center gap-1.5 font-semibold tracking-wider uppercase">
                 <ShieldCheck className="w-4.5 h-4.5 text-muted-gold" />
-                100% Nguyên bản thủ công
+                100% Nâng tầm trải nghiệm
               </span>
             </div>
           </div>
@@ -117,24 +112,34 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Micro aesthetic avatar/seal badge */}
-            <div className="pt-4 flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full overflow-hidden border border-white/20">
-                <img
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=150&auto=format&fit=crop"
-                  alt="Giám đốc FESGift"
-                  className="w-full h-full object-cover filter brightness-[0.9]"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="text-left leading-none">
-                <p className="text-[10px] font-bold text-white tracking-wide uppercase leading-none">Nhà Sáng Lập</p>
-                <p className="text-[9px] text-white/50 lowercase mt-1 font-mono">duynpb1402@gmail.com</p>
-              </div>
-            </div>
-          </div>
+            <div className="pt-4 space-y-3 text-xs">
+  <div>
+    <p className="text-white/40 uppercase tracking-wider mb-1">
+      Email
+    </p>
+    <p className="text-white/80">
+      contact@fesgift.com
+    </p>
+  </div>
 
-        </div>
+  <div>
+    <p className="text-white/40 uppercase tracking-wider mb-1">
+      Website
+    </p>
+    <p className="text-white/80">
+      www.fesgift.com
+    </p>
+  </div>
+
+  <div>
+    <p className="text-white/40 uppercase tracking-wider mb-1">
+      Hotline
+    </p>
+    <p className="text-white/80">
+      090x xxx xxx
+    </p>
+  </div>
+</div>
 
         {/* Lower footer note */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/45">
