@@ -6,8 +6,7 @@ import About from "./components/About";
 import Philosophy from "./components/Philosophy";
 import Collections from "./components/Collections";
 import Workflow from "./components/Workflow";
-import Projects from "./components/Projects";
-import Testimonials from "./components/Testimonials";
+import Capabilities from "./components/Capabilities";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 
