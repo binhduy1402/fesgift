@@ -9,12 +9,12 @@ export const BRAND_INFO = {
 };
 
 export const NAVIGATION_LINKS = [
-  { label: "Về FESGift", href: "#our-story" },
-  { label: "Triết Lý 3T", href: "#philosophy" },
-  { label: "Bộ Sưu Tập", href: "#collections" },
-  { label: "Quy Trình", href: "#process" },
-  { label: "Dự Án", href: "#projects" },
-  { label: "Đánh Giá", href: "#testimonials" },
+{ label: "Năng Lực", href: "#our-story" },
+{ label: "Sản Phẩm", href: "#collections" },
+{ label: "Câu Chuyện", href: "#philosophy" },
+{ label: "Khách Hàng", href: "#capabilities" },
+{ label: "Quy Trình", href: "#process" },
+{ label: "Liên Hệ", href: "#contact" },
 ];
 
 export const PHILOSOPHY_ITEMS: PhilosophyItem[] = [
@@ -98,42 +98,24 @@ highlights: [
 ];
 
 export const WORKFLOW_STEPS: WorkflowStep[] = [
-  {
-    id: "step1",
-    num: "01",
-    title: "TƯ VẤN",
-    desc: "Tìm hiểu nhu cầu, ngân sách và thấu hiểu thông điệp thương hiệu cần truyền tải.",
-  },
-  {
-    id: "step2",
-    num: "02",
-    title: "Ý TƯỞNG",
-    desc: "Phác thảo các concept độc đáo, lồng ghép khéo léo yếu tố nghệ thuật & di sản.",
-  },
-  {
-    id: "step3",
-    num: "03",
-    title: "THIẾT KẾ",
-    desc: "Dựng hình ảnh 3D chân thực, mô phỏng bao bì và chất liệu một cách trực quan nhất.",
-  },
-  {
-    id: "step4",
-    num: "04",
-    title: "SẢN XUẤT",
-    desc: "Gia công chế tác thủ công tinh xảo kết hợp công nghệ hiện đại dưới giám sát chặt chẽ.",
-  },
-  {
-    id: "step5",
-    num: "05",
-    title: "KIỂM ĐỊNH",
-    desc: "Kiểm tra chất lượng nghiêm ngặt từng chi tiết hoàn thiện trước khi đóng gói.",
-  },
-  {
-    id: "step6",
-    num: "06",
-    title: "GIAO HÀNG",
-    desc: "Vận chuyển an toàn, nhanh chóng theo quy chuẩn cao cấp của FESGift.",
-  },
+{
+id: "step1",
+num: "01",
+title: "TRAO ĐỔI NHU CẦU",
+desc: "Chia sẻ ngân sách, số lượng, đối tượng nhận quà và mục tiêu chương trình.",
+},
+{
+id: "step2",
+num: "02",
+title: "THIẾT KẾ & BÁO GIÁ",
+desc: "FESGift đề xuất giải pháp, thiết kế và gửi báo giá phù hợp với yêu cầu.",
+},
+{
+id: "step3",
+num: "03",
+title: "SẢN XUẤT & GIAO HÀNG",
+desc: "Triển khai sản xuất, kiểm soát chất lượng và giao hàng đúng tiến độ.",
+},
 ];
 
 export const FEATURED_PROJECTS: Project[] = [
