@@ -1,3 +1,4 @@
+import logo from "../assets/logo.png";
 import { useState, useEffect } from "react";
 import { BRAND_INFO, NAVIGATION_LINKS } from "../data";
 import { Menu, X, ArrowRight } from "lucide-react";
@@ -33,20 +34,13 @@ export default function Navbar({ onInquireClick }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-md bg-primary-brand flex items-center justify-center text-white font-serif text-lg font-bold shadow-md transition-transform group-hover:scale-105">
-              F
-            </div>
-            <div className="flex flex-col">
-              <span className="font-serif text-xl tracking-wider font-bold text-primary-brand">
-                {BRAND_INFO.name}
-              </span>
-              <span className="text-[9px] uppercase tracking-widest text-muted-gold font-semibold -mt-1">
-                {BRAND_INFO.tagline}
-              </span>
-            </div>
-          </a>
-
+          <a href="#" className="flex items-center">
+  <img
+    src={logo}
+    alt="FESGift"
+    className="h-12 w-auto"
+  />
+</a>
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
             {NAVIGATION_LINKS.map((link) => (
