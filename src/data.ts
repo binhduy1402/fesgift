@@ -38,22 +38,25 @@ export const NAVIGATION_LINKS = [
 
 export const PHILOSOPHY_ITEMS: PhilosophyItem[] = [
   {
-    id: "tam",
-    title: "THỂ HIỆN THỰC LỰC",
-    description: "Sự chỉn chu trong từng món quà khẳng định vị thế và năng lực vượt trội của doanh nghiệp trong mắt đối tác.",
-    iconName: "Gift",
+    id: "mars-story",
+    title: "CÂU CHUYỆN MARS",
+    description:
+      "FESGift được phát triển từ kinh nghiệm nhiều năm trong lĩnh vực quà tặng doanh nghiệp và sản xuất theo yêu cầu. Mục tiêu là tạo ra những giải pháp quà tặng giúp doanh nghiệp xây dựng hình ảnh chuyên nghiệp và bền vững.",
+    iconName: "Building2",
   },
   {
-    id: "tam-2",
-    title: "TRẢI NGHIỆM KHÁCH HÀNG",
-    description: "Mọi điểm chạm từ bao bì tinh xảo đến nội dung bên trong đều được tối ưu hóa để tạo nên cảm xúc thăng hoa trọn vẹn.",
-    iconName: "Award",
+    id: "usp",
+    title: "ĐIỂM KHÁC BIỆT",
+    description:
+      "Tư vấn theo mục tiêu chiến dịch, thiết kế theo nhận diện thương hiệu, sản xuất linh hoạt và kiểm soát chất lượng xuyên suốt từ ý tưởng đến thành phẩm.",
+    iconName: "Sparkles",
   },
   {
-    id: "tin",
-    title: "TÍNH CÁCH NỔI BẬT",
-    description: "Cá nhân hóa tối đa theo bản sắc và ngôn ngữ thương hiệu riêng biệt, tạo nên dấu ấn độc bản khó phai mờ.",
-    iconName: "Fingerprint",
+    id: "mission",
+    title: "LÝ DO TỒN TẠI",
+    description:
+      "Chúng tôi tin rằng một món quà được chuẩn bị đúng cách có thể tạo nên sự kết nối, ghi nhớ và giá trị lâu dài cho thương hiệu trong mắt khách hàng và đối tác.",
+    iconName: "HeartHandshake",
   },
 ];
 
