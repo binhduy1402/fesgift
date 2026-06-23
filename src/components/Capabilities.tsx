@@ -1,4 +1,10 @@
-import { ArrowRight, Quote } from "lucide-react";
+import { useState } from "react";
+import {
+  ArrowRight,
+  Quote,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
 const testimonials = [
   {
@@ -25,17 +31,35 @@ const testimonials = [
 ];
 
 const clientLogos = [
-"CLIENT 01",
-"CLIENT 02",
-"CLIENT 03",
-"CLIENT 04",
-"CLIENT 05",
-"CLIENT 06",
-"CLIENT 07",
-"CLIENT 08",
+  "CLIENT 01",
+  "CLIENT 02",
+  "CLIENT 03",
+  "CLIENT 04",
+  "CLIENT 05",
+  "CLIENT 06",
+  "CLIENT 07",
+  "CLIENT 08",
+
+  "CLIENT 09",
+  "CLIENT 10",
+  "CLIENT 11",
+  "CLIENT 12",
+  "CLIENT 13",
+  "CLIENT 14",
+  "CLIENT 15",
+  "CLIENT 16",
 ];
 
+const logosPerPage = 8;
+
+const logoPages = [];
+
+for (let i = 0; i < clientLogos.length; i += logosPerPage) {
+  logoPages.push(clientLogos.slice(i, i + logosPerPage));
+}
+
 export default function Capabilities() {
+const [logoPage, setLogoPage] = useState(0);
 const scrollToContact = () => {
 const section = document.getElementById("contact");
 
@@ -70,29 +94,63 @@ return (
       </p>
     </div>
 
-    <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-6 mb-16">
-      {clientLogos.map((logo) => (
-        <div
-          key={logo}
-          className="
-            flex
-            items-center
-            justify-center
-            rounded-2xl
-            border
-            border-[#7c142b]/10
-            bg-white
-            h-24
-            text-xs
-            font-bold
-            tracking-widest
-            text-[#7c142b]
-          "
-        >
-          {logo}
-        </div>
-      ))}
-    </div>
+<div className="mb-16">
+
+  <div className="flex items-center justify-center gap-4 mb-6">
+
+    <button
+      onClick={() =>
+        setLogoPage(
+          logoPage === 0
+            ? logoPages.length - 1
+            : logoPage - 1
+        )
+      }
+      className="rounded-full border border-[#7c142b]/20 p-2 hover:bg-[#7c142b]/5"
+    >
+      <ChevronLeft className="h-5 w-5" />
+    </button>
+
+    <button
+      onClick={() =>
+        setLogoPage(
+          logoPage === logoPages.length - 1
+            ? 0
+            : logoPage + 1
+        )
+      }
+      className="rounded-full border border-[#7c142b]/20 p-2 hover:bg-[#7c142b]/5"
+    >
+      <ChevronRight className="h-5 w-5" />
+    </button>
+
+  </div>
+
+  <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
+    {logoPages[logoPage].map((logo) => (
+      <div
+        key={logo}
+        className="
+          flex
+          items-center
+          justify-center
+          rounded-2xl
+          border
+          border-[#7c142b]/10
+          bg-white
+          h-24
+          text-xs
+          font-bold
+          tracking-widest
+          text-[#7c142b]
+        "
+      >
+        {logo}
+      </div>
+    ))}
+  </div>
+
+</div>
 
     <div className="mb-16 overflow-hidden rounded-3xl border border-[#7c142b]/10 bg-white shadow-sm">
   <div className="grid lg:grid-cols-2">
@@ -117,7 +175,7 @@ return (
       </h3>
 
       <p className="mt-4 text-gray-600 leading-relaxed">
-        Triển khai hơn 2.000 bộ quà tặng được thiết kế riêng theo
+        Triển khai hơn 20.000 bộ quà tặng được thiết kế riêng theo
         nhận diện thương hiệu cho chương trình tri ân khách hàng cuối năm.
       </p>
 
@@ -152,7 +210,6 @@ return (
           </p>
 
           <div className="mt-6 border-t border-[#7c142b]/10 pt-4">
-            <div className="mt-6 border-t border-[#7c142b]/10 pt-4">
               <div className="font-semibold text-[#2c2c2c]">
                 {item.name}
               </div>
