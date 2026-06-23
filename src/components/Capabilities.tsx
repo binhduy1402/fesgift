@@ -94,6 +94,44 @@ return (
       ))}
     </div>
 
+    <div className="mb-16 overflow-hidden rounded-3xl border border-[#7c142b]/10 bg-white shadow-sm">
+  <div className="grid lg:grid-cols-2">
+
+    {/* Image */}
+    <div className="relative min-h-[320px]">
+      <img
+        src="https://images.unsplash.com/photo-1512909006721-3d6018887383?q=80&w=1200&auto=format&fit=crop"
+        alt="Case Study"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+    </div>
+
+    {/* Content */}
+    <div className="flex flex-col justify-center p-10">
+      <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#7c142b]">
+        CASE STUDY TIÊU BIỂU
+      </span>
+
+      <h3 className="mt-3 font-serif text-3xl font-bold text-[#1f1f1f]">
+        Dự Án Quà Tặng Tết Doanh Nghiệp
+      </h3>
+
+      <p className="mt-4 text-gray-600 leading-relaxed">
+        Triển khai hơn 2.000 bộ quà tặng được thiết kế riêng theo
+        nhận diện thương hiệu cho chương trình tri ân khách hàng cuối năm.
+      </p>
+
+      <div className="mt-6 space-y-3">
+        <div>✓ Thiết kế riêng theo thương hiệu</div>
+        <div>✓ Sản xuất số lượng lớn</div>
+        <div>✓ Giao hàng toàn quốc</div>
+        <div>✓ Hoàn thành đúng tiến độ</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
     <div className="grid gap-6 lg:grid-cols-3">
       {testimonials.map((item, index) => (
         <div
