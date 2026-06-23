@@ -27,17 +27,18 @@ export default function Hero({
               Quà Tặng Doanh Nghiệp Cao Cấp
             </div>
 
-            <h1 className="mt-6 font-serif text-4xl font-bold leading-tight text-[#2c2c2c] sm:text-5xl lg:text-6xl">
-              Quà Tặng Doanh Nghiệp
-              <span className="mt-2 block text-[#7c142b] italic font-normal">
-                Thiết Kế Riêng Theo Thương Hiệu
-              </span>
-            </h1>
+              <h1 className="mt-6 font-serif text-4xl font-bold leading-tight text-[#2c2c2c] sm:text-5xl lg:text-6xl">
+                Quà Tặng Doanh Nghiệp
+              
+                <span className="mt-2 block text-[#7c142b] italic font-normal">
+                  Nâng Tầm Thương Hiệu
+                </span>
+              </h1>
 
             <p className="mt-6 max-w-xl text-base leading-relaxed text-[#555]">
-              FESGift đồng hành cùng doanh nghiệp trong việc xây dựng hình ảnh
-              thương hiệu thông qua những bộ quà tặng được thiết kế riêng,
-              sản xuất theo yêu cầu và cá nhân hóa theo từng chiến dịch.
+              FESGift đồng hành cùng doanh nghiệp tạo nên những bộ quà tặng mang
+              dấu ấn thương hiệu riêng, từ ý tưởng, thiết kế đến sản xuất và bàn giao
+              trên toàn quốc.
             </p>
 
             {/* USP */}
@@ -80,11 +81,11 @@ export default function Hero({
                   hover:shadow-xl
                 "
               >
-                Yêu Cầu Báo Giá
+                Nhận Báo Giá Ngay
                 <ArrowRight className="h-4 w-4" />
               </button>
 
-              <button
+              {/*<button
                 onClick={onDiscoverClick}
                 className="
                   inline-flex
@@ -107,7 +108,7 @@ export default function Hero({
                 "
               >
                 Xem Bộ Sưu Tập
-              </button>
+              </button>*/}
             </div>
           </div>
 
