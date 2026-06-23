@@ -55,11 +55,11 @@ export default function App() {
 
       <About />
 
-      <Philosophy />
-
       <Collections
         onSelectCollection={setSelectedCollection}
       />
+
+      <Philosophy />
 
       <Workflow />
 
