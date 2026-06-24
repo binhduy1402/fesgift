@@ -1,9 +1,6 @@
-import { useState } from "react";
 import {
   ArrowRight,
   Quote,
-  ChevronLeft,
-  ChevronRight,
 } from "lucide-react";
 
 const testimonials = [
@@ -41,17 +38,8 @@ const clientLogos = [
   "CLIENT 08",
 ];
 
-const logosPerPage = 4;
-
-const logoPages = [];
-
-for (let i = 0; i < clientLogos.length; i += logosPerPage) {
-  logoPages.push(clientLogos.slice(i, i + logosPerPage));
-}
-
 
 export default function Capabilities() {
-const [logoPage, setLogoPage] = useState(0);
 const scrollToContact = () => {
 const section = document.getElementById("contact");
 
@@ -89,69 +77,39 @@ return (
       </p>
     </div>
 
-<div className="relative mb-16">
+<div className="relative mb-16 overflow-hidden">
 
-  <button
-  onClick={() =>
-    setLogoPage(
-      logoPage === 0
-        ? logoPages.length - 1
-        : logoPage - 1
-    )
-  }
-  className="
-    absolute
-    left-[-20px]
-    top-1/2
-    -translate-y-1/2
-    z-10
-    rounded-full
-    border
-    border-[#7c142b]/20
-    bg-white
-    p-3
-    shadow-sm
-    hover:bg-[#7c142b]/5
-  "
->
-  <ChevronLeft className="h-5 w-5" />
-</button>
+  {/* Fade trái */}
+  <div className="absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-[#fffdf9] to-transparent" />
 
-<button
-  onClick={() =>
-    setLogoPage(
-      logoPage === logoPages.length - 1
-        ? 0
-        : logoPage + 1
-    )
-  }
-  className="
-    absolute
-    right-[-20px]
-    top-1/2
-    -translate-y-1/2
-    z-10
-    rounded-full
-    border
-    border-[#7c142b]/20
-    bg-white
-    p-3
-    shadow-sm
-    hover:bg-[#7c142b]/5
-  "
->
-  <ChevronRight className="h-5 w-5" />
-</button>
-  
-  <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-    {logoPages[logoPage].map((logo) => (
-    <div
-      key={logo}
-      className="premium-card flex items-center justify-center h-24 text-xs font-bold tracking-widest text-[#7c142b]"
-    >
+  {/* Fade phải */}
+  <div className="absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-[#fffdf9] to-transparent" />
+
+  <div className="flex w-max animate-marquee gap-6">
+
+    {[...clientLogos, ...clientLogos].map((logo, index) => (
+      <div
+        key={index}
+        className="
+          premium-card
+          flex
+          h-24
+          min-w-[220px]
+          items-center
+          justify-center
+          px-10
+          text-xs
+          font-bold
+          tracking-[0.2em]
+          text-[#7c142b]
+          transition-all
+          hover:-translate-y-1
+        "
+      >
         {logo}
       </div>
     ))}
+
   </div>
 
 </div>
