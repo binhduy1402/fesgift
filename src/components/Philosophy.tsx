@@ -1,6 +1,9 @@
 export default function Philosophy() {
 return (
-<section id="philosophy" className="relative overflow-hidden bg-white py-24" >
+<section
+  id="philosophy"
+  className="reveal relative overflow-hidden bg-white py-24"
+>
 <div className="absolute left-0 top-0 h-64 w-64 rounded-full bg-[#7c142b]/5 blur-3xl" />
 <div className="absolute right-0 bottom-0 h-64 w-64 rounded-full bg-[#d4af37]/10 blur-3xl" />
 
@@ -14,7 +17,16 @@ return (
 
       <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#2c2c2c]">
         Mỗi Món Quà Là Một
-        <span className="block text-[#7c142b]">
+<span
+  className="
+    block
+    bg-gradient-to-r
+    from-[#7c142b]
+    to-[#c9a227]
+    bg-clip-text
+    text-transparent
+  "
+>
           Trải Nghiệm Thương Hiệu
         </span>
       </h2>
@@ -35,7 +47,16 @@ return (
 
       <div className="mt-16 grid gap-8 md:grid-cols-3">
 
-  <div className="rounded-2xl border border-[#7c142b]/10 bg-[#faf7f2] p-8 min-h-[260px]">
+<div
+  style={{ transitionDelay: "0ms" }}
+  className="
+    reveal
+    premium-card
+    bg-[#faf7f2]
+    p-8
+    min-h-[260px]
+  "
+>
     <h3 className="text-xl font-bold text-[#7c142b]">
       CÂU CHUYỆN MARS
     </h3>
@@ -48,7 +69,16 @@ return (
     </p>
   </div>
 
-  <div className="rounded-2xl border border-[#7c142b]/10 bg-[#faf7f2] p-8 min-h-[260px]">
+  <div
+  style={{ transitionDelay: "150ms" }}
+  className="
+    reveal
+    premium-card
+    bg-[#faf7f2]
+    p-8
+    min-h-[260px]
+  "
+>
     <h3 className="text-xl font-bold text-[#7c142b]">
       ĐIỂM KHÁC BIỆT
     </h3>
@@ -60,7 +90,16 @@ return (
     </p>
   </div>
 
-  <div className="rounded-2xl border border-[#7c142b]/10 bg-[#faf7f2] p-8 min-h-[260px]">
+<div
+  style={{ transitionDelay: "300ms" }}
+  className="
+    reveal
+    premium-card
+    bg-[#faf7f2]
+    p-8
+    min-h-[260px]
+  "
+>
     <h3 className="text-xl font-bold text-[#7c142b]">
       LÝ DO TỒN TẠI
     </h3>
