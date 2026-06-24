@@ -156,22 +156,24 @@ return (
   <div className="grid lg:grid-cols-2">
 
     {/* Image */}
-    <div className="group relative min-h-[320px] overflow-hidden">
-      <img
-        src="https://images.unsplash.com/photo-1512909006721-3d6018887383?q=80&w=1200&auto=format&fit=crop"
-        alt="Case Study"
-        className="
-          absolute
-          inset-0
-          h-full
-          w-full
-          object-cover
-          transition-transform
-          duration-1000
-          group-hover:scale-105
-        "
-      />
-    </div>
+      <div className="group relative min-h-[320px] overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1512909006721-3d6018887383?q=80&w=1200&auto=format&fit=crop"
+          alt="Case Study"
+          className="
+            absolute
+            inset-0
+            h-full
+            w-full
+            object-cover
+            transition-transform
+            duration-1000
+            group-hover:scale-105
+          "
+        />
+      
+        <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent" />
+      </div>
 
     {/* Content */}
     <div className="flex flex-col justify-center p-10">
@@ -183,36 +185,50 @@ return (
         Dự Án Quà Tặng Tết Doanh Nghiệp
       </h3>
 
-      <p className="mt-4 text-gray-600 leading-relaxed">
-        <div className="mt-6 grid grid-cols-3 gap-4">
-          <div>
-            <div className="text-2xl font-bold text-[#7c142b]">
-              20.000+
-            </div>
-            <div className="text-xs text-gray-500">
-              Bộ quà tặng
-            </div>
-          </div>
-        
-          <div>
-            <div className="text-2xl font-bold text-[#7c142b]">
-              45
-            </div>
-            <div className="text-xs text-gray-500">
-              Ngày triển khai
-            </div>
-          </div>
-        
-          <div>
-            <div className="text-2xl font-bold text-[#7c142b]">
-              100%
-            </div>
-            <div className="text-xs text-gray-500">
-              Đúng tiến độ
-            </div>
-          </div>
-        </div>
+<p className="mt-4 text-gray-600 leading-relaxed">
+  Triển khai hơn 20.000 bộ quà tặng được thiết kế riêng theo
+  nhận diện thương hiệu cho chương trình tri ân khách hàng cuối năm.
+</p>
+
+<div className="mt-6 grid grid-cols-3 gap-4">
+  <div>
+    <div className="text-2xl font-bold text-[#7c142b]">
+      20.000+
+    </div>
+    <div className="text-xs text-gray-500">
+      Bộ quà tặng
+    </div>
+  </div>
+
+  <div>
+    <div className="text-2xl font-bold text-[#7c142b]">
+      45
+    </div>
+    <div className="text-xs text-gray-500">
+      Ngày triển khai
+    </div>
+  </div>
+
+  <div>
+    <div className="text-2xl font-bold text-[#7c142b]">
+      100%
+    </div>
+    <div className="text-xs text-gray-500">
+      Đúng tiến độ
+    </div>
+  </div>
 </div>
+
+<div className="mt-6 space-y-3">
+  <div>✓ Thiết kế riêng theo thương hiệu</div>
+  <div>✓ Sản xuất số lượng lớn</div>
+  <div>✓ Giao hàng toàn quốc</div>
+  <div>✓ Hoàn thành đúng tiến độ</div>
+</div>
+      
+</div>
+</div>
+  </div>
 
     <div className="grid gap-6 lg:grid-cols-3">
       {testimonials.map((item, index) => (
