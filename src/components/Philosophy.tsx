@@ -60,7 +60,7 @@ return (
       CÂU CHUYỆN MARS
     </h3>
 
-    <p className="mt-4 text-sm leading-relaxed text-gray-600">
+    <p className="mt-4 text-center text-sm leading-relaxed text-gray-600">
       FESGift được phát triển từ kinh nghiệm nhiều năm trong lĩnh vực
       quà tặng doanh nghiệp và sản xuất theo yêu cầu. Mục tiêu là tạo
       ra những giải pháp quà tặng giúp doanh nghiệp xây dựng hình ảnh
@@ -81,7 +81,7 @@ return (
       ĐIỂM KHÁC BIỆT
     </h3>
 
-    <p className="mt-4 text-sm leading-relaxed text-gray-600">
+    <p className="mt-4 text-center text-sm leading-relaxed text-gray-600">
       Tư vấn theo mục tiêu chiến dịch, thiết kế theo nhận diện thương
       hiệu, sản xuất linh hoạt và kiểm soát chất lượng xuyên suốt từ
       ý tưởng đến thành phẩm.
@@ -101,7 +101,7 @@ return (
       LÝ DO TỒN TẠI
     </h3>
 
-    <p className="mt-4 text-sm leading-relaxed text-gray-600">
+    <p className="mt-4 text-center text-sm leading-relaxed text-gray-600">
       Chúng tôi tin rằng một món quà được chuẩn bị đúng cách có thể
       tạo nên sự kết nối, ghi nhớ và giá trị lâu dài cho thương hiệu
       trong mắt khách hàng và đối tác.
