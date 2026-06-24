@@ -45,70 +45,73 @@ return (
         cho người nhận.
       </p>
 
-      <div className="mt-16 grid gap-8 md:grid-cols-3">
-
-<div
-  style={{ transitionDelay: "0ms" }}
-  className="
-    reveal
-    premium-card
-    bg-[#faf7f2]
-    min-h-[220px]
-  "
->
-    <h3 className="text-xl font-bold text-[#7c142b]">
-      CÂU CHUYỆN MARS
-    </h3>
-
-    <p className="mt-4 text-center text-sm leading-relaxed text-gray-600">
-      FESGift được phát triển từ kinh nghiệm nhiều năm trong lĩnh vực
-      quà tặng doanh nghiệp và sản xuất theo yêu cầu. Mục tiêu là tạo
-      ra những giải pháp quà tặng giúp doanh nghiệp xây dựng hình ảnh
-      chuyên nghiệp và bền vững.
-    </p>
-  </div>
+  <div className="mt-20 grid gap-12 md:grid-cols-3">
 
   <div
-  style={{ transitionDelay: "150ms" }}
-  className="
-    reveal
-    premium-card
-    bg-[#faf7f2]
-    min-h-[220px]
-  "
->
-    <h3 className="text-xl font-bold text-[#7c142b]">
-      ĐIỂM KHÁC BIỆT
+    style={{ transitionDelay: "0ms" }}
+    className="reveal text-center"
+  >
+    <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-[#c9a227]/40 bg-[#faf7f2]">
+      <span className="text-2xl">🏛</span>
+    </div>
+
+    <h3 className="text-xl font-bold tracking-wide text-[#7c142b]">
+      CÂU CHUYỆN MARS
     </h3>
-
-    <p className="mt-4 text-center text-sm leading-relaxed text-gray-600">
-      Tư vấn theo mục tiêu chiến dịch, thiết kế theo nhận diện thương
-      hiệu, sản xuất linh hoạt và kiểm soát chất lượng xuyên suốt từ
-      ý tưởng đến thành phẩm.
-    </p>
+  
+      <div className="mx-auto mt-4 h-px w-16 bg-[#c9a227]" />
+  
+      <p className="mt-6 text-sm leading-relaxed text-gray-600">
+        FESGift được phát triển từ kinh nghiệm nhiều năm trong lĩnh vực
+        quà tặng doanh nghiệp và sản xuất theo yêu cầu. Mục tiêu là tạo
+        ra những giải pháp quà tặng giúp doanh nghiệp xây dựng hình ảnh
+        chuyên nghiệp và bền vững.
+      </p>
+    </div>
+  
+    <div
+      style={{ transitionDelay: "150ms" }}
+      className="reveal text-center"
+    >
+      <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-[#c9a227]/40 bg-[#faf7f2]">
+        <span className="text-2xl">✨</span>
+      </div>
+  
+      <h3 className="text-xl font-bold tracking-wide text-[#7c142b]">
+        ĐIỂM KHÁC BIỆT
+      </h3>
+  
+      <div className="mx-auto mt-4 h-px w-16 bg-[#c9a227]" />
+  
+      <p className="mt-6 text-sm leading-relaxed text-gray-600">
+        Tư vấn theo mục tiêu chiến dịch, thiết kế theo nhận diện thương
+        hiệu, sản xuất linh hoạt và kiểm soát chất lượng xuyên suốt từ
+        ý tưởng đến thành phẩm.
+      </p>
+    </div>
+  
+    <div
+      style={{ transitionDelay: "300ms" }}
+      className="reveal text-center"
+    >
+      <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-[#c9a227]/40 bg-[#faf7f2]">
+        <span className="text-2xl">❤</span>
+      </div>
+  
+      <h3 className="text-xl font-bold tracking-wide text-[#7c142b]">
+        LÝ DO TỒN TẠI
+      </h3>
+  
+      <div className="mx-auto mt-4 h-px w-16 bg-[#c9a227]" />
+  
+      <p className="mt-6 text-sm leading-relaxed text-gray-600">
+        Chúng tôi tin rằng một món quà được chuẩn bị đúng cách có thể
+        tạo nên sự kết nối, ghi nhớ và giá trị lâu dài cho thương hiệu
+        trong mắt khách hàng và đối tác.
+      </p>
+    </div>
+  
   </div>
-
-<div
-  style={{ transitionDelay: "300ms" }}
-  className="
-    reveal
-    premium-card
-    bg-[#faf7f2]
-    min-h-[220px]
-  "
->
-    <h3 className="text-xl font-bold text-[#7c142b]">
-      LÝ DO TỒN TẠI
-    </h3>
-
-    <p className="mt-4 text-center text-sm leading-relaxed text-gray-600">
-      Chúng tôi tin rằng một món quà được chuẩn bị đúng cách có thể
-      tạo nên sự kết nối, ghi nhớ và giá trị lâu dài cho thương hiệu
-      trong mắt khách hàng và đối tác.
-    </p>
-  </div>
-
-</div>
 
     </div>
 
