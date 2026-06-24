@@ -113,7 +113,7 @@ export default function Hero({
           </div>
 
           {/* Right Image */}
-          <div className="lg:col-span-6">
+          <div className="relative hero-float">
             <div className="relative">
               <div className="overflow-hidden rounded-2xl border border-[#7c142b]/10 bg-white p-2 shadow-2xl">
                 <img
@@ -124,7 +124,7 @@ export default function Hero({
               </div>
 
               {/* Floating Card */}
-              <div className="absolute -bottom-6 left-6 rounded-xl border border-[#d4af37]/20 bg-white/95 px-6 py-5 shadow-xl backdrop-blur-md">
+              <div className="absolute -bottom-6 left-6 hero-card-float rounded-xl border border-[#d4af37]/20 bg-white/95 px-6 py-5 shadow-xl backdrop-blur-md">
                 <div className="text-2xl font-serif font-bold text-[#7c142b]">
                  TƯ VẤN MIỄN PHÍ
                 </div>
