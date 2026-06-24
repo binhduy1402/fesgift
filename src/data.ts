@@ -8,100 +8,147 @@ export const BRAND_INFO = {
   address: "District 1, Ho Chi Minh City, Vietnam",
 };
 
+export const COMPANY_STATS = [
+{
+value: "34",
+label: "Tỉnh thành phục vụ",
+},
+{
+value: "200+",
+label: "Khách hàng doanh nghiệp",
+},
+{
+value: "50.000+",
+label: "Quà tặng mỗi năm",
+},
+{
+value: "8+",
+label: "Năm kinh nghiệm",
+},
+];
+
 export const NAVIGATION_LINKS = [
-  { label: "Về FESGift", href: "#our-story" },
-  { label: "Triết Lý 3T", href: "#philosophy" },
-  { label: "Bộ Sưu Tập", href: "#collections" },
-  { label: "Quy Trình", href: "#process" },
-  { label: "Dự Án", href: "#projects" },
-  { label: "Đánh Giá", href: "#testimonials" },
+{ label: "Năng Lực", href: "#our-story" },
+{ label: "Sản Phẩm", href: "#collections" },
+{ label: "Câu Chuyện", href: "#philosophy" },
+{ label: "Khách Hàng", href: "#capabilities" },
+{ label: "Quy Trình", href: "#process" },
+{ label: "Liên Hệ", href: "#contact" },
 ];
 
 export const PHILOSOPHY_ITEMS: PhilosophyItem[] = [
   {
-    id: "tam",
-    title: "THỂ HIỆN THỰC LỰC",
-    description: "Sự chỉn chu trong từng món quà khẳng định vị thế và năng lực vượt trội của doanh nghiệp trong mắt đối tác.",
-    iconName: "Gift",
+    id: "mars-story",
+    title: "CÂU CHUYỆN MARS",
+    description:
+      "FESGift được phát triển từ kinh nghiệm nhiều năm trong lĩnh vực quà tặng doanh nghiệp và sản xuất theo yêu cầu. Mục tiêu là tạo ra những giải pháp quà tặng giúp doanh nghiệp xây dựng hình ảnh chuyên nghiệp và bền vững.",
+    iconName: "Building2",
   },
   {
-    id: "tam-2",
-    title: "TRẢI NGHIỆM KHÁCH HÀNG",
-    description: "Mọi điểm chạm từ bao bì tinh xảo đến nội dung bên trong đều được tối ưu hóa để tạo nên cảm xúc thăng hoa trọn vẹn.",
-    iconName: "Award",
+    id: "usp",
+    title: "ĐIỂM KHÁC BIỆT",
+    description:
+      "Tư vấn theo mục tiêu chiến dịch, thiết kế theo nhận diện thương hiệu, sản xuất linh hoạt và kiểm soát chất lượng xuyên suốt từ ý tưởng đến thành phẩm.",
+    iconName: "Sparkles",
   },
   {
-    id: "tin",
-    title: "TÍNH CÁCH NỔI BẬT",
-    description: "Cá nhân hóa tối đa theo bản sắc và ngôn ngữ thương hiệu riêng biệt, tạo nên dấu ấn độc bản khó phai mờ.",
-    iconName: "Fingerprint",
+    id: "mission",
+    title: "LÝ DO TỒN TẠI",
+    description:
+      "Chúng tôi tin rằng một món quà được chuẩn bị đúng cách có thể tạo nên sự kết nối, ghi nhớ và giá trị lâu dài cho thương hiệu trong mắt khách hàng và đối tác.",
+    iconName: "HeartHandshake",
   },
 ];
 
 export const COLLECTIONS: Collection[] = [
-  {
-    id: "corporate",
-    title: "Quà Doanh Nghiệp",
-    description: "Giải pháp quà tặng đối tác ngoại giao, khách hàng VIP tinh tế, tôn vinh giá trị văn hóa và nâng tầm mối quan hệ hợp tác lâu dài.",
-    image: "https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=800&auto=format&fit=crop",
-    badge: "BÁN CHẠY NHẤT",
-    highlights: ["Sản phẩm văn hoá chọn lọc", "Bao bì sơn mài cao cấp", "Thiết kế logo ép kim"],
-  },
-  {
-    id: "event",
-    title: "Quà Sự Kiện",
-    description: "Thiết kế đồng bộ theo chủ đề hội nghị, lễ kỷ niệm hay ra mắt sản phẩm mới. Tối ưu hóa độ nhận nhận diện thương hiệu tuyệt đối.",
-    image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800&auto=format&fit=crop",
-    badge: "ĐỘC ĐÁO & ẤN TƯỢNG",
-    highlights: ["Tùy biến theo chủ đề sự kiện", "Sản xuất nhanh, số lượng lớn", "Bộ Kit quà tặng đa dụng"],
-  },
-  {
-    id: "personalized",
-    title: "Quà Cá Nhân Hóa",
-    description: "Khắc tên, in dập nổi logo trên các chất liệu da thuộc, gỗ tự nhiên hay kim loại cao cấp. Mỗi món quà là một tác phẩm nghệ thuật duy nhất.",
-    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=800&auto=format&fit=crop",
-    badge: "ĐỘC BẢN SANG TRỌNG",
-    highlights: ["Khắc logo/Tên bằng Laser CNC", "Chất liệu cao cấp tự nhiên", "Thiết kế riêng cho từng cá nhân"],
-  },
+{
+id: "customer-gifts",
+title: "Quà Khách Hàng",
+tagline: "Tăng độ ghi nhớ thương hiệu",
+icon: "Users",
+description:
+"Giải pháp quà tặng giúp doanh nghiệp xây dựng mối quan hệ bền vững và tạo trải nghiệm tích cực cho khách hàng.",
+image:
+"https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=800&auto=format&fit=crop",
+badge: "KHÁCH HÀNG",
+highlights: [
+"Giftset theo nhận diện thương hiệu",
+"Bao bì thiết kế riêng",
+"Tăng độ ghi nhớ thương hiệu",
+],
+},
+
+{
+id: "event-gifts",
+title: "Quà Sự Kiện",
+tagline: "Đồng bộ mọi chiến dịch",
+icon: "CalendarDays",
+description:
+"Phù hợp cho hội nghị, workshop, activation, lễ ra mắt sản phẩm và các chương trình truyền thông doanh nghiệp.",
+image:
+"https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=800&auto=format&fit=crop",
+badge: "SỰ KIỆN",
+highlights: [
+"Sản xuất số lượng lớn",
+"Đồng bộ concept chương trình",
+"Tiến độ triển khai nhanh",
+],
+},
+
+{
+id: "vip-gifts",
+title: "Quà VIP",
+tagline: "Khẳng định đẳng cấp đối tác",
+icon: "Crown",
+description:
+"Dòng quà tặng cao cấp dành cho đối tác chiến lược, khách hàng quan trọng và các chương trình tri ân đặc biệt.",
+image:
+"https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=800&auto=format&fit=crop",
+badge: "VIP",
+highlights: [
+"Thiết kế sang trọng",
+"Cá nhân hóa theo yêu cầu",
+"Nâng tầm hình ảnh doanh nghiệp",
+],
+},
+
+{
+id: "employee-gifts",
+title: "Quà Đội Ngũ",
+tagline: "Gắn kết và truyền cảm hứng",
+icon: "UsersRound",
+description:
+"Welcome Kit, quà sinh nhật, lễ tết và các chương trình nội bộ giúp nâng cao trải nghiệm nhân sự.",
+image:
+"https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800&auto=format&fit=crop",
+badge: "NỘI BỘ",
+highlights: [
+"Welcome Kit",
+"Quà sinh nhật nhân viên",
+"Quà lễ tết doanh nghiệp",
+],
+},
 ];
 
 export const WORKFLOW_STEPS: WorkflowStep[] = [
-  {
-    id: "step1",
-    num: "01",
-    title: "TƯ VẤN",
-    desc: "Tìm hiểu nhu cầu, ngân sách và thấu hiểu thông điệp thương hiệu cần truyền tải.",
-  },
-  {
-    id: "step2",
-    num: "02",
-    title: "Ý TƯỞNG",
-    desc: "Phác thảo các concept độc đáo, lồng ghép khéo léo yếu tố nghệ thuật & di sản.",
-  },
-  {
-    id: "step3",
-    num: "03",
-    title: "THIẾT KẾ",
-    desc: "Dựng hình ảnh 3D chân thực, mô phỏng bao bì và chất liệu một cách trực quan nhất.",
-  },
-  {
-    id: "step4",
-    num: "04",
-    title: "SẢN XUẤT",
-    desc: "Gia công chế tác thủ công tinh xảo kết hợp công nghệ hiện đại dưới giám sát chặt chẽ.",
-  },
-  {
-    id: "step5",
-    num: "05",
-    title: "KIỂM ĐỊNH",
-    desc: "Kiểm tra chất lượng nghiêm ngặt từng chi tiết hoàn thiện trước khi đóng gói.",
-  },
-  {
-    id: "step6",
-    num: "06",
-    title: "GIAO HÀNG",
-    desc: "Vận chuyển an toàn, nhanh chóng theo quy chuẩn cao cấp của FESGift.",
-  },
+{
+id: "step1",
+num: "01",
+title: "TRAO ĐỔI NHU CẦU",
+desc: "Chia sẻ ngân sách, số lượng, đối tượng nhận quà và mục tiêu chương trình.",
+},
+{
+id: "step2",
+num: "02",
+title: "THIẾT KẾ & BÁO GIÁ",
+desc: "FESGift đề xuất giải pháp, thiết kế và gửi báo giá phù hợp với yêu cầu.",
+},
+{
+id: "step3",
+num: "03",
+title: "SẢN XUẤT & GIAO HÀNG",
+desc: "Triển khai sản xuất, kiểm soát chất lượng và giao hàng đúng tiến độ.",
+},
 ];
 
 export const FEATURED_PROJECTS: Project[] = [

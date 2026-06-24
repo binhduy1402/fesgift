@@ -1,8 +1,10 @@
 export interface Collection {
   id: string;
   title: string;
-  image: string;
+  tagline?: string;
+  icon?: string;
   description: string;
+  image: string;
   badge?: string;
   highlights?: string[];
 }
