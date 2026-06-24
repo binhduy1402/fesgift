@@ -144,20 +144,17 @@ return (
     {logoPages[logoPage].map((logo) => (
       <div
         key={logo}
-        className="
-          flex
-          items-center
-          justify-center
-          rounded-2xl
-          border
-          border-[#7c142b]/10
-          bg-white
-          h-24
-          text-xs
-          font-bold
-          tracking-widest
-          text-[#7c142b]
-        "
+          className="
+            premium-card
+            flex
+            items-center
+            justify-center
+            h-24
+            text-xs
+            font-bold
+            tracking-widest
+            text-[#7c142b]
+          "
       >
         {logo}
       </div>
@@ -166,7 +163,7 @@ return (
 
 </div>
 
-    <div className="mb-16 overflow-hidden rounded-3xl border border-[#7c142b]/10 bg-white shadow-sm">
+    <div className="premium-card mb-16 overflow-hidden rounded-3xl">
   <div className="grid lg:grid-cols-2">
 
     {/* Image */}
@@ -209,12 +206,9 @@ return (
         <div
           key={index}
           className="
-            rounded-2xl
-            border
-            border-[#7c142b]/10
-            bg-white
+           className="
+            premium-card
             p-8
-            shadow-sm
           "
         >
           <Quote className="h-8 w-8 text-[#c9a227]" />
