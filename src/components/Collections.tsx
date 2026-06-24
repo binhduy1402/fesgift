@@ -116,10 +116,10 @@ export default function Collections({
               </div>
 
               {/* Content */}
-              <div className="flex h-full flex-col p-6">
+              <div className="flex min-h-[340px] flex-col p-6">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#7c142b]/10 text-[#7c142b]">{getIcon(col.icon)}
                 </div>
-                <p className="text-sm leading-relaxed text-gray-600">
+               <p className="min-h-[96px] text-sm leading-relaxed text-gray-600">
                   {col.description}
                 </p>
 
