@@ -109,7 +109,7 @@ return (
         {logo}
       </div>
     ))}
-
+    
   </div>
 
 </div>
