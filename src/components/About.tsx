@@ -1,10 +1,35 @@
 import { COMPANY_STATS } from "../data";
+import { useEffect, useRef, useState } from "react";
 import CountUp from "./CountUp";
 
 export default function About() {
 
+const sectionRef = useRef<HTMLElement>(null);
+const [startCount, setStartCount] = useState(false);
+
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setStartCount(true);
+        observer.disconnect();
+      }
+    },
+    {
+      threshold: 0.3,
+    }
+  );
+
+  if (sectionRef.current) {
+    observer.observe(sectionRef.current);
+  }
+
+  return () => observer.disconnect();
+}, []);
+
 return (
 <section
+  ref={sectionRef}
   id="our-story"
   className="bg-[#f8f5f0] py-20"
 >
@@ -41,7 +66,10 @@ return (
             "
         >
         <div className="text-5xl font-bold text-[#7c142b]">
-          <CountUp value={item.value} />
+          <CountUp
+            value={item.value}
+            start={startCount}
+          />
         </div>
 
           <div className="mt-3 text-sm text-charcoal-text/70">
