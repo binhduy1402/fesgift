@@ -94,7 +94,6 @@ return (
             <div
               key={index}
               className="
-                premium-card
                 flex
                 h-28
                 min-w-[220px]
@@ -102,14 +101,25 @@ return (
                 justify-center
                 px-10
                 transition-all
-                hover:-translate-y-1
+                duration-300
+                hover:scale-105
               "
             >
-              <img
-                src={logo}
-                alt={`Client ${index + 1}`}
-                className="max-h-16 w-auto object-contain"
-              />
+                <img
+                  src={logo}
+                  alt={`Client ${index + 1}`}
+                  className="
+                    max-h-16
+                    w-auto
+                    object-contain
+                    opacity-70
+                    grayscale
+                    transition-all
+                    duration-300
+                    hover:opacity-100
+                    hover:grayscale-0
+                  "
+                />
             </div>
           ))}
     
