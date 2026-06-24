@@ -3,6 +3,12 @@ import {
   Quote,
 } from "lucide-react";
 
+import logoAIA from "../assets/logo_aia.png";
+import logoFubon from "../assets/logo_fubon.png";
+import logoFWD from "../assets/logo_fwd.jpg";
+import logoGEN from "../assets/logo_gen.jpg";
+import logoSUN from "../assets/logo_sun.jpg";
+
 const testimonials = [
   {
     name: "Nguyễn Minh Anh",
@@ -27,15 +33,12 @@ const testimonials = [
   },
 ];
 
-const clientLogos = [
-  "CLIENT 01",
-  "CLIENT 02",
-  "CLIENT 03",
-  "CLIENT 04",
-  "CLIENT 05",
-  "CLIENT 06",
-  "CLIENT 07",
-  "CLIENT 08",
+const clients = [
+  logoAIA,
+  logoFubon,
+  logoFWD,
+  logoGEN,
+  logoSUN,
 ];
 
 
@@ -87,28 +90,28 @@ return (
 
   <div className="flex w-max animate-marquee gap-6">
 
-    {[...clientLogos, ...clientLogos].map((logo, index) => (
-      <div
-        key={index}
-        className="
-          premium-card
-          flex
-          h-24
-          min-w-[220px]
-          items-center
-          justify-center
-          px-10
-          text-xs
-          font-bold
-          tracking-[0.2em]
-          text-[#7c142b]
-          transition-all
-          hover:-translate-y-1
-        "
-      >
-        {logo}
-      </div>
-    ))}
+          {[...clients, ...clients].map((logo, index) => (
+            <div
+              key={index}
+              className="
+                premium-card
+                flex
+                h-24
+                min-w-[220px]
+                items-center
+                justify-center
+                px-10
+                transition-all
+                hover:-translate-y-1
+              "
+            >
+              <img
+                src={logo}
+                alt={`Client ${index + 1}`}
+                className="max-h-12 w-auto object-contain"
+              />
+            </div>
+          ))}
     
   </div>
 
