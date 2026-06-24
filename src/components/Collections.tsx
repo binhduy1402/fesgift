@@ -62,20 +62,19 @@ export default function Collections({
             <div
               key={col.id}
               onClick={() => onSelectCollection(col)}
-              className="
-                group
-                cursor-pointer
-                overflow-hidden
-                rounded-xl
-                border
-                border-[#7c142b]/10
-                bg-white
-                shadow-sm
-                transition-all
-                duration-300
-                hover:-translate-y-2
-                hover:shadow-2xl
-              "
+                className="
+                  group
+                  h-full
+                  flex
+                  flex-col
+                  cursor-pointer
+                  overflow-hidden
+                  rounded-xl
+                  border
+                  border-[#7c142b]/10
+                  bg-white
+                  shadow-sm
+                "
             >
               {/* Image */}
               <div className="relative aspect-[4/3] overflow-hidden">
@@ -116,7 +115,7 @@ export default function Collections({
               </div>
 
               {/* Content */}
-              <div className="flex h-full flex-col p-6">
+              <div className="flex flex-1 flex-col p-6">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#7c142b]/10 text-[#7c142b]">{getIcon(col.icon)}
                 </div>
                <p className="min-h-[120px] text-sm leading-relaxed text-gray-600">
@@ -142,7 +141,7 @@ export default function Collections({
                 )}
 
                 {/* Footer */}
-               <div className="mt-6 border-t border-gray-100 pt-5">
+               <div className="mt-auto border-t border-gray-100 pt-5">
                   <div className="flex items-center justify-between text-[#7c142b] transition-colors group-hover:text-[#d4af37]">
                     <span className="text-xs font-bold tracking-widest uppercase">
                       Nhận Báo Giá 
