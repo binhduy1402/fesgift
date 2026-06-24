@@ -3,7 +3,10 @@ import { COMPANY_STATS } from "../data";
 export default function About() {
 
 return (
-<section id="our-story" className="bg-[#f8f5f0] py-20" >
+<section
+  id="our-story"
+  className="bg-[#f8f5f0] py-20"
+>
 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <div className="text-center mb-14">
@@ -23,22 +26,18 @@ return (
     </div>
 
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {COMPANY_STATS.map((item) => (
+      {COMPANY_STATS.map((item, index) => (
         <div
           key={item.label}
-          className="
-            rounded-2xl
-            bg-white
-            p-8
-            text-center
-            shadow-sm
-            border
-            border-[#7c142b]/10
-            transition-all
-            duration-300
-            hover:-translate-y-3
-            hover:shadow-xl
-          "
+          style={{
+            transitionDelay: `${index * 120}ms`,
+          }}
+            className="
+              reveal
+              premium-card
+              p-8
+              text-center
+            "
         >
          <div className="text-5xl font-bold text-[#7c142b]">
             {item.value}
