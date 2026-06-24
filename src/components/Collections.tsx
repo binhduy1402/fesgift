@@ -118,13 +118,13 @@ export default function Collections({
               <div className="flex flex-1 flex-col p-6">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#7c142b]/10 text-[#7c142b]">{getIcon(col.icon)}
                 </div>
-               <p className="min-h-[120px] text-sm leading-relaxed text-gray-600">
+               <p className="text-sm leading-relaxed text-gray-600">
                   {col.description}
                 </p>
 
                 {/* Highlights */}
                   {col.highlights && (
-                    <ul className="mt-5 space-y-3">
+                    <ul className="mt-6 flex-1 space-y-3">
                     {col.highlights.map((item, index) => (
                       <li
                         key={index}
