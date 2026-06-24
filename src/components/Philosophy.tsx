@@ -15,7 +15,7 @@ return (
         CÂU CHUYỆN THƯƠNG HIỆU
       </span>
 
-      <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#2c2c2c]">
+      <h2 className="font-serif text-4xl md:text-5xl font-bold leading-[1.3] text-[#2c2c2c]">
         Mỗi Món Quà Là Một
 <span
   className="
@@ -53,8 +53,7 @@ return (
     reveal
     premium-card
     bg-[#faf7f2]
-    p-8
-    min-h-[260px]
+    min-h-[220px]
   "
 >
     <h3 className="text-xl font-bold text-[#7c142b]">
@@ -75,8 +74,7 @@ return (
     reveal
     premium-card
     bg-[#faf7f2]
-    p-8
-    min-h-[260px]
+    min-h-[220px]
   "
 >
     <h3 className="text-xl font-bold text-[#7c142b]">
@@ -96,8 +94,7 @@ return (
     reveal
     premium-card
     bg-[#faf7f2]
-    p-8
-    min-h-[260px]
+    min-h-[220px]
   "
 >
     <h3 className="text-xl font-bold text-[#7c142b]">
