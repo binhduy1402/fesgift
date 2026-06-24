@@ -80,30 +80,32 @@ export default function Workflow() {
               )}
 
               {/* Number */}
-                <div
-                  className="
-                    mx-auto
-                    mb-6
-                    flex
-                    h-14
-                    w-14
-                    items-center
-                    justify-center
-                    rounded-xl
-                    border
-                    border-[#d4af37]
-                    bg-white/5
-                    font-serif
-                    text-lg
-                    font-bold
-                    text-[#f1d58a]
-                    transition-all
-                    duration-500
-                    group-hover:scale-110
-                    group-hover:bg-[#d4af37]
-                    group-hover:text-[#6b0d22]
-                  "
-                >
+              <div
+                className="
+                  mx-auto
+                  mb-6
+                  flex
+                  h-14
+                  w-14
+                  items-center
+                  justify-center
+                  rounded-xl
+                  border
+                  border-[#d4af37]
+                  bg-white/5
+                  font-serif
+                  text-lg
+                  font-bold
+                  text-[#f1d58a]
+                  transition-all
+                  duration-500
+                  group-hover:scale-110
+                  group-hover:bg-[#d4af37]
+                  group-hover:text-[#6b0d22]
+                "
+              >
+                {step.num}
+              </div>
 
               {/* Title */}
               <h3 className="mb-4 text-lg font-bold uppercase tracking-wide text-white">
