@@ -96,7 +96,7 @@ return (
               className="
                 flex
                 h-28
-                min-w-[220px]
+                min-w-[180px]
                 items-center
                 justify-center
                 px-10
