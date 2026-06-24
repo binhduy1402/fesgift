@@ -96,7 +96,7 @@ return (
               className="
                 premium-card
                 flex
-                h-24
+                h-28
                 min-w-[220px]
                 items-center
                 justify-center
@@ -108,7 +108,7 @@ return (
               <img
                 src={logo}
                 alt={`Client ${index + 1}`}
-                className="max-h-12 w-auto object-contain"
+                className="max-h-16 w-auto object-contain"
               />
             </div>
           ))}
