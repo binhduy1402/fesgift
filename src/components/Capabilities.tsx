@@ -142,20 +142,10 @@ return (
   
   <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
     {logoPages[logoPage].map((logo) => (
-      <div
-        key={logo}
-          className="
-            premium-card
-            flex
-            items-center
-            justify-center
-            h-24
-            text-xs
-            font-bold
-            tracking-widest
-            text-[#7c142b]
-          "
-      >
+    <div
+      key={logo}
+      className="premium-card flex items-center justify-center h-24 text-xs font-bold tracking-widest text-[#7c142b]"
+    >
         {logo}
       </div>
     ))}
@@ -205,11 +195,7 @@ return (
       {testimonials.map((item, index) => (
         <div
           key={index}
-          className="
-           className="
-            premium-card
-            p-8
-          "
+          className="premium-card p-8"
         >
           <Quote className="h-8 w-8 text-[#c9a227]" />
 
