@@ -7,7 +7,7 @@ import logoAIA from "../assets/logo_aia.png";
 import logoFubon from "../assets/logo_fubon.png";
 import logoFWD from "../assets/logo_fwd.jpg";
 import logoGEN from "../assets/logo_gen.jpg";
-import logoSUN from "../assets/logo_sun.jpg";
+import logoSUN from "../assets/logo_sun.png";
 
 const testimonials = [
   {
