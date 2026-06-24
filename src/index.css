@@ -93,4 +93,43 @@
   .text-gold {
     color: #c9a227;
   }
+  /* ==================================
+   HERO FLOATING ANIMATION
+================================== */
+
+@keyframes heroFloat {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.hero-float {
+  animation: heroFloat 6s ease-in-out infinite;
+}
+
+@keyframes cardFloat {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.hero-card-float {
+  animation: cardFloat 4s ease-in-out infinite;
+}
 }
