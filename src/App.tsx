@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -19,6 +19,26 @@ export default function App() {
     useState<Collection | null>(null);
 
   const [prefilledProduct, setPrefilledProduct] = useState("");
+  useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+    }
+  );
+
+  document.querySelectorAll(".reveal").forEach((el) => {
+    observer.observe(el);
+  });
+
+  return () => observer.disconnect();
+}, []);
 
   const scrollToContact = () => {
     const section = document.getElementById("contact");
