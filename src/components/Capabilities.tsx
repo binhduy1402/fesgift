@@ -60,6 +60,20 @@ return (
   className="reveal relative overflow-hidden bg-[#fffdf9] py-24"
 >
 <div className="absolute top-0 left-0 h-72 w-72 rounded-full bg-[#7c142b]/5 blur-3xl" />
+<div
+  className="
+    absolute
+    left-1/2
+    top-1/3
+    h-96
+    w-96
+    -translate-x-1/2
+    rounded-full
+    bg-[#d4af37]/5
+    blur-3xl
+    animate-pulse
+  "
+/>
 <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-[#c9a227]/10 blur-3xl" />
 
   <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -127,15 +141,35 @@ return (
 
 </div>
 
-    <div className="premium-card mb-16 overflow-hidden rounded-3xl">
+    <div
+        className="
+          premium-card
+          mb-16
+          overflow-hidden
+          rounded-3xl
+          transition-all
+          duration-700
+          hover:-translate-y-1
+          hover:shadow-[0_30px_80px_rgba(124,20,43,0.12)]
+        "
+      >
   <div className="grid lg:grid-cols-2">
 
     {/* Image */}
-    <div className="relative min-h-[320px]">
+    <div className="group relative min-h-[320px] overflow-hidden">
       <img
         src="https://images.unsplash.com/photo-1512909006721-3d6018887383?q=80&w=1200&auto=format&fit=crop"
         alt="Case Study"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="
+          absolute
+          inset-0
+          h-full
+          w-full
+          object-cover
+          transition-transform
+          duration-1000
+          group-hover:scale-105
+        "
       />
     </div>
 
@@ -150,28 +184,55 @@ return (
       </h3>
 
       <p className="mt-4 text-gray-600 leading-relaxed">
-        Triển khai hơn 20.000 bộ quà tặng được thiết kế riêng theo
-        nhận diện thương hiệu cho chương trình tri ân khách hàng cuối năm.
-      </p>
-
-      <div className="mt-6 space-y-3">
-        <div>✓ Thiết kế riêng theo thương hiệu</div>
-        <div>✓ Sản xuất số lượng lớn</div>
-        <div>✓ Giao hàng toàn quốc</div>
-        <div>✓ Hoàn thành đúng tiến độ</div>
-      </div>
-    </div>
-
-  </div>
+        <div className="mt-6 grid grid-cols-3 gap-4">
+          <div>
+            <div className="text-2xl font-bold text-[#7c142b]">
+              20.000+
+            </div>
+            <div className="text-xs text-gray-500">
+              Bộ quà tặng
+            </div>
+          </div>
+        
+          <div>
+            <div className="text-2xl font-bold text-[#7c142b]">
+              45
+            </div>
+            <div className="text-xs text-gray-500">
+              Ngày triển khai
+            </div>
+          </div>
+        
+          <div>
+            <div className="text-2xl font-bold text-[#7c142b]">
+              100%
+            </div>
+            <div className="text-xs text-gray-500">
+              Đúng tiến độ
+            </div>
+          </div>
+        </div>
 </div>
 
     <div className="grid gap-6 lg:grid-cols-3">
       {testimonials.map((item, index) => (
         <div
           key={index}
-          className="premium-card p-8"
+          className="
+            premium-card
+            relative
+            overflow-hidden
+            p-8
+            transition-all
+            duration-500
+            hover:-translate-y-2
+            hover:shadow-[0_20px_50px_rgba(124,20,43,0.12)]
+          "
         >
-          <Quote className="h-8 w-8 text-[#c9a227]" />
+          <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-[#d4af37] to-[#f3d77a]" />
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#d4af37]/10">
+            <Quote className="h-6 w-6 text-[#d4af37]" />
+          </div>
 
           <p className="mt-4 text-sm leading-relaxed text-gray-600">
             {item.content}
