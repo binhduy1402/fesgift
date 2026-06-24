@@ -116,16 +116,16 @@ export default function Collections({
               </div>
 
               {/* Content */}
-              <div className="flex min-h-[340px] flex-col p-6">
+              <div className="flex h-full flex-col p-6">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#7c142b]/10 text-[#7c142b]">{getIcon(col.icon)}
                 </div>
-               <p className="min-h-[96px] text-sm leading-relaxed text-gray-600">
+               <p className="min-h-[120px] text-sm leading-relaxed text-gray-600">
                   {col.description}
                 </p>
 
                 {/* Highlights */}
-                {col.highlights && (
-                  <ul className="mt-5 space-y-3">
+                  {col.highlights && (
+                    <ul className="mt-5 flex-1 space-y-3">
                     {col.highlights.map((item, index) => (
                       <li
                         key={index}
@@ -142,7 +142,7 @@ export default function Collections({
                 )}
 
                 {/* Footer */}
-                <div className="mt-6 border-t border-gray-100 pt-5">
+                <div className="mt-auto border-t border-gray-100 pt-5">
                   <div className="flex items-center justify-between text-[#7c142b] transition-colors group-hover:text-[#d4af37]">
                     <span className="text-xs font-bold tracking-widest uppercase">
                       Nhận Báo Giá 
