@@ -3,10 +3,14 @@ import { WORKFLOW_STEPS } from "../data";
 
 export default function Workflow() {
   return (
-      <section
-        id="process"
-        className="reveal relative overflow-hidden py-20 text-white"
-      >
+        <section
+          id="process"
+          className="reveal relative overflow-hidden py-20 text-white"
+          style={{
+            background:
+              "linear-gradient(135deg, #6b0d22 0%, #8f1231 50%, #7c142b 100%)",
+          }}
+        >
       {/* Background Effects */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute left-1/4 top-1/2 h-[30rem] w-[30rem] -translate-y-1/2 rounded-full bg-white/5 blur-3xl" />
