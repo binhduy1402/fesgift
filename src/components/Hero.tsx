@@ -112,30 +112,31 @@ export default function Hero({
             </div>
           </div>
 
-          {/* Right Image */}
-          <div className="relative hero-float">
-            <div className="relative">
-              <div className="overflow-hidden rounded-2xl border border-[#7c142b]/10 bg-white p-2 shadow-2xl">
-                <img
-                  src={heroImage}
-                  alt="FESGift Gift Collection"
-                  className="h-full w-full rounded-xl object-cover"
-                />
-              </div>
-
-              {/* Floating Card */}
-              <div className="absolute -bottom-6 left-6 hero-card-float rounded-xl border border-[#d4af37]/20 bg-white/95 px-6 py-5 shadow-xl backdrop-blur-md">
-                <div className="text-2xl font-serif font-bold text-[#7c142b]">
-                 TƯ VẤN MIỄN PHÍ
+              {/* Right Image */}
+            <div className="lg:col-span-6">
+              <div className="relative hero-float">
+            
+                <div className="overflow-hidden rounded-2xl border border-[#7c142b]/10 bg-white p-2 shadow-2xl">
+                  <img
+                    src={heroImage}
+                    alt="FESGift Gift Collection"
+                    className="h-full w-full rounded-xl object-cover"
+                  />
                 </div>
-
-                <div className="mt-1 text-xs font-semibold uppercase tracking-wider text-gray-500">
-                  THEO NHẬN DIỆN THƯƠNG HIỆU
+            
+                {/* Floating Card */}
+                <div className="absolute -bottom-6 left-6 hero-card-float rounded-xl border border-[#d4af37]/20 bg-white/95 px-6 py-5 shadow-xl backdrop-blur-md">
+                  <div className="text-2xl font-serif font-bold text-[#7c142b]">
+                    TƯ VẤN MIỄN PHÍ
+                  </div>
+            
+                  <div className="mt-1 text-xs font-semibold uppercase tracking-wider text-gray-500">
+                    THEO NHẬN DIỆN THƯƠNG HIỆU
+                  </div>
                 </div>
+            
               </div>
             </div>
-          </div>
-
         </div>
       </div>
     </section>
