@@ -1,40 +1,41 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface CountUpProps {
   value: string;
+  start: boolean;
 }
 
-export default function CountUp({ value }: CountUpProps) {
+export default function CountUp({
+  value,
+  start,
+}: CountUpProps) {
   const [count, setCount] = useState(0);
-  const started = useRef(false);
 
   useEffect(() => {
-    if (started.current) return;
+    if (!start) return;
 
-    started.current = true;
+    const target = Number(
+      value.replace(/[^\d]/g, "")
+    );
 
-    const target = parseInt(value.replace(/[^\d]/g, ""), 10);
+    let current = 0;
 
     const duration = 1800;
-    const startTime = performance.now();
+    const increment = target / (duration / 16);
 
-    const animate = (currentTime: number) => {
-      const progress = Math.min(
-        (currentTime - startTime) / duration,
-        1
-      );
+    const timer = setInterval(() => {
+      current += increment;
 
-      const current = Math.floor(target * progress);
-
-      setCount(current);
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
+      if (current >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(current));
       }
-    };
+    }, 16);
 
-    requestAnimationFrame(animate);
-  }, [value]);
+    return () => clearInterval(timer);
+  }, [start, value]);
 
   const suffix = value.includes("+") ? "+" : "";
 
