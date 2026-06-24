@@ -64,7 +64,10 @@ if (section) {
 };
 
 return (
-<section id="capabilities" className="relative overflow-hidden bg-[#fffdf9] py-24" >
+<section
+  id="capabilities"
+  className="reveal relative overflow-hidden bg-[#fffdf9] py-24"
+>
 <div className="absolute top-0 left-0 h-72 w-72 rounded-full bg-[#7c142b]/5 blur-3xl" />
 <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-[#c9a227]/10 blur-3xl" />
 
