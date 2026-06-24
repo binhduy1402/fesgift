@@ -1,4 +1,5 @@
 import { COMPANY_STATS } from "../data";
+import CountUp from "./CountUp";
 
 export default function About() {
 
@@ -39,9 +40,9 @@ return (
               text-center
             "
         >
-         <div className="text-5xl font-bold text-[#7c142b]">
-            {item.value}
-          </div>
+        <div className="text-5xl font-bold text-[#7c142b]">
+          <CountUp value={item.value} />
+        </div>
 
           <div className="mt-3 text-sm text-charcoal-text/70">
             {item.label}
