@@ -125,7 +125,7 @@ export default function Collections({
 
                 {/* Highlights */}
                   {col.highlights && (
-                    <ul className="mt-5 flex-1 space-y-3">
+                    <ul className="mt-5 space-y-3">
                     {col.highlights.map((item, index) => (
                       <li
                         key={index}
@@ -142,7 +142,7 @@ export default function Collections({
                 )}
 
                 {/* Footer */}
-                <div className="mt-auto border-t border-gray-100 pt-5">
+               <div className="mt-6 border-t border-gray-100 pt-5">
                   <div className="flex items-center justify-between text-[#7c142b] transition-colors group-hover:text-[#d4af37]">
                     <span className="text-xs font-bold tracking-widest uppercase">
                       Nhận Báo Giá 
