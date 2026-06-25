@@ -41,8 +41,8 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
     if (lastSubmit) {
       const diff = Date.now() - Number(lastSubmit);
     
-      if (diff < 5 * 60 * 1000) {
-        const remain = Math.ceil((5 * 60 * 1000 - diff) / 60000);
+      if (diff < 2 * 60 * 1000) {
+        const remain = Math.ceil((2 * 60 * 1000 - diff) / 60000);
     
         setErrMessage(
           `Bạn vừa gửi yêu cầu. Vui lòng thử lại sau khoảng ${remain} phút.`
