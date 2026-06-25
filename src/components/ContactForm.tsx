@@ -189,25 +189,25 @@ try {
                   Cám ơn quý khách đã tin tưởng dịch vụ của FESGift. Chuyên viên của FESGift sẽ chủ động liên hệ trực tiếp đến quý khách qua số điện thoại/Zalo/Email trong thời gian sớm nhất.
                 </p>
                     <p className="text-sm text-emerald-700">
-                      {countdown > 0
-                        ? `Bạn có thể gửi yêu cầu mới sau ${formatTime(countdown)}`
-                        : "Bạn có thể gửi thêm yêu cầu mới."}
+                      Quý khách có thể gửi yêu cầu mới sau
                     </p>
                     
                     <button
                       disabled={countdown > 0}
                       onClick={() => {
                         if (countdown > 0) return;
+                    
+                        setErrMessage("");
                         setIsSubmitSuccess(false);
                       }}
-                      className={`px-5 py-2.5 rounded-sm text-[11px] font-bold tracking-widest uppercase transition-all ${
+                      className={`min-w-[220px] px-6 py-3 rounded-sm transition-all duration-300 ${
                         countdown > 0
-                          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                          : "bg-emerald-600 hover:bg-emerald-700 text-white"
+                          ? "bg-gray-300 text-gray-600 cursor-not-allowed font-mono text-lg tracking-[0.25em] font-bold"
+                          : "bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-bold tracking-widest uppercase"
                       }`}
                     >
                       {countdown > 0
-                        ? `GỬI LẠI SAU ${formatTime(countdown)}`
+                        ? formatTime(countdown)
                         : "GỬI THÊM YÊU CẦU MỚI"}
                     </button>
               </div>
