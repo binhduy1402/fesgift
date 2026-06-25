@@ -28,7 +28,7 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
     }
   }, [prefilledProduct]);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setErrMessage("");
 
@@ -41,21 +41,32 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
       return;
     }
 
-    // Save mock submission to localStorage for demonstration
-    const listInquiries = JSON.parse(localStorage.getItem("fesgift_inquiries") || "[]");
-    const newInquiry = {
-  id: "inq_" + Date.now(),
-  fullName,
-  company,
-  email,
-  phone,
-  message,
-      status: "new",
-      createdAt: new Date().toISOString(),
-    };
-    listInquiries.push(newInquiry);
-    localStorage.setItem("fesgift_inquiries", JSON.stringify(listInquiries));
+try {
+  const response = await fetch(
+    "https://duynpb.app.n8n.cloud/webhook/fesgift-lead",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: fullName,
+        company: company,
+        phone: phone,
+        email: email,
+        message: message,
+      }),
+    }
+  );
 
+  if (!response.ok) {
+    throw new Error("Không gửi được dữ liệu");
+  }
+} catch (error) {
+  console.error(error);
+  setErrMessage("Có lỗi xảy ra khi gửi yêu cầu. Vui lòng thử lại.");
+  return;
+}
     // Reset Form & Show Success Modal
     setIsSubmitSuccess(true);
     setFullName("");
