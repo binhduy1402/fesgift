@@ -35,6 +35,23 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
 
     if (isSubmitting) return;
 
+    // Chặn gửi lại trong 5 phút
+    const lastSubmit = localStorage.getItem("fesgift_last_submit");
+    
+    if (lastSubmit) {
+      const diff = Date.now() - Number(lastSubmit);
+    
+      if (diff < 5 * 60 * 1000) {
+        const remain = Math.ceil((5 * 60 * 1000 - diff) / 60000);
+    
+        setErrMessage(
+          `Bạn vừa gửi yêu cầu. Vui lòng thử lại sau khoảng ${remain} phút.`
+        );
+    
+        return;
+      }
+    }
+
     setIsSubmitting(true);
     setErrMessage("");
     if (website.trim() !== "") {
@@ -48,6 +65,7 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
   !phone.trim()
   ) {
       setErrMessage("Vui lòng điền đầy đủ thông tin bắt buộc (*).");
+      setIsSubmitting(false);
       return;
     }
 
@@ -73,6 +91,13 @@ try {
   if (!response.ok) {
     throw new Error("Không gửi được dữ liệu");
   }
+
+  // Lưu thời điểm gửi thành công
+    localStorage.setItem(
+      "fesgift_last_submit",
+      Date.now().toString()
+    );
+  
 } catch (error) {
   console.error(error);
   setErrMessage("Có lỗi xảy ra khi gửi yêu cầu. Vui lòng thử lại.");
