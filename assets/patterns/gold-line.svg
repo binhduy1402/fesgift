@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220">
+
+  <g stroke="#D4AF37" stroke-width="0.8" fill="none" opacity=".35">
+
+    <path d="M110 20L200 110L110 200L20 110Z"></path>
+
+    <path d="M110 55L165 110L110 165L55 110Z"></path>
+
+    <circle cx="110" cy="110" r="4" fill="#D4AF37"></circle>
+
+  </g>
+
+</svg>
