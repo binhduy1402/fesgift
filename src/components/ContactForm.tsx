@@ -186,7 +186,7 @@ try {
                   Gửi Yêu Cầu Thành Công!
                 </h3>
                 <p className="text-xs sm:text-sm text-emerald-800/80 font-light max-w-md mx-auto leading-relaxed">
-                  Cám ơn quý khách đã tin tưởng dịch vụ chế tác FESGift. Chuyên viên phát triển dự án sẽ chủ động liên hệ trực tiếp đến quý khách qua số điện thoại/Zalo trong thời gian sớm nhất.
+                  Cám ơn quý khách đã tin tưởng dịch vụ của FESGift. Chuyên viên của FESGift sẽ chủ động liên hệ trực tiếp đến quý khách qua số điện thoại/Zalo/Email trong thời gian sớm nhất.
                 </p>
                     <p className="text-sm text-emerald-700">
                       {countdown > 0
