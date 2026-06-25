@@ -1,6 +1,6 @@
-
 import { ArrowRight, Sparkles } from "lucide-react";
 import heroImage from "../assets/hero01.jpg";
+import goldPattern from "../assets/gold-line.svg";
 
 interface HeroProps {
   onDiscoverClick: () => void;
@@ -13,6 +13,23 @@ export default function Hero({
 }: HeroProps) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#faf7f2] via-[#faf7f2] to-white pt-24 pb-20 md:pt-36 md:pb-28">
+      {/* Luxury Gold Pattern */}
+        <img
+          src={goldPattern}
+          alt=""
+          aria-hidden="true"
+          className="
+            pointer-events-none
+            absolute
+            inset-0
+            h-full
+            w-full
+            object-cover
+            opacity-[0.03]
+            select-none
+          "
+        />
+      
       {/* Background Effects */}
       <div className="absolute left-[-10%] top-1/2 h-[35rem] w-[35rem] -translate-y-1/2 rounded-full bg-[#7c142b]/5 blur-3xl pointer-events-none" />
       <div className="absolute right-[-5%] top-0 h-[30rem] w-[30rem] rounded-full bg-[#d4af37]/10 blur-3xl pointer-events-none" />
