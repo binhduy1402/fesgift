@@ -15,6 +15,7 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
   const [message, setMessage] = useState("");
   const [isSubmitSuccess, setIsSubmitSuccess] = useState(false);
   const [errMessage, setErrMessage] = useState("");
+  const [website, setWebsite] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Populate message if prefilledProduct changes
@@ -36,6 +37,10 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
 
     setIsSubmitting(true);
     setErrMessage("");
+    if (website.trim() !== "") {
+        setIsSubmitting(false);
+        return;
+      }
 
     if (
   !fullName.trim() ||
@@ -80,6 +85,7 @@ try {
     setEmail("");
     setPhone("");
     setMessage("");
+    setWebsite("");
 
     setIsSubmitting(false);
 
@@ -126,6 +132,15 @@ try {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5 text-left">
+                <input
+                    type="text"
+                    name="website"
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
+                    autoComplete="off"
+                    tabIndex={-1}
+                    className="hidden"
+                  />
                 
                 {errMessage && (
                   <div className="p-3.5 bg-red-50 border border-red-200 text-xs text-red-700 font-medium rounded-sm">
