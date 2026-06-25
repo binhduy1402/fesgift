@@ -17,6 +17,8 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
   const [errMessage, setErrMessage] = useState("");
   const [website, setWebsite] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const DELAY_SECONDS = 120;
+  const [countdown, setCountdown] = useState(0);
 
   // Populate message if prefilledProduct changes
   useEffect(() => {
@@ -30,6 +32,39 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
     }
   }, [prefilledProduct]);
 
+  useEffect(() => {
+  if (!isSubmitSuccess) return;
+
+  if (countdown <= 0) return;
+
+  const timer = setInterval(() => {
+    setCountdown((prev) => prev - 1);
+  }, 1000);
+
+  return () => clearInterval(timer);
+}, [isSubmitSuccess, countdown]);
+
+  useEffect(() => {
+  const lastSubmit = localStorage.getItem("fesgift_last_submit");
+
+  if (!lastSubmit) return;
+
+  const diff = Date.now() - Number(lastSubmit);
+  const remain = DELAY_SECONDS - Math.floor(diff / 1000);
+
+  if (remain > 0) {
+    setIsSubmitSuccess(true);
+    setCountdown(remain);
+  }
+}, []);
+
+  const formatTime = (seconds: number) => {
+  const minutes = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+
+  return `${String(minutes).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+};
+  
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
@@ -106,6 +141,7 @@ try {
 }
     // Reset Form & Show Success Modal
     setIsSubmitSuccess(true);
+    setCountdown(DELAY_SECONDS);
     setFullName("");
     setCompany("");
     setEmail("");
@@ -149,12 +185,28 @@ try {
                 <p className="text-xs sm:text-sm text-emerald-800/80 font-light max-w-md mx-auto leading-relaxed">
                   Cám ơn quý khách đã tin tưởng dịch vụ chế tác FESGift. Chuyên viên phát triển dự án sẽ chủ động liên hệ trực tiếp đến quý khách qua số điện thoại/Zalo trong thời gian sớm nhất.
                 </p>
-                <button
-                  onClick={() => setIsSubmitSuccess(false)}
-                  className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-bold tracking-widest uppercase rounded-sm transition-all"
-                >
-                  Gửi Thêm Yêu Cầu Mới
-                </button>
+                    <p className="text-sm text-emerald-700">
+                      {countdown > 0
+                        ? `Bạn có thể gửi yêu cầu mới sau ${formatTime(countdown)}`
+                        : "Bạn có thể gửi thêm yêu cầu mới."}
+                    </p>
+                    
+                    <button
+                      disabled={countdown > 0}
+                      onClick={() => {
+                        if (countdown > 0) return;
+                        setIsSubmitSuccess(false);
+                      }}
+                      className={`px-5 py-2.5 rounded-sm text-[11px] font-bold tracking-widest uppercase transition-all ${
+                        countdown > 0
+                          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                          : "bg-emerald-600 hover:bg-emerald-700 text-white"
+                      }`}
+                    >
+                      {countdown > 0
+                        ? `GỬI LẠI SAU ${formatTime(countdown)}`
+                        : "GỬI THÊM YÊU CẦU MỚI"}
+                    </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5 text-left">
