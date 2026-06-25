@@ -15,6 +15,10 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
   const [message, setMessage] = useState("");
   const [isSubmitSuccess, setIsSubmitSuccess] = useState(false);
   const [errMessage, setErrMessage] = useState("");
+  const [website, setWebsite] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const DELAY_SECONDS = 120;
+  const [countdown, setCountdown] = useState(0);
 
   // Populate message if prefilledProduct changes
   useEffect(() => {
@@ -28,9 +32,70 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
     }
   }, [prefilledProduct]);
 
-  const handleSubmit = (e: FormEvent) => {
+  useEffect(() => {
+  if (!isSubmitSuccess) return;
+
+  if (countdown <= 0) return;
+
+  const timer = setInterval(() => {
+    setCountdown((prev) => prev - 1);
+  }, 1000);
+
+  return () => clearInterval(timer);
+}, [isSubmitSuccess, countdown]);
+
+  useEffect(() => {
+  const lastSubmit = localStorage.getItem("fesgift_last_submit");
+
+  if (!lastSubmit) return;
+
+  const diff = Date.now() - Number(lastSubmit);
+  const remain = DELAY_SECONDS - Math.floor(diff / 1000);
+
+  if (remain > 0) {
+    setIsSubmitSuccess(true);
+    setCountdown(remain);
+  }
+}, []);
+
+  const formatTime = (seconds: number) => {
+  const minutes = Math.floor(seconds / 60);
+  const secs = seconds % 60;
+
+  return `${String(minutes).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+};
+  
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
+    if (isSubmitting) return;
+
+    // Chặn gửi lại trong 5 phút
+    const lastSubmit = localStorage.getItem("fesgift_last_submit");
+    
+    if (lastSubmit) {
+      const diff = Date.now() - Number(lastSubmit);
+    
+      if (diff < 2 * 60 * 1000) {
+        const remain = Math.ceil((2 * 60 * 1000 - diff) / 1000);
+        
+        const minutes = Math.floor(remain / 60);
+        const seconds = remain % 60;
+        
+        setErrMessage(
+          `Bạn vừa gửi yêu cầu. Vui lòng thử lại sau ${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}.`
+        );
+        
+        return;
+      }
+    }
+
+    setIsSubmitting(true);
     setErrMessage("");
+    if (website.trim() !== "") {
+        setIsSubmitting(false);
+        return;
+      }
 
     if (
   !fullName.trim() ||
@@ -38,31 +103,56 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
   !phone.trim()
   ) {
       setErrMessage("Vui lòng điền đầy đủ thông tin bắt buộc (*).");
+      setIsSubmitting(false);
       return;
     }
 
-    // Save mock submission to localStorage for demonstration
-    const listInquiries = JSON.parse(localStorage.getItem("fesgift_inquiries") || "[]");
-    const newInquiry = {
-  id: "inq_" + Date.now(),
-  fullName,
-  company,
-  email,
-  phone,
-  message,
-      status: "new",
-      createdAt: new Date().toISOString(),
-    };
-    listInquiries.push(newInquiry);
-    localStorage.setItem("fesgift_inquiries", JSON.stringify(listInquiries));
+try {
+  const response = await fetch(
+    "https://duynpb.app.n8n.cloud/webhook/fesgift-lead",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: fullName,
+        company: company,
+        phone: phone,
+        email: email,
+        message: message,
+        website: website,
+      }),
+    }
+  );
 
+  if (!response.ok) {
+    throw new Error("Không gửi được dữ liệu");
+  }
+
+  // Lưu thời điểm gửi thành công
+    localStorage.setItem(
+      "fesgift_last_submit",
+      Date.now().toString()
+    );
+  
+} catch (error) {
+  console.error(error);
+  setErrMessage("Có lỗi xảy ra khi gửi yêu cầu. Vui lòng thử lại.");
+  setIsSubmitting(false);
+  return;
+}
     // Reset Form & Show Success Modal
     setIsSubmitSuccess(true);
+    setCountdown(DELAY_SECONDS);
     setFullName("");
     setCompany("");
     setEmail("");
     setPhone("");
     setMessage("");
+    setWebsite("");
+
+    setIsSubmitting(false);
 
     if (onClearPrefill) {
       onClearPrefill();
@@ -96,17 +186,42 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
                   Gửi Yêu Cầu Thành Công!
                 </h3>
                 <p className="text-xs sm:text-sm text-emerald-800/80 font-light max-w-md mx-auto leading-relaxed">
-                  Cám ơn quý khách đã tin tưởng dịch vụ chế tác FESGift. Chuyên viên phát triển dự án sẽ chủ động liên hệ trực tiếp đến quý khách qua số điện thoại/Zalo trong thời gian sớm nhất.
+                  Cám ơn quý khách đã tin tưởng dịch vụ của FESGift. Chuyên viên của FESGift sẽ chủ động liên hệ trực tiếp đến quý khách qua số điện thoại/Zalo/Email trong thời gian sớm nhất.
                 </p>
-                <button
-                  onClick={() => setIsSubmitSuccess(false)}
-                  className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-bold tracking-widest uppercase rounded-sm transition-all"
-                >
-                  Gửi Thêm Yêu Cầu Mới
-                </button>
+                    <p className="text-sm text-emerald-700">
+                      Quý khách có thể gửi yêu cầu mới sau
+                    </p>
+                    
+                    <button
+                      disabled={countdown > 0}
+                      onClick={() => {
+                        if (countdown > 0) return;
+                    
+                        setErrMessage("");
+                        setIsSubmitSuccess(false);
+                      }}
+                      className={`min-w-[220px] px-6 py-3 rounded-sm transition-all duration-300 ${
+                        countdown > 0
+                          ? "bg-gray-300 text-gray-600 cursor-not-allowed font-mono text-lg tracking-[0.25em] font-bold"
+                          : "bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-bold tracking-widest uppercase"
+                      }`}
+                    >
+                      {countdown > 0
+                        ? formatTime(countdown)
+                        : "GỬI THÊM YÊU CẦU MỚI"}
+                    </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5 text-left">
+                <input
+                    type="text"
+                    name="website"
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
+                    autoComplete="off"
+                    tabIndex={-1}
+                    className="hidden"
+                  />
                 
                 {errMessage && (
                   <div className="p-3.5 bg-red-50 border border-red-200 text-xs text-red-700 font-medium rounded-sm">
@@ -196,13 +311,14 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
 
                 {/* Submission CTA Button */}
                 <div className="pt-2">
-                  <button
-                    type="submit"
-                    className="w-full inline-flex items-center justify-center px-6 py-3.5 bg-primary-brand hover:brightness-110 text-white text-xs font-bold tracking-widest rounded-sm transition-all uppercase shadow-md hover:shadow-lg"
-                    style={{ backgroundColor: "#7c142b" }}
-                  >
-                    Nhận tư vấn miễn phí
-                  </button>
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full inline-flex items-center justify-center px-6 py-3.5 bg-primary-brand hover:brightness-110 disabled:opacity-60 disabled:cursor-not-allowed text-white text-xs font-bold tracking-widest rounded-sm transition-all uppercase shadow-md hover:shadow-lg"
+                      style={{ backgroundColor: "#7c142b" }}
+                    >
+                      {isSubmitting ? "Đang gửi..." : "Nhận tư vấn miễn phí"}
+                    </button>
                   <p className="text-center text-[11px] text-charcoal-text/50 mt-3">
                     Chuyên viên FESGift sẽ phản hồi trong vòng 2 giờ làm việc.
                   </p>
