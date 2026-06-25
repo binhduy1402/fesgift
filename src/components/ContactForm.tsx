@@ -15,6 +15,7 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
   const [message, setMessage] = useState("");
   const [isSubmitSuccess, setIsSubmitSuccess] = useState(false);
   const [errMessage, setErrMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Populate message if prefilledProduct changes
   useEffect(() => {
@@ -30,6 +31,10 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
     setErrMessage("");
 
     if (
@@ -65,6 +70,7 @@ try {
 } catch (error) {
   console.error(error);
   setErrMessage("Có lỗi xảy ra khi gửi yêu cầu. Vui lòng thử lại.");
+  setIsSubmitting(false);
   return;
 }
     // Reset Form & Show Success Modal
@@ -74,6 +80,8 @@ try {
     setEmail("");
     setPhone("");
     setMessage("");
+
+    setIsSubmitting(false);
 
     if (onClearPrefill) {
       onClearPrefill();
@@ -207,13 +215,14 @@ try {
 
                 {/* Submission CTA Button */}
                 <div className="pt-2">
-                  <button
-                    type="submit"
-                    className="w-full inline-flex items-center justify-center px-6 py-3.5 bg-primary-brand hover:brightness-110 text-white text-xs font-bold tracking-widest rounded-sm transition-all uppercase shadow-md hover:shadow-lg"
-                    style={{ backgroundColor: "#7c142b" }}
-                  >
-                    Nhận tư vấn miễn phí
-                  </button>
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full inline-flex items-center justify-center px-6 py-3.5 bg-primary-brand hover:brightness-110 disabled:opacity-60 disabled:cursor-not-allowed text-white text-xs font-bold tracking-widest rounded-sm transition-all uppercase shadow-md hover:shadow-lg"
+                      style={{ backgroundColor: "#7c142b" }}
+                    >
+                      {isSubmitting ? "Đang gửi..." : "Nhận tư vấn miễn phí"}
+                    </button>
                   <p className="text-center text-[11px] text-charcoal-text/50 mt-3">
                     Chuyên viên FESGift sẽ phản hồi trong vòng 2 giờ làm việc.
                   </p>
