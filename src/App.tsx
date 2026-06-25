@@ -1,6 +1,8 @@
 
 import { useState, useEffect } from "react";
 
+import LuxuryBackground from "./components/LuxuryBackground";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -56,9 +58,12 @@ export default function App() {
     scrollToContact();
   };
 
-  return (
-    <div className="relative min-h-screen bg-cream-bg text-charcoal-text selection:bg-primary-brand selection:text-white">
-      <Navbar onInquireClick={scrollToContact} />
+return (
+  <div className="relative min-h-screen overflow-hidden bg-cream-bg text-charcoal-text selection:bg-primary-brand selection:text-white">
+
+    <LuxuryBackground />
+
+    <Navbar onInquireClick={scrollToContact} />
 
       <Hero
         onDiscoverClick={() => {
