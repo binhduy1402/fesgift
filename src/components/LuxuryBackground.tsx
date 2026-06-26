@@ -33,7 +33,7 @@ export default function LuxuryBackground() {
           h-[620px]
           w-[620px]
           rounded-full
-          blur-[180px]
+          blur-[80px]
           opacity-60
         "
         style={{
