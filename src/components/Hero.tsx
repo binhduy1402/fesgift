@@ -62,20 +62,21 @@ export default function Hero({
             </p>
 
             {/* USP */}
-            <div className="mt-6 flex flex-wrap gap-3">
-              <span className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-[#7c142b] shadow-sm border border-[#7c142b]/10">
+            <div className="mt-6 grid grid-cols-2 gap-3">
+              <span className="flex items-center justify-center rounded-full border border-[#7c142b]/10 bg-white px-3 py-2 text-center text-xs font-semibold text-[#7c142b] shadow-sm">
                 ✓ Tư vấn miễn phí
               </span>
 
-              <span className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-[#7c142b] shadow-sm border border-[#7c142b]/10">
+              <span className="flex items-center justify-center rounded-full border border-[#7c142b]/10 bg-white px-3 py-2 text-center text-xs font-semibold text-[#7c142b] shadow-sm">
+                ✓ Thiết kế theo thương hiệu
+              </span>
+
+              <span className="flex items-center justify-center rounded-full border border-[#7c142b]/10 bg-white px-3 py-2 text-center text-xs font-semibold text-[#7c142b] shadow-sm">
                 ✓ Sản xuất theo yêu cầu
               </span>
 
-              <span className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-[#7c142b] shadow-sm border border-[#7c142b]/10">
+              <span className="flex items-center justify-center rounded-full border border-[#7c142b]/10 bg-white px-3 py-2 text-center text-xs font-semibold text-[#7c142b] shadow-sm">
                 ✓ Giao hàng toàn quốc
-              </span>
-              <span className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-[#7c142b] shadow-sm border border-[#7c142b]/10">
-                ✓ Thiết kế theo thương hiệu
               </span>
             </div>
 
