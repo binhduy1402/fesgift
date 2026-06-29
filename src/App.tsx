@@ -78,11 +78,11 @@ return (
         onConsultClick={scrollToContact}
       />
 
-      <About />
-
       <Collections
         onSelectCollection={setSelectedCollection}
       />
+
+      <About />
 
       <Philosophy />
 
