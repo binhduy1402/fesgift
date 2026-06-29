@@ -1,4 +1,11 @@
+import { useState } from "react";
+import story1 from "../assets/story1.jpg";
+
+
 export default function Philosophy() {
+  const [showStory1, setShowStory1] = useState(false);
+  const [showStory2, setShowStory2] = useState(false);
+  const [showStory3, setShowStory3] = useState(false);
 return (
 <section
   id="philosophy"
@@ -45,73 +52,206 @@ return (
         cho người nhận.
       </p>
 
-  <div className="mt-20 grid gap-12 md:grid-cols-3">
+<div className="mt-16 grid gap-8 md:grid-cols-3">
 
-  <div
-    style={{ transitionDelay: "0ms" }}
-    className="reveal text-center"
+  {/* STORY 1 */}
+  <button
+    onClick={() => setShowStory1(true)}
+    className="group overflow-hidden rounded-3xl bg-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
   >
-    <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-[#c9a227]/40 bg-[#faf7f2]">
-      <span className="text-2xl">🏛</span>
+    <div className="overflow-hidden">
+      <img
+        src={story1}
+        alt="Story 1"
+        className="h-64 w-full object-cover transition duration-500 group-hover:scale-105"
+      />
     </div>
 
-    <h3 className="text-xl font-bold tracking-wide text-[#7c142b]">
-      CÂU CHUYỆN MARS
-    </h3>
-  
-      <div className="mx-auto mt-4 h-px w-16 bg-[#c9a227]" />
-  
-      <p className="mt-6 text-sm leading-relaxed text-gray-600">
-        FESGift được phát triển từ kinh nghiệm nhiều năm trong lĩnh vực
-        quà tặng doanh nghiệp và sản xuất theo yêu cầu. Mục tiêu là tạo
-        ra những giải pháp quà tặng giúp doanh nghiệp xây dựng hình ảnh
-        chuyên nghiệp và bền vững.
-      </p>
-    </div>
-  
-    <div
-      style={{ transitionDelay: "150ms" }}
-      className="reveal text-center"
-    >
-      <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-[#c9a227]/40 bg-[#faf7f2]">
-        <span className="text-2xl">✨</span>
-      </div>
-  
-      <h3 className="text-xl font-bold tracking-wide text-[#7c142b]">
-        ĐIỂM KHÁC BIỆT
+    <div className="p-5">
+      <h3 className="text-center text-xl font-bold text-[#7c142b]">
+        Câu chuyện Sunlife
       </h3>
-  
-      <div className="mx-auto mt-4 h-px w-16 bg-[#c9a227]" />
-  
-      <p className="mt-6 text-sm leading-relaxed text-gray-600">
-        Tư vấn theo mục tiêu chiến dịch, thiết kế theo nhận diện thương
-        hiệu, sản xuất linh hoạt và kiểm soát chất lượng xuyên suốt từ
-        ý tưởng đến thành phẩm.
+
+      <p className="mt-2 text-center text-sm text-gray-500">
+        Chạm để xem câu chuyện
       </p>
     </div>
-  
-    <div
-      style={{ transitionDelay: "300ms" }}
-      className="reveal text-center"
-    >
-      <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-[#c9a227]/40 bg-[#faf7f2]">
-        <span className="text-2xl">❤</span>
+  </button>
+
+  {/* STORY 2 */}
+  <button
+    onClick={() => setShowStory2(true)}
+    className="group overflow-hidden rounded-3xl bg-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
+  >
+    <div className="flex h-64 items-center justify-center bg-[#f7f5f2]">
+      <div className="text-center">
+        <div className="text-5xl">🖼️</div>
+
+        <p className="mt-3 text-sm text-gray-400">
+          Hình sẽ cập nhật
+        </p>
       </div>
-  
-      <h3 className="text-xl font-bold tracking-wide text-[#7c142b]">
-        LÝ DO TỒN TẠI
+    </div>
+
+    <div className="p-5">
+      <h3 className="text-center text-xl font-bold text-[#7c142b]">
+        Câu chuyện 02
       </h3>
-  
-      <div className="mx-auto mt-4 h-px w-16 bg-[#c9a227]" />
-  
-      <p className="mt-6 text-sm leading-relaxed text-gray-600">
-        Chúng tôi tin rằng một món quà được chuẩn bị đúng cách có thể
-        tạo nên sự kết nối, ghi nhớ và giá trị lâu dài cho thương hiệu
-        trong mắt khách hàng và đối tác.
+
+      <p className="mt-2 text-center text-sm text-gray-500">
+        Chạm để xem câu chuyện
       </p>
     </div>
-  
+  </button>
+
+  {/* STORY 3 */}
+  <button
+    onClick={() => setShowStory3(true)}
+    className="group overflow-hidden rounded-3xl bg-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
+  >
+    <div className="flex h-64 items-center justify-center bg-[#f7f5f2]">
+      <div className="text-center">
+        <div className="text-5xl">🖼️</div>
+
+        <p className="mt-3 text-sm text-gray-400">
+          Hình sẽ cập nhật
+        </p>
+      </div>
+    </div>
+
+    <div className="p-5">
+      <h3 className="text-center text-xl font-bold text-[#7c142b]">
+        Câu chuyện 03
+      </h3>
+
+      <p className="mt-2 text-center text-sm text-gray-500">
+        Chạm để xem câu chuyện
+      </p>
+    </div>
+  </button>
+
+</div>
+
+
+{/* POPUP STORY 1 */}
+{showStory1 && (
+  <div
+    onClick={() => setShowStory1(false)}
+    className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+  >
+    <div
+      onClick={(e) => e.stopPropagation()}
+      className="w-full max-w-md max-h-[90vh] overflow-y-auto rounded-3xl bg-white shadow-2xl"
+    >
+      <img
+        src={story1}
+        alt="Story 1"
+        className="h-56 w-full object-cover"
+      />
+
+      <div className="p-6">
+
+        <h3 className="text-2xl font-bold text-[#7c142b]">
+          Câu chuyện Sun Life
+        </h3>
+
+        <p className="mt-4 text-sm leading-7 text-gray-600">
+          Sunlife với mong muốn mang đến những món quà tuyệt vời 
+          đến Khách hàng của mình, do đó Sunllife chọn Mars để
+          đồng hành trên hành trình đó.
+        </p>
+
+        <button
+          onClick={() => setShowStory1(false)}
+          className="mt-6 w-full rounded-xl bg-[#7c142b] py-3 font-semibold text-white transition transition active:scale-95"
+        >
+          Đóng
+        </button>
+
+      </div>
+    </div>
   </div>
+)}
+
+{/* POPUP STORY 2 */}
+{showStory2 && (
+  <div
+    onClick={() => setShowStory2(false)}
+    className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+  >
+    <div
+      onClick={(e) => e.stopPropagation()}
+      className="w-full max-w-md max-h-[90vh] overflow-y-auto rounded-3xl bg-white shadow-2xl"
+    >
+
+      <div className="flex h-64 items-center justify-center bg-[#f7f5f2]">
+        <span className="text-gray-400">
+          Hình sẽ cập nhật
+        </span>
+      </div>
+
+      <div className="p-6">
+
+        <h3 className="text-2xl font-bold text-[#7c142b]">
+          Câu chuyện 02
+        </h3>
+
+        <p className="mt-4 text-sm leading-7 text-gray-600">
+          Nội dung câu chuyện sẽ được bổ sung sau khi hoàn thiện
+          hình ảnh và thông tin dự án.
+        </p>
+
+        <button
+          onClick={() => setShowStory2(false)}
+          className="mt-6 w-full rounded-xl bg-[#7c142b] py-3 font-semibold text-white"
+        >
+          Đóng
+        </button>
+
+      </div>
+    </div>
+  </div>
+)}
+
+{/* POPUP STORY 3 */}
+{showStory3 && (
+  <div
+    onClick={() => setShowStory3(false)}
+    className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+  >
+    <div
+      onClick={(e) => e.stopPropagation()}
+      className="w-full max-w-md max-h-[90vh] overflow-y-auto rounded-3xl bg-white shadow-2xl"
+    >
+
+      <div className="flex h-64 items-center justify-center bg-[#f7f5f2]">
+        <span className="text-gray-400">
+          Hình sẽ cập nhật
+        </span>
+      </div>
+
+      <div className="p-6">
+
+        <h3 className="text-2xl font-bold text-[#7c142b]">
+          Câu chuyện 03
+        </h3>
+
+        <p className="mt-4 text-sm leading-7 text-gray-600">
+          Nội dung câu chuyện sẽ được cập nhật trong thời gian tới
+          cùng với hình ảnh minh họa.
+        </p>
+
+        <button
+          onClick={() => setShowStory3(false)}
+          className="mt-6 w-full rounded-xl bg-[#7c142b] py-3 font-semibold text-white"
+        >
+          Đóng
+        </button>
+
+      </div>
+    </div>
+  </div>
+)}
 
     </div>
 
