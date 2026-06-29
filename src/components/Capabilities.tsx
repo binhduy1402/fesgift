@@ -1,14 +1,13 @@
-import {
-  ArrowRight,
-  Quote,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
+/*
 import logoAIA from "../assets/logo_aia.png";
 import logoFubon from "../assets/logo_fubon.png";
 import logoFWD from "../assets/logo_fwd.jpg";
 import logoGEN from "../assets/logo_gen.jpg";
 import logoSUN from "../assets/logo_sun.png";
-
+ */
+/*
 const testimonials = [
   {
     name: "Nguyễn Minh Anh",
@@ -32,7 +31,8 @@ const testimonials = [
       "Quà tặng cao cấp, đóng gói đẹp và đúng tiến độ. Đối tác của chúng tôi đánh giá rất cao trải nghiệm nhận quà.",
   },
 ];
-
+*/
+/*
 const clients = [
   logoAIA,
   logoFubon,
@@ -40,7 +40,7 @@ const clients = [
   logoGEN,
   logoSUN,
 ];
-
+*/
 
 export default function Capabilities() {
 const scrollToContact = () => {
@@ -78,6 +78,7 @@ return (
 
   <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
+    {/*
     <div className="mx-auto mb-16 max-w-3xl text-center">
       <span className="mb-2 block text-[11px] font-bold tracking-[0.3em] uppercase text-[#7c142b]">
         KHÁCH HÀNG TIN TƯỞNG
@@ -93,13 +94,15 @@ return (
         đối tác và nhân viên.
       </p>
     </div>
+   
 
 <div className="relative mb-16 overflow-hidden">
 
-  {/* Fade trái */}
+    
+  Fade trái 
   <div className="absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-[#fffdf9] to-transparent" />
 
-  {/* Fade phải */}
+  Fade phải 
   <div className="absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-[#fffdf9] to-transparent" />
 
   <div className="flex w-max animate-marquee gap-6">
@@ -140,7 +143,7 @@ return (
   </div>
 
 </div>
-
+ */}
     <div
         className="
           premium-card
@@ -230,6 +233,7 @@ return (
 </div>
   </div>
 
+  {/*
     <div className="grid gap-6 lg:grid-cols-3">
       {testimonials.map((item, index) => (
         <div
@@ -270,6 +274,7 @@ return (
           </div>
       ))}
     </div>
+     */}
 
     <div className="mt-16 rounded-3xl luxury-gradient p-10 text-center text-white">
       <h3 className="font-serif text-3xl font-bold">
