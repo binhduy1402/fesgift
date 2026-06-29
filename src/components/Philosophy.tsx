@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import story1 from "../assets/story1.jpg";
 
 
@@ -6,10 +6,23 @@ export default function Philosophy() {
   const [showStory1, setShowStory1] = useState(false);
   const [showStory2, setShowStory2] = useState(false);
   const [showStory3, setShowStory3] = useState(false);
+  useEffect(() => {
+    const isOpen =
+      showStory1 ||
+      showStory2 ||
+      showStory3;
+  
+    document.body.style.overflow = isOpen ? "hidden" : "";
+  
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showStory1, showStory2, showStory3]);
+
 return (
 <section
   id="philosophy"
-  className="reveal relative overflow-hidden bg-white py-24"
+  className="reveal relative bg-white py-24"
 >
 <div className="absolute left-0 top-0 h-64 w-64 rounded-full bg-[#7c142b]/5 blur-3xl" />
 <div className="absolute right-0 bottom-0 h-64 w-64 rounded-full bg-[#d4af37]/10 blur-3xl" />
@@ -132,6 +145,9 @@ return (
 
 </div>
 
+    </div>
+
+  </div>
 
 {/* POPUP STORY 1 */}
 {showStory1 && (
@@ -252,10 +268,7 @@ return (
     </div>
   </div>
 )}
-
-    </div>
-
-  </div>
+  
 </section>
 );
 }
