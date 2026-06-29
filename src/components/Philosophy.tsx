@@ -1,23 +1,13 @@
-import { useEffect, useState } from "react";
 import story1 from "../assets/story1.jpg";
 
+interface PhilosophyProps {
+  onOpenStory: (storyId: number) => void;
+}
 
-export default function Philosophy() {
-  const [showStory1, setShowStory1] = useState(false);
-  const [showStory2, setShowStory2] = useState(false);
-  const [showStory3, setShowStory3] = useState(false);
-  useEffect(() => {
-    const isOpen =
-      showStory1 ||
-      showStory2 ||
-      showStory3;
-  
-    document.body.style.overflow = isOpen ? "hidden" : "";
-  
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [showStory1, showStory2, showStory3]);
+export default function Philosophy({
+  onOpenStory,
+}: PhilosophyProps) {
+
 
 return (
 <section
@@ -69,7 +59,7 @@ return (
 
   {/* STORY 1 */}
   <button
-    onClick={() => setShowStory1(true)}
+    onClick={() => onOpenStory(1)}
     className="group overflow-hidden rounded-3xl bg-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
   >
     <div className="overflow-hidden">
@@ -82,7 +72,7 @@ return (
 
     <div className="p-5">
       <h3 className="text-center text-xl font-bold text-[#7c142b]">
-        Câu chuyện Sunlife
+        Câu Chuyện Sun Life
       </h3>
 
       <p className="mt-2 text-center text-sm text-gray-500">
@@ -93,7 +83,7 @@ return (
 
   {/* STORY 2 */}
   <button
-    onClick={() => setShowStory2(true)}
+    onClick={() => onOpenStory(2)}
     className="group overflow-hidden rounded-3xl bg-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
   >
     <div className="flex h-64 items-center justify-center bg-[#f7f5f2]">
@@ -119,7 +109,7 @@ return (
 
   {/* STORY 3 */}
   <button
-    onClick={() => setShowStory3(true)}
+    onClick={() => onOpenStory(3)}
     className="group overflow-hidden rounded-3xl bg-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
   >
     <div className="flex h-64 items-center justify-center bg-[#f7f5f2]">
@@ -148,126 +138,6 @@ return (
     </div>
 
   </div>
-
-{/* POPUP STORY 1 */}
-{showStory1 && (
-  <div
-    onClick={() => setShowStory1(false)}
-    className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
-  >
-    <div
-      onClick={(e) => e.stopPropagation()}
-      className="w-full max-w-md max-h-[90vh] overflow-y-auto rounded-3xl bg-white shadow-2xl"
-    >
-      <img
-        src={story1}
-        alt="Story 1"
-        className="h-56 w-full object-cover"
-      />
-
-      <div className="p-6">
-
-        <h3 className="text-2xl font-bold text-[#7c142b]">
-          Câu chuyện Sun Life
-        </h3>
-
-        <p className="mt-4 text-sm leading-7 text-gray-600">
-          Sunlife với mong muốn mang đến những món quà tuyệt vời 
-          đến Khách hàng của mình, do đó Sunllife chọn Mars để
-          đồng hành trên hành trình đó.
-        </p>
-
-        <button
-          onClick={() => setShowStory1(false)}
-          className="mt-6 w-full rounded-xl bg-[#7c142b] py-3 font-semibold text-white transition transition active:scale-95"
-        >
-          Đóng
-        </button>
-
-      </div>
-    </div>
-  </div>
-)}
-
-{/* POPUP STORY 2 */}
-{showStory2 && (
-  <div
-    onClick={() => setShowStory2(false)}
-    className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
-  >
-    <div
-      onClick={(e) => e.stopPropagation()}
-      className="w-full max-w-md max-h-[90vh] overflow-y-auto rounded-3xl bg-white shadow-2xl"
-    >
-
-      <div className="flex h-64 items-center justify-center bg-[#f7f5f2]">
-        <span className="text-gray-400">
-          Hình sẽ cập nhật
-        </span>
-      </div>
-
-      <div className="p-6">
-
-        <h3 className="text-2xl font-bold text-[#7c142b]">
-          Câu chuyện 02
-        </h3>
-
-        <p className="mt-4 text-sm leading-7 text-gray-600">
-          Nội dung câu chuyện sẽ được bổ sung sau khi hoàn thiện
-          hình ảnh và thông tin dự án.
-        </p>
-
-        <button
-          onClick={() => setShowStory2(false)}
-          className="mt-6 w-full rounded-xl bg-[#7c142b] py-3 font-semibold text-white"
-        >
-          Đóng
-        </button>
-
-      </div>
-    </div>
-  </div>
-)}
-
-{/* POPUP STORY 3 */}
-{showStory3 && (
-  <div
-    onClick={() => setShowStory3(false)}
-    className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
-  >
-    <div
-      onClick={(e) => e.stopPropagation()}
-      className="w-full max-w-md max-h-[90vh] overflow-y-auto rounded-3xl bg-white shadow-2xl"
-    >
-
-      <div className="flex h-64 items-center justify-center bg-[#f7f5f2]">
-        <span className="text-gray-400">
-          Hình sẽ cập nhật
-        </span>
-      </div>
-
-      <div className="p-6">
-
-        <h3 className="text-2xl font-bold text-[#7c142b]">
-          Câu chuyện 03
-        </h3>
-
-        <p className="mt-4 text-sm leading-7 text-gray-600">
-          Nội dung câu chuyện sẽ được cập nhật trong thời gian tới
-          cùng với hình ảnh minh họa.
-        </p>
-
-        <button
-          onClick={() => setShowStory3(false)}
-          className="mt-6 w-full rounded-xl bg-[#7c142b] py-3 font-semibold text-white"
-        >
-          Đóng
-        </button>
-
-      </div>
-    </div>
-  </div>
-)}
   
 </section>
 );
