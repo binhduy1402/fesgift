@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 
 /*
 import logoAIA from "../assets/logo_aia.png";
@@ -43,16 +42,6 @@ const clients = [
 */
 
 export default function Capabilities() {
-const scrollToContact = () => {
-const section = document.getElementById("contact");
-
-if (section) {
-  section.scrollIntoView({
-    behavior: "smooth",
-  });
-}
-
-};
 
 return (
 <section
@@ -276,7 +265,7 @@ return (
     </div>
      */}
 
-    <div className="mt-16 rounded-3xl luxury-gradient p-10 text-center text-white">
+    {/*  <div className="mt-16 rounded-3xl luxury-gradient p-10 text-center text-white">
       <h3 className="font-serif text-3xl font-bold">
         Nhận Tư Vấn Giải Pháp Quà Tặng
       </h3>
@@ -309,7 +298,8 @@ return (
         <ArrowRight className="h-4 w-4" />
       </button>
     </div>
-
+*/}
+    
   </div>
 </section>
 );
