@@ -1,4 +1,4 @@
-import logo from "../assets/logo.png";
+import logo from "../assets/logo_mars.png";
 import { useState, useEffect } from "react";
 import { BRAND_INFO, NAVIGATION_LINKS } from "../data";
 import { Menu, X, ArrowRight } from "lucide-react";
