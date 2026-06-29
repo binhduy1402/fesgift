@@ -54,10 +54,14 @@ export default function Hero({
               <span className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-[#7c142b] shadow-sm border border-[#7c142b]/10">
                 ✓ Giao hàng toàn quốc
               </span>
+              <span className="rounded-full bg-white px-4 py-2 text-xs font-semibold text-[#7c142b] shadow-sm border border-[#7c142b]/10">
+                ✓ Thiết kế theo thương hiệu
+              </span>
             </div>
 
             {/* CTA */}
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              {/*
               <button
                 onClick={onConsultClick}
                 className="
@@ -84,6 +88,7 @@ export default function Hero({
                 Nhận Báo Giá Ngay
                 <ArrowRight className="h-4 w-4" />
               </button>
+              */}
 
               {/*<button
                 onClick={onDiscoverClick}
@@ -125,6 +130,7 @@ export default function Hero({
                 </div>
             
                 {/* Floating Card */}
+                {/*
                 <div className="absolute -bottom-6 left-6 hero-card-float rounded-xl border border-[#d4af37]/20 bg-white/95 px-6 py-5 shadow-xl backdrop-blur-md">
                   <div className="text-2xl font-serif font-bold text-[#7c142b]">
                     TƯ VẤN MIỄN PHÍ
@@ -134,6 +140,7 @@ export default function Hero({
                     THEO NHẬN DIỆN THƯƠNG HIỆU
                   </div>
                 </div>
+                */}
             
               </div>
             </div>
