@@ -55,7 +55,7 @@ export default function Footer() {
               </li>
 
               <li>
-                <a href="#projects" className="text-white/60 hover:text-white transition-colors">
+                <a href="#capabilities" className="text-white/60 hover:text-white transition-colors">
                   Dự án tiêu biểu
                 </a>
               </li>
