@@ -58,7 +58,7 @@ export default function App() {
   };
 
 return (
-  <div className="relative min-h-screen overflow-hidden bg-cream-bg text-charcoal-text selection:bg-primary-brand selection:text-white">
+  <div className="relative min-h-screen bg-cream-bg text-charcoal-text selection:bg-primary-brand selection:text-white">
 
     <LuxuryBackground />
 
