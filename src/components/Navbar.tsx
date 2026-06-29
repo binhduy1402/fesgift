@@ -93,6 +93,7 @@ export default function Navbar({ onInquireClick }: NavbarProps) {
                 {link.label}
               </a>
             ))}
+            {/*
             <div className="pt-4 px-3">
               <button
                 onClick={() => {
@@ -106,6 +107,7 @@ export default function Navbar({ onInquireClick }: NavbarProps) {
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
+            */}
           </div>
         </div>
       )}
