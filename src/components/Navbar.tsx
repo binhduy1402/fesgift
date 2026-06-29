@@ -38,7 +38,7 @@ export default function Navbar({ onInquireClick }: NavbarProps) {
   <img
     src={logo}
     alt="FESGift"
-    className="h-12 w-auto"
+    className="h-16 w-auto"
   />
 </a>
           {/* Desktop Navigation Links */}
