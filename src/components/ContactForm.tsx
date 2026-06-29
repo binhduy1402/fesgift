@@ -1,6 +1,7 @@
 import { useState, useEffect, FormEvent } from "react";
 import { Phone, Mail, HelpCircle, CheckCircle2 } from "lucide-react";
 import { BRAND_INFO } from "../data";
+import zaloIcon from "../assets/zalo.svg";
 
 interface ContactFormProps {
   prefilledProduct?: string;
@@ -392,9 +393,13 @@ try {
               </div>
 
               <div className="flex gap-3 justify-start items-center">
-                    <div className="w-10 h-10 rounded-full bg-muted-gold/25 flex items-center justify-center text-muted-gold">
-                      <Phone className="w-4.5 h-4.5" />
-                    </div>
+                  <div className="w-10 h-10 rounded-full bg-[#c49b47]/10 flex items-center justify-center">
+                    <img
+                      src={zaloIcon}
+                      alt="Zalo"
+                      className="w-[26px] h-[26px] object-contain"
+                    />
+                  </div>
                   
                     <div className="text-left">
                       <p className="text-[9px] font-bold tracking-widest text-[#ffbabf] uppercase leading-none">
