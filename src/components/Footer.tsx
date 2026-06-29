@@ -1,5 +1,4 @@
-
-import logo from "../assets/logo.png";
+import logo from "../assets/logo_mars.png";
 import { Globe, ShieldCheck } from "lucide-react";
 
 export default function Footer() {
