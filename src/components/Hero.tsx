@@ -1,15 +1,9 @@
-import { ArrowRight, Sparkles } from "lucide-react";
 import heroImage from "../assets/hero01.jpg";
 import zaloQR from "../assets/zalo-qr.png";
 
-interface HeroProps {
-  onDiscoverClick: () => void;
-  onConsultClick: () => void;
-}
 
 export default function Hero({
-  onDiscoverClick,
-  onConsultClick,
+
 }: HeroProps) {
   return (
     <section className="gold-pattern relative overflow-hidden bg-gradient-to-b from-[#faf7f2] via-[#faf7f2] to-white pt-24 pb-20 md:pt-36 md:pb-28">
@@ -20,6 +14,9 @@ export default function Hero({
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
+
+          {/* Left Content */}
+            <div className="lg:col-span-6">  
 
           {/* Hotline + QR */}
               <div className="flex w-full items-center justify-between rounded-2xl border border-[#c49b47]/20 bg-[#f5efe6]/90 px-5 py-3 shadow-md backdrop-blur-sm">
