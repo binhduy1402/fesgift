@@ -37,7 +37,7 @@ export default function Navbar({ onInquireClick }: NavbarProps) {
           <a href="#" className="flex items-center">
   <img
     src={logo}
-    alt="FESGift"
+    alt="Mars Group"
     className="h-16 w-auto"
   />
 </a>
