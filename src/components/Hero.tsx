@@ -81,8 +81,7 @@ export default function Hero({
             </div>
 
             {/* CTA */}
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              {/*
+            {/* <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <button
                 onClick={onConsultClick}
                 className="
