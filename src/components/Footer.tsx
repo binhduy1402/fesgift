@@ -13,13 +13,25 @@ export default function Footer() {
 
           {/* Logo */}
           <div className="md:col-span-4 space-y-4">
-            <a href="#" className="inline-flex items-center">
-              <img
-                src={logo}
-                alt="FESGift"
-                className="h-16 w-auto"
-              />
-            </a>
+              <a
+                href="#"
+                className="
+                  inline-flex
+                  items-center
+                  rounded-2xl
+                  bg-white
+                  px-4
+                  py-3
+                  shadow-lg
+                  shadow-black/20
+                "
+              >
+                <img
+                  src={logo}
+                  alt="MARS Group"
+                  className="h-16 w-auto"
+                />
+              </a>
 
             <p className="text-xs text-white/55 leading-relaxed font-light max-w-sm">
               FESGift chuyên cung cấp giải pháp quà tặng doanh nghiệp,
