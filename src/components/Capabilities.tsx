@@ -192,12 +192,12 @@ return (
     </div>
   </div>
 
+  <div className="text-center">
     <div className="text-2xl font-bold text-[#7c142b]">
-      45Days
+      45
     </div>
-  
     <div className="text-xs leading-tight text-gray-500">
-      Triển khai
+      Ngày triển khai
     </div>
   </div>
 
@@ -210,7 +210,7 @@ return (
     </div>
   </div>
 </div>
-
+      
 <div className="mt-6 space-y-3">
   <div>✓ Thiết kế riêng theo thương hiệu</div>
   <div>✓ Sản xuất số lượng lớn</div>
