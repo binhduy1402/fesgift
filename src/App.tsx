@@ -317,56 +317,49 @@ return (
           </div>
         </div>
       )}
-        {/* Story Modal */}
-    {selectedStory && (
-      <>
-        <div
-          className="fixed inset-0 z-[9998] bg-black/70"
-          onClick={closeStory}
+{/* Story Modal */}
+{selectedStory && (
+  <div
+    className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 p-4"
+    onClick={closeStory}
+  >
+    <div
+      onClick={(e) => e.stopPropagation()}
+      className="w-full max-w-xl overflow-hidden rounded-3xl bg-white shadow-2xl"
+    >
+      {stories[selectedStory as keyof typeof stories].image ? (
+        <img
+          src={stories[selectedStory as keyof typeof stories].image}
+          alt={stories[selectedStory as keyof typeof stories].title}
+          className="h-64 w-full object-cover"
         />
-    
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
-    
-          <div className="w-full max-w-xl overflow-hidden rounded-3xl bg-white shadow-2xl">
-    
-            {stories[selectedStory as keyof typeof stories].image ? (
-              <img
-                src={stories[selectedStory as keyof typeof stories].image}
-                alt={stories[selectedStory as keyof typeof stories].title}
-                className="h-64 w-full object-cover"
-              />
-            ) : (
-              <div className="flex h-64 items-center justify-center bg-[#f7f5f2]">
-                <span className="text-gray-400">
-                  Hình sẽ cập nhật
-                </span>
-              </div>
-            )}
-    
-            <div className="p-6">
-    
-              <h2 className="text-2xl font-bold text-[#7c142b]">
-                {stories[selectedStory as keyof typeof stories].title}
-              </h2>
-    
-              <p className="mt-4 leading-7 text-gray-600">
-                {stories[selectedStory as keyof typeof stories].description}
-              </p>
-    
-              <button
-                onClick={closeStory}
-                className="mt-8 w-full rounded-xl bg-[#7c142b] py-3 font-semibold text-white"
-              >
-                Đóng
-              </button>
-    
-            </div>
-    
-          </div>
-    
+      ) : (
+        <div className="flex h-64 items-center justify-center bg-[#f7f5f2]">
+          <span className="text-gray-400">
+            Hình sẽ cập nhật
+          </span>
         </div>
-      </>
-    )}
+      )}
+
+      <div className="p-6">
+        <h2 className="text-2xl font-bold text-[#7c142b]">
+          {stories[selectedStory as keyof typeof stories].title}
+        </h2>
+
+        <p className="mt-4 leading-7 text-gray-600">
+          {stories[selectedStory as keyof typeof stories].description}
+        </p>
+
+        <button
+          onClick={closeStory}
+          className="mt-8 w-full rounded-xl bg-[#7c142b] py-3 font-semibold text-white transition active:scale-95"
+        >
+          Đóng
+        </button>
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 }
