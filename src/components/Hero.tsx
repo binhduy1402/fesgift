@@ -19,7 +19,7 @@ export default function Hero({
             <div className="lg:col-span-6">  
 
           {/* Hotline + QR */}
-              <div className="flex w-full items-center justify-between rounded-2xl border border-[#c49b47]/20 bg-[#f5efe6]/90 px-5 py-3 shadow-md backdrop-blur-sm">
+              <div className="flex w-full items-center justify-between rounded-2xl border border-[#c49b47]/15 bg-[#faf8f4]/70 px-5 py-2.5 shadow-[0_6px_20px_rgba(124,20,43,0.08)] backdrop-blur-sm">
                 <div className="flex flex-1 flex-col">
                   <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#8d8d8d]">
                     Hotline
@@ -27,7 +27,7 @@ export default function Hero({
               
                   <a
                     href="tel:0931133790"
-                    className="mt-1 text-[1.55rem] font-bold leading-none text-[#7c142b]"
+                    className="mt-1 text-[1.3rem] font-bold leading-none text-[#7c142b]"
                   >
                     0931 133 790
                   </a>
@@ -37,12 +37,12 @@ export default function Hero({
                   href="https://zalo.me/0931133790"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ml-5 shrink-0"
+                  className="ml-8 shrink-0"
                 >
                   <img
                     src={zaloQR}
                     alt="QR Zalo"
-                    className="h-12 w-12 rounded-lg border border-[#c49b47]/20 bg-white p-1"
+                    className="h-[52px] w-[52px] rounded-xl border border-[#c49b47]/20 bg-white p-1"
                   />
                 </a>
               </div>
