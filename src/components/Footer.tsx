@@ -34,7 +34,7 @@ export default function Footer() {
               </a>
 
             <p className="text-xs text-white/55 leading-relaxed font-light max-w-sm">
-              FESGift chuyên cung cấp giải pháp quà tặng doanh nghiệp,
+              Mars Group chuyên cung cấp giải pháp quà tặng doanh nghiệp,
               quà tặng sự kiện và giftset cao cấp mang đậm bản sắc Việt.
             </p>
 
@@ -49,7 +49,7 @@ export default function Footer() {
           {/* About */}
           <div className="md:col-span-3">
             <h4 className="text-xs font-bold tracking-widest uppercase text-white mb-4">
-              VỀ FESGIFT
+              VỀ MARS GROUP
             </h4>
 
             <ul className="space-y-2.5 text-xs">
@@ -141,7 +141,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/45">
           <p>
-            © {currentYear} FESGift. All Rights Reserved.
+            © {currentYear} MarsGroup. All Rights Reserved.
           </p>
 
           <a
