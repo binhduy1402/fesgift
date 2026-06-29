@@ -32,7 +32,6 @@ export const NAVIGATION_LINKS = [
 { label: "Sản Phẩm", href: "#collections" },
 { label: "Câu Chuyện", href: "#philosophy" },
 { label: "Khách Hàng", href: "#capabilities" },
-{ label: "Quy Trình", href: "#process" },
 { label: "Liên Hệ", href: "#contact" },
 ];
 
