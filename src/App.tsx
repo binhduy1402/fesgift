@@ -8,7 +8,6 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Philosophy from "./components/Philosophy";
 import Collections from "./components/Collections";
-import Workflow from "./components/Workflow";
 import Capabilities from "./components/Capabilities";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
@@ -87,8 +86,6 @@ return (
       <Philosophy />
 
       <Capabilities />
-
-      <Workflow />
 
       <ContactForm
         prefilledProduct={prefilledProduct}
