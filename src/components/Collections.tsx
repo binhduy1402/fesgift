@@ -144,7 +144,7 @@ export default function Collections({
                <div className="mt-auto border-t border-gray-100 pt-5">
                   <div className="flex items-center justify-between text-[#7c142b] transition-colors group-hover:text-[#d4af37]">
                     <span className="text-xs font-bold tracking-widest uppercase">
-                      Nhận Báo Giá 
+                      Khám Phá Bộ Sưu Tập
                     </span>
 
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1.5" />
