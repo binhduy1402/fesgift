@@ -183,29 +183,29 @@ return (
 </p>
 
 <div className="mt-6 grid grid-cols-3 gap-4">
-  <div>
+  <div className="text-center">
     <div className="text-2xl font-bold text-[#7c142b]">
-      20.000+
+      20K+
     </div>
-    <div className="text-xs text-gray-500">
+    <div className="text-xs leading-tight text-gray-500">
       Bộ quà tặng
     </div>
   </div>
 
-  <div>
+  <div className="text-center">
     <div className="text-2xl font-bold text-[#7c142b]">
-      45
+      45 ngày
     </div>
-    <div className="text-xs text-gray-500">
-      Ngày triển khai
+    <div className="text-xs leading-tight text-gray-500">
+      Triển khai
     </div>
   </div>
 
-  <div>
+  <div className="text-center">
     <div className="text-2xl font-bold text-[#7c142b]">
       100%
     </div>
-    <div className="text-xs text-gray-500">
+    <div className="text-xs leading-tight text-gray-500">
       Đúng tiến độ
     </div>
   </div>
