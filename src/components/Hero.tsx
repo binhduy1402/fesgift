@@ -133,8 +133,8 @@ export default function Hero({
                 "
               >
                 Xem Bộ Sưu Tập
-              </button>*/}
-            </div>
+              </button>
+            </div>*/}
           </div>
 
               {/* Right Image */}
