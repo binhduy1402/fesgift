@@ -193,7 +193,7 @@ return (
   </div>
 
   <div className="text-center">
-    <div className="text-2xl font-bold text-[#7c142b]">
+    <div className="whitespace-nowrap text-xl sm:text-2xl font-bold text-[#7c142b]">
       45 ngày
     </div>
     <div className="text-xs leading-tight text-gray-500">
