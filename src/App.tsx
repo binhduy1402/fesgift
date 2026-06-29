@@ -20,6 +20,7 @@ export default function App() {
     useState<Collection | null>(null);
 
   const [prefilledProduct, setPrefilledProduct] = useState("");
+  const [selectedStory, setSelectedStory] = useState<number | null>(null);
   useEffect(() => {
   const observer = new IntersectionObserver(
     (entries) => {
@@ -83,7 +84,9 @@ return (
 
       <About />
 
-      <Philosophy />
+      <Philosophy
+        onOpenStory={(storyId) => setSelectedStory(storyId)}
+      />
 
       <Capabilities />
 
