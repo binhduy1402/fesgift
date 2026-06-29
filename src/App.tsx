@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 
 import { Collection } from "./types";
 import { X, Check, ArrowRight, ShieldCheck } from "lucide-react";
+import story1 from "./assets/story1.jpg";
 
 export default function App() {
   const [selectedCollection, setSelectedCollection] =
@@ -21,6 +22,29 @@ export default function App() {
 
   const [prefilledProduct, setPrefilledProduct] = useState("");
   const [selectedStory, setSelectedStory] = useState<number | null>(null);
+
+  const stories = {
+  1: {
+    title: "Câu chuyện Sun Life",
+    image: story1,
+    description:
+      "Sun Life mong muốn mang đến những món quà ý nghĩa dành cho khách hàng và đối tác. MARS đồng hành từ khâu tư vấn, thiết kế đến sản xuất để tạo nên bộ quà tặng mang dấu ấn thương hiệu.",
+  },
+
+  2: {
+    title: "Câu chuyện 02",
+    image: "",
+    description:
+      "Nội dung sẽ được cập nhật sau.",
+  },
+
+  3: {
+    title: "Câu chuyện 03",
+    image: "",
+    description:
+      "Nội dung sẽ được cập nhật sau.",
+  },
+} as const;
   useEffect(() => {
   const observer = new IntersectionObserver(
     (entries) => {
@@ -52,11 +76,15 @@ export default function App() {
     }
   };
 
-  const handleCollectionInquire = (title: string) => {
-    setPrefilledProduct(`Báo giá sỉ bộ sản phẩm: ${title}`);
-    setSelectedCollection(null);
-    scrollToContact();
-  };
+const handleCollectionInquire = (title: string) => {
+  setPrefilledProduct(`Báo giá sỉ bộ sản phẩm: ${title}`);
+  setSelectedCollection(null);
+  scrollToContact();
+};
+
+const closeStory = () => {
+  setSelectedStory(null);
+};
 
 return (
   <div className="relative min-h-screen bg-cream-bg text-charcoal-text selection:bg-primary-brand selection:text-white">
@@ -289,6 +317,56 @@ return (
           </div>
         </div>
       )}
+        {/* Story Modal */}
+    {selectedStory && (
+      <>
+        <div
+          className="fixed inset-0 z-[9998] bg-black/70"
+          onClick={closeStory}
+        />
+    
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+    
+          <div className="w-full max-w-xl overflow-hidden rounded-3xl bg-white shadow-2xl">
+    
+            {stories[selectedStory as keyof typeof stories].image ? (
+              <img
+                src={stories[selectedStory as keyof typeof stories].image}
+                alt={stories[selectedStory as keyof typeof stories].title}
+                className="h-64 w-full object-cover"
+              />
+            ) : (
+              <div className="flex h-64 items-center justify-center bg-[#f7f5f2]">
+                <span className="text-gray-400">
+                  Hình sẽ cập nhật
+                </span>
+              </div>
+            )}
+    
+            <div className="p-6">
+    
+              <h2 className="text-2xl font-bold text-[#7c142b]">
+                {stories[selectedStory as keyof typeof stories].title}
+              </h2>
+    
+              <p className="mt-4 leading-7 text-gray-600">
+                {stories[selectedStory as keyof typeof stories].description}
+              </p>
+    
+              <button
+                onClick={closeStory}
+                className="mt-8 w-full rounded-xl bg-[#7c142b] py-3 font-semibold text-white"
+              >
+                Đóng
+              </button>
+    
+            </div>
+    
+          </div>
+    
+        </div>
+      </>
+    )}
     </div>
   );
 }
