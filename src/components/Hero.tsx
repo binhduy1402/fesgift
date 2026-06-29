@@ -21,33 +21,31 @@ export default function Hero({
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
 
-          {/* Left Content */}
-          <div className="lg:col-span-6">
-              <div className="inline-flex items-center justify-between gap-4 rounded-2xl border border-[#7c142b]/10 bg-white/90 px-4 py-3 shadow-sm backdrop-blur-sm">
-                <div className="flex items-center gap-2">
-                  <Sparkles className="h-4 w-4 text-[#d4af37]" />
-                  <div>
-                    <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-500">
-                      Hotline
-                    </div>
-                    <a
-                      href="tel:0931133790"
-                      className="text-base font-bold text-[#7c142b]"
-                    >
-                      0931 133 790
-                    </a>
-                  </div>
+          {/* Hotline + QR */}
+              <div className="flex w-full items-center justify-between rounded-2xl border border-[#c49b47]/20 bg-[#f5efe6]/90 px-5 py-3 shadow-md backdrop-blur-sm">
+                <div className="flex flex-1 flex-col">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#8d8d8d]">
+                    Hotline
+                  </span>
+              
+                  <a
+                    href="tel:0931133790"
+                    className="mt-1 text-[1.55rem] font-bold leading-none text-[#7c142b]"
+                  >
+                    0931 133 790
+                  </a>
                 </div>
               
                 <a
                   href="https://zalo.me/0931133790"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="ml-5 shrink-0"
                 >
                   <img
                     src={zaloQR}
                     alt="QR Zalo"
-                    className="h-14 w-14 rounded-lg border border-[#d4af37]/20 bg-white p-1"
+                    className="h-12 w-12 rounded-lg border border-[#c49b47]/20 bg-white p-1"
                   />
                 </a>
               </div>
