@@ -112,7 +112,7 @@ const handleAnimationIteration = () => {
                     font-semibold
                     text-[#7c142b]
                 
-                    leading-[0.9]
+                    leading-[1.05]
                     tracking-[-0.04em]
                 
                     text-[2.15rem]
