@@ -85,10 +85,11 @@ const handleAnimationIteration = () => {
               </div>
 
               <h1 className="mt-6 font-serif font-bold leading-[1.05] text-[#2c2c2c] text-[clamp(2.8rem,6vw,4.5rem)] [text-wrap:balance]">
-                Quà Tặng Doanh Nghiệp
+                Mars Group
               
                 <span className="mt-2 block italic font-normal text-[#7c142b] text-[clamp(2.6rem,5.5vw,4rem)] [text-wrap:balance]">
-                  Nâng Tầm Thương Hiệu
+                  Kiến Tạo 
+                  Dấu Ấn Thương Hiệu
                 </span>
               </h1>
 
