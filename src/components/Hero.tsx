@@ -13,7 +13,7 @@ export default function Hero({
       <div className="absolute right-[-5%] top-0 h-[30rem] w-[30rem] rounded-full bg-[#d4af37]/10 blur-3xl pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
+        <div className="grid items-start gap-6 lg:grid-cols-12 lg:gap-10">
 
           {/* Left Content */}
             <div className="lg:col-span-6">  
