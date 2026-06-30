@@ -48,13 +48,6 @@ return (
         chỉn chu và phù hợp với từng đối tượng nhận quà.
       </p>
 
-      <p className="mt-6 text-base leading-relaxed text-gray-500">
-        Từ ý tưởng, thiết kế, sản xuất đến giao hàng,
-        mọi chi tiết đều được chăm chút nhằm tạo nên
-        dấu ấn chuyên nghiệp và cảm xúc tích cực
-        cho người nhận.
-      </p>
-
 <div className="mt-16 grid gap-8 md:grid-cols-3">
 
   {/* STORY 1 */}
