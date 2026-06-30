@@ -1,4 +1,4 @@
-
+import caseStudy01 from "../assets/casestudy01.jpg";
 /*
 import logoAIA from "../assets/logo_aia.png";
 import logoFubon from "../assets/logo_fubon.png";
@@ -150,7 +150,7 @@ return (
     {/* Image */}
       <div className="group relative min-h-[320px] overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1512909006721-3d6018887383?q=80&w=1200&auto=format&fit=crop"
+          src={caseStudy01}
           alt="Case Study"
           className="
             absolute
