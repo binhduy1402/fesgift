@@ -183,11 +183,30 @@ export default function Hero({
                 >
             
                 <div className="overflow-hidden rounded-2xl border border-[#7c142b]/10 bg-white p-2 shadow-2xl">
-                    <img
-                      src={heroImages[currentImage]}
-                      alt="FESGift Gift Collection"
-                        className="h-full w-full rounded-xl object-cover"
-                    />
+                  <div className="relative aspect-[4/3] w-full">
+                    {heroImages.map((image, index) => (
+                      <img
+                        key={index}
+                        src={image}
+                        alt={`Hero ${index + 1}`}
+                        className={`
+                          absolute
+                          inset-0
+                          h-full
+                          w-full
+                          rounded-xl
+                          object-cover
+                          transition-opacity
+                          duration-700
+                          ${
+                            currentImage === index
+                              ? "opacity-100"
+                              : "opacity-0"
+                          }
+                        `}
+                      />
+                    ))}
+                  </div>
                 </div>
             
                 {/* Floating Card */}
