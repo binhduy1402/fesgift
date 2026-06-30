@@ -89,11 +89,11 @@ const handleAnimationIteration = () => {
                   className="
                     block
                     font-['Playfair_Display']
-                    font-bold
-                    leading-none
-                    tracking-[-0.02em]
+                    font-black
                     text-[#222]
-                    text-[clamp(2.9rem,6vw,4.8rem)]
+                    leading-none
+                    tracking-[-0.03em]
+                    text-[clamp(3rem,6vw,4.8rem)]
                   "
                 >
                   Mars Group
@@ -103,13 +103,12 @@ const handleAnimationIteration = () => {
                   className="
                     mt-2
                     block
-                    font-['Cormorant_Garamond']
+                    font-['DM_Serif_Display']
                     italic
-                    font-medium
-                    leading-[0.88]
-                    tracking-[-0.01em]
                     text-[#7c142b]
-                    text-[clamp(2.7rem,5.8vw,4.3rem)]
+                    leading-[0.95]
+                    tracking-[-0.01em]
+                    text-[clamp(2.5rem,5vw,4rem)]
                   "
                 >
                   Kiến Tạo
