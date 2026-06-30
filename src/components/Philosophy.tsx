@@ -42,7 +42,7 @@ return (
       </h2>
 
       <p className="mt-8 text-xl leading-relaxed text-gray-600">
-        FESGift không chỉ cung cấp quà tặng doanh nghiệp.
+        Mars Group không chỉ cung cấp quà tặng doanh nghiệp.
         Chúng tôi giúp doanh nghiệp truyền tải giá trị thương hiệu
         thông qua những sản phẩm được thiết kế riêng,
         chỉn chu và phù hợp với từng đối tượng nhận quà.
