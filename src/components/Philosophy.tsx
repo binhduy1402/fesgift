@@ -97,7 +97,7 @@ return (
 
     <div className="p-5">
       <h3 className="text-center text-xl font-bold text-[#7c142b]">
-        Câu chuyện 02
+        Câu Chuyện Generali
       </h3>
 
       <p className="mt-2 text-center text-sm text-gray-500">
