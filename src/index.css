@@ -102,16 +102,8 @@
     transform: translateY(14px);
   }
 
-  15% {
-    transform: translateY(14px);
-  }
-
   50% {
     transform: translateY(-22px);
-  }
-
-  85% {
-    transform: translateY(14px);
   }
 
   100% {
@@ -120,8 +112,9 @@
 }
 
 .hero-float {
-  animation: heroFloat 6s ease-in-out infinite;
+  animation: heroFloat 6s cubic-bezier(.42, 0, .58, 1) infinite;
   will-change: transform;
+  transform: translateZ(0);
 }
 
 @keyframes cardFloat {
