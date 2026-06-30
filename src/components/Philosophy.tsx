@@ -41,7 +41,20 @@ return (
         </span>
       </h2>
 
-      <p className="mt-8 text-xl leading-relaxed text-gray-600">
+      <p
+          className="
+            mt-8
+            mx-auto
+            max-w-3xl
+        
+            text-[15px]
+            sm:text-base
+            md:text-lg
+        
+            leading-8
+            text-[#5f6673]
+          "
+        >
         Mars Group không chỉ cung cấp quà tặng doanh nghiệp.
         Chúng tôi giúp doanh nghiệp truyền tải giá trị thương hiệu
         thông qua những sản phẩm được thiết kế riêng,
