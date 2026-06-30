@@ -112,7 +112,7 @@ export default function Footer() {
                   Email
                 </p>
                 <p className="text-white/80">
-                  contact@fesgift.com
+                  contact@mars-vn.com
                 </p>
               </div>
 
@@ -130,7 +130,7 @@ export default function Footer() {
                   Hotline
                 </p>
                 <p className="text-white/80">
-                  090x xxx xxx
+                  0931 133 790
                 </p>
               </div>
             </div>
