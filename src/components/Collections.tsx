@@ -62,19 +62,20 @@ export default function Collections({
             <div
               key={col.id}
               onClick={() => window.open(col.url, "_blank")}
-                className="
-                  group
-                  h-full
-                  flex
-                  flex-col
-                  cursor-pointer
-                  overflow-hidden
-                  rounded-xl
-                  border
-                  border-[#7c142b]/10
-                  bg-white
-                  shadow-sm
-                "
+              className="
+                reveal
+                group
+                h-full
+                flex
+                flex-col
+                cursor-pointer
+                overflow-hidden
+                rounded-xl
+                border
+                border-[#7c142b]/10
+                bg-white
+                shadow-sm
+              "
             >
               {/* Image */}
               <div className="relative aspect-[4/3] overflow-hidden">
