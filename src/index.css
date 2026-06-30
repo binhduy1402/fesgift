@@ -140,17 +140,17 @@
 ========================== */
 
 .reveal {
-  opacity: 0;
-  transform: translateY(50px) scale(.97);
-  transition:
-    opacity .7s ease,
-    transform .7s cubic-bezier(.22,1,.36,1);
-  will-change: transform, opacity;
+    opacity: 0;
+    transform: translateY(50px);
+
+    transition:
+        opacity 1.1s ease,
+        transform 1.1s cubic-bezier(.22,.61,.36,1);
 }
 
 .reveal.show {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 @keyframes marquee {
