@@ -12,7 +12,7 @@ export default function Philosophy({
 return (
 <section
   id="philosophy"
-  className="reveal relative bg-white py-24"
+  className="relative bg-white py-24"
 >
 <div className="absolute left-0 top-0 h-64 w-64 rounded-full bg-[#7c142b]/5 blur-3xl" />
 <div className="absolute right-0 bottom-0 h-64 w-64 rounded-full bg-[#d4af37]/10 blur-3xl" />
@@ -60,7 +60,7 @@ return (
   {/* STORY 1 */}
   <button
     onClick={() => onOpenStory(1)}
-    className="group overflow-hidden rounded-3xl bg-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
+    className="reveal group overflow-hidden rounded-3xl bg-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
   >
     <div className="overflow-hidden">
       <img
@@ -84,7 +84,7 @@ return (
   {/* STORY 2 */}
   <button
     onClick={() => onOpenStory(2)}
-    className="group overflow-hidden rounded-3xl bg-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
+    className="reveal group overflow-hidden rounded-3xl bg-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
   >
     <div className="flex h-64 items-center justify-center bg-[#f7f5f2]">
       <div className="text-center">
@@ -110,7 +110,7 @@ return (
   {/* STORY 3 */}
   <button
     onClick={() => onOpenStory(3)}
-    className="group overflow-hidden rounded-3xl bg-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
+    className="reveal group overflow-hidden rounded-3xl bg-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
   >
     <div className="flex h-64 items-center justify-center bg-[#f7f5f2]">
       <div className="text-center">
