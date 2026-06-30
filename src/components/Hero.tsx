@@ -100,7 +100,7 @@ const handleAnimationIteration = () => {
                       lg:text-[4.8rem]
                     "
                   >
-                  MARS GROUP
+                  Giải Pháp Quà Tặng
                 </span>
               
                 <span
@@ -121,9 +121,9 @@ const handleAnimationIteration = () => {
                     lg:text-[4rem]
                   "
                 >
-                  Kiến Tạo
+                  Nhanh Trong Tư Vấn
                   <br />
-                  Dấu Ấn Thương Hiệu
+                  Chắc Trong Thực Thi
                 </span>
               </h1>
 
