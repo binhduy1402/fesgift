@@ -99,23 +99,29 @@
 
 @keyframes heroFloat {
   0% {
-    transform: translate3d(0, 12px, 0);
+    transform: translateY(14px);
+  }
+
+  15% {
+    transform: translateY(14px);
   }
 
   50% {
-    transform: translate3d(0, -22px, 0);
+    transform: translateY(-22px);
+  }
+
+  85% {
+    transform: translateY(14px);
   }
 
   100% {
-    transform: translate3d(0, 12px, 0);
+    transform: translateY(14px);
   }
 }
 
 .hero-float {
   animation: heroFloat 6s ease-in-out infinite;
   will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden;
 }
 
 @keyframes cardFloat {
