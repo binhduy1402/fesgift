@@ -85,31 +85,40 @@ const handleAnimationIteration = () => {
               </div>
 
               <h1 className="mt-6">
-                <span
-                  className="
-                    block
-                    font-['Libre_Baskerville']
-                    font-bold
-                    text-[#242424]
-                    leading-[0.95]
-                    tracking-[-0.03em]
-                    text-[clamp(2.7rem,6vw,4.8rem)]
-                  "
-                >
-                  Mars Group
+                  <span
+                    className="
+                      block
+                      font-['Lora']
+                      font-bold
+                      text-[#222]
+                  
+                      leading-none
+                  
+                      text-[2.8rem]
+                      sm:text-[3.2rem]
+                      md:text-[4rem]
+                      lg:text-[4.8rem]
+                    "
+                  >
+                  MARS GROUP
                 </span>
               
                 <span
                   className="
                     mt-3
                     block
-                    font-['Libre_Baskerville']
-                    font-bold
+                    font-['Lora']
                     italic
+                    font-semibold
                     text-[#7c142b]
-                    leading-[0.95]
-                    tracking-[-0.02em]
-                    text-[clamp(2.3rem,5vw,3.8rem)]
+                
+                    leading-[0.9]
+                    tracking-[-0.04em]
+                
+                    text-[2.15rem]
+                    sm:text-[2.45rem]
+                    md:text-[3.1rem]
+                    lg:text-[4rem]
                   "
                 >
                   Kiến Tạo
