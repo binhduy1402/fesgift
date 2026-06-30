@@ -99,15 +99,15 @@
 
 @keyframes heroFloat {
   0% {
-    transform: translateY(0px);
+    transform: translateY(12px);
   }
 
   50% {
-    transform: translateY(-14px);
+    transform: translateY(-24px);
   }
 
   100% {
-    transform: translateY(0px);
+    transform: translateY(12px);
   }
 }
 
