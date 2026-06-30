@@ -56,7 +56,7 @@ export default function Hero({
               </h1>
 
             <p className="mt-6 max-w-xl text-base leading-relaxed text-[#555]">
-              FESGift đồng hành cùng doanh nghiệp tạo nên những bộ quà tặng mang
+              Mars Group đồng hành cùng doanh nghiệp tạo nên những bộ quà tặng mang
               dấu ấn thương hiệu riêng, từ ý tưởng, thiết kế đến sản xuất và bàn giao
               trên toàn quốc.
             </p>
