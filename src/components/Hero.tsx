@@ -26,12 +26,9 @@ useEffect(() => {
 
   if (!element) return;
 
-  const handleAnimationIteration = () => {
-    // Khung vừa chạm đáy, đợi chút rồi đổi ảnh
-    setTimeout(() => {
-      setCurrentImage((prev) => (prev + 1) % heroImages.length);
-    }, 200);
-  };
+const handleAnimationIteration = () => {
+  setCurrentImage((prev) => (prev + 1) % heroImages.length);
+};
 
   element.addEventListener(
     "animationiteration",
