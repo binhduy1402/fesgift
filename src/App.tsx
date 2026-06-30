@@ -106,9 +106,7 @@ return (
         onConsultClick={scrollToContact}
       />
 
-      <Collections
-        onSelectCollection={setSelectedCollection}
-      />
+      <Collections />
 
       <About />
 
