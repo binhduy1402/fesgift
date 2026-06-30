@@ -1,10 +1,37 @@
-import heroImage from "../assets/hero01.jpg";
+import { useEffect, useState } from "react";
+
+import hero1 from "../assets/hero01.jpg";
+import hero2 from "../assets/hero02.jpg";
+import hero3 from "../assets/hero03.jpg";
+import hero4 from "../assets/hero04.jpg";
+
 import zaloQR from "../assets/zalo-qr.png";
 
+  const heroImages = [
+          hero1,
+          hero2,
+          hero3,
+          hero4,
+        ];
 
 export default function Hero({
 
 }: HeroProps) {
+  
+  const [currentImage, setCurrentImage] = useState(0);
+  const [fade, setFade] = useState(true);
+useEffect(() => {
+  const timer = setInterval(() => {
+    setFade(false);
+
+    setTimeout(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+      setFade(true);
+    }, 300);
+  }, 4500);
+
+  return () => clearInterval(timer);
+}, []);
   return (
     <section className="gold-pattern relative overflow-hidden bg-gradient-to-b from-[#faf7f2] via-[#faf7f2] to-white pt-24 pb-20 md:pt-36 md:pb-28">
       
@@ -142,11 +169,23 @@ export default function Hero({
               <div className="relative hero-float">
             
                 <div className="overflow-hidden rounded-2xl border border-[#7c142b]/10 bg-white p-2 shadow-2xl">
-                  <img
-                    src={heroImage}
-                    alt="FESGift Gift Collection"
-                    className="h-full w-full rounded-xl object-cover"
-                  />
+                    <img
+                      src={heroImages[currentImage]}
+                      alt="FESGift Gift Collection"
+                        className={`
+                          h-full
+                          w-full
+                          rounded-xl
+                          object-cover
+                          transition-all
+                          duration-500
+                          ${
+                            fade
+                              ? "opacity-100 translate-y-0"
+                              : "opacity-0 translate-y-6"
+                          }
+                        `}
+                    />
                 </div>
             
                 {/* Floating Card */}
