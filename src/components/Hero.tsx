@@ -88,28 +88,28 @@ const handleAnimationIteration = () => {
                 <span
                   className="
                     block
-                    font-['Bodoni_Moda']
+                    font-['Libre_Baskerville']
                     font-bold
-                    text-[#222]
+                    text-[#242424]
                     leading-[0.95]
                     tracking-[-0.03em]
-                    text-[clamp(3rem,6vw,4.8rem)]
+                    text-[clamp(2.7rem,6vw,4.8rem)]
                   "
                 >
-                  MARS GROUP
+                  Mars Group
                 </span>
               
                 <span
                   className="
-                    mt-2
+                    mt-3
                     block
-                    font-['Bodoni_Moda']
+                    font-['Libre_Baskerville']
                     font-bold
                     italic
                     text-[#7c142b]
-                    leading-[0.9]
+                    leading-[0.95]
                     tracking-[-0.02em]
-                    text-[clamp(2.5rem,5vw,4rem)]
+                    text-[clamp(2.3rem,5vw,3.8rem)]
                   "
                 >
                   Kiến Tạo
@@ -118,10 +118,8 @@ const handleAnimationIteration = () => {
                 </span>
               </h1>
 
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-[#555]">
-              Mars Group đồng hành cùng doanh nghiệp tạo nên những bộ quà tặng mang
-              dấu ấn thương hiệu riêng, từ ý tưởng, thiết kế đến sản xuất và bàn giao
-              trên toàn quốc.
+            <p className="mt-8 max-w-xl text-base leading-relaxed text-[#555]">
+            Mars Group đồng hành cùng doanh nghiệp kiến tạo những giải pháp quà tặng được thiết kế theo nhận diện thương hiệu, từ ý tưởng, sản xuất đến giao hàng trên toàn quốc.
             </p>
 
             {/* USP */}
