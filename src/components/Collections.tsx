@@ -1,5 +1,5 @@
-
 import { COLLECTIONS } from "../data";
+
 import {
   ArrowRight,
   Check,
@@ -8,15 +8,9 @@ import {
   Crown,
   UsersRound,
 } from "lucide-react";
-import { Collection } from "../types";
 
-interface CollectionsProps {
-  onSelectCollection: (collection: Collection) => void;
-}
-
-export default function Collections({
-  onSelectCollection,
-}: CollectionsProps) {
+export default function Collections()
+ {
     const getIcon = (icon?: string) => {
     switch (icon) {
       case "Users":
@@ -117,7 +111,7 @@ export default function Collections({
 
               {/* Content */}
               <div className="flex flex-1 flex-col p-6">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#7c142b]/10 text-[#7c142b]">{getIcon(col.icon)}
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#7c142b]/10 text-[#7c142b]">{getIcon(col.icon)}
                 </div>
                <p className="text-sm leading-relaxed text-gray-600">
                   {col.description}
@@ -142,13 +136,21 @@ export default function Collections({
                 )}
 
                 {/* Footer */}
-               <div className="mt-auto border-t border-gray-100 pt-5">
+               <div className="mt-auto border-t border-gray-100 pt-4">
                   <div className="flex items-center justify-between text-[#7c142b] transition-colors group-hover:text-[#d4af37]">
                     <span className="text-xs font-bold tracking-widest uppercase">
                       Khám Phá Bộ Sưu Tập
                     </span>
 
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1.5" />
+                    <ArrowRight
+                        className="
+                          h-4
+                          w-4
+                          transition-all
+                          duration-300
+                          group-hover:translate-x-2
+                        "
+                      />
                   </div>
                 </div>
               </div>
