@@ -99,30 +99,23 @@
 
 @keyframes heroFloat {
   0% {
-    transform: translate3d(0, 14px, 0) scale(0.985);
-  }
-
-  20% {
-    transform: translate3d(0, 2px, 0) scale(0.992);
+    transform: translate3d(0, 12px, 0);
   }
 
   50% {
-    transform: translate3d(0, -24px, 0) scale(1);
-  }
-
-  80% {
-    transform: translate3d(0, -6px, 0) scale(0.994);
+    transform: translate3d(0, -22px, 0);
   }
 
   100% {
-    transform: translate3d(0, 14px, 0) scale(0.985);
+    transform: translate3d(0, 12px, 0);
   }
 }
 
 .hero-float {
-  animation: heroFloat 6s cubic-bezier(.42,0,.2,1) infinite;
-  transform-origin: center center;
+  animation: heroFloat 6s ease-in-out infinite;
   will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 @keyframes cardFloat {
