@@ -15,6 +15,7 @@ import Footer from "./components/Footer";
 import { Collection } from "./types";
 import { X, Check, ArrowRight, ShieldCheck } from "lucide-react";
 import story1 from "./assets/story1.jpg";
+import story2 from "./assets/story2.jpg";
 
 export default function App() {
   const [selectedCollection, setSelectedCollection] =
@@ -32,10 +33,10 @@ export default function App() {
   },
 
   2: {
-    title: "Câu chuyện 02",
-    image: "",
+    title: "Câu chuyện Genarali",
+    image: story2,
     description:
-      "Nội dung sẽ được cập nhật sau.",
+      "Với Mars Group, quà tặng không chỉ là một món quà mà còn là cầu nối giữa thương hiệu và khách hàng. Trong dự án cùng Generali, chúng tôi mang đến giải pháp quà tặng và vật phẩm sự kiện được thiết kế đồng bộ, góp phần lan tỏa thông điệp thương hiệu và tạo nên những khoảnh khắc đáng nhớ cho người tham dự.",
   },
 
   3: {
