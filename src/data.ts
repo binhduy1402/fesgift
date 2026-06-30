@@ -1,7 +1,7 @@
 import { Collection, PhilosophyItem, WorkflowStep, Project, Testimonial } from "./types";
 
 export const BRAND_INFO = {
-  name: "FESGift",
+  name: "Mars Group",
   tagline: "Heritage & Grace",
   hotline: "0931 133 790",
   email: "fesgift@mars-vn.com",
