@@ -26,7 +26,7 @@ return (
       </span>
 
       <h2 className="font-serif text-4xl md:text-5xl font-bold leading-[1.3] text-[#2c2c2c]">
-        Mỗi Món Quà Là Một
+        Mỗi Món Quà
 <span
   className="
     block
@@ -37,7 +37,7 @@ return (
     text-transparent
   "
 >
-          Trải Nghiệm Thương Hiệu
+          Là Một Trải Nghiệm
         </span>
       </h2>
 
