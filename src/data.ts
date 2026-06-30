@@ -1,9 +1,9 @@
 import { Collection, PhilosophyItem, WorkflowStep, Project, Testimonial } from "./types";
 
-import collection1 from "../assets/collection/collection1.jpg";
-import collection2 from "../assets/collection/collection2.jpg";
-import collection3 from "../assets/collection/collection3.jpg";
-import collection4 from "../assets/collection/collection4.jpg";
+import collection1 from "./assets/collection/collection1.jpg";
+import collection2 from "./assets/collection/collection2.jpg";
+import collection3 from "./assets/collection/collection3.jpg";
+import collection4 from "./assets/collection/collection4.jpg";
 
 export const BRAND_INFO = {
   name: "Mars Group",
