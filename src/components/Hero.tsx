@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import hero1 from "../assets/hero01.jpg";
 import hero2 from "../assets/hero02.jpg";
@@ -19,19 +19,30 @@ export default function Hero({
 }: HeroProps) {
   
   const [currentImage, setCurrentImage] = useState(0);
-  const [fade, setFade] = useState(true);
-useEffect(() => {
-  const timer = setInterval(() => {
-    setFade(false);
+  const heroRef = useRef<HTMLDivElement>(null);
 
-    setTimeout(() => {
-      setCurrentImage((prev) => (prev + 1) % heroImages.length);
-      setFade(true);
-    }, 300);
-  }, 4500);
+  useEffect(() => {
+  const element = heroRef.current;
 
-  return () => clearInterval(timer);
+  if (!element) return;
+
+  const handleAnimationIteration = () => {
+    setCurrentImage((prev) => (prev + 1) % heroImages.length);
+  };
+
+  element.addEventListener(
+    "animationiteration",
+    handleAnimationIteration
+  );
+
+  return () => {
+    element.removeEventListener(
+      "animationiteration",
+      handleAnimationIteration
+    );
+  };
 }, []);
+  
   return (
     <section className="gold-pattern relative overflow-hidden bg-gradient-to-b from-[#faf7f2] via-[#faf7f2] to-white pt-24 pb-20 md:pt-36 md:pb-28">
       
@@ -166,25 +177,16 @@ useEffect(() => {
 
               {/* Right Image */}
             <div className="lg:col-span-6">
-              <div className="relative hero-float">
+              <div
+                  ref={heroRef}
+                  className="relative hero-float"
+                >
             
                 <div className="overflow-hidden rounded-2xl border border-[#7c142b]/10 bg-white p-2 shadow-2xl">
                     <img
                       src={heroImages[currentImage]}
                       alt="FESGift Gift Collection"
-                        className={`
-                          h-full
-                          w-full
-                          rounded-xl
-                          object-cover
-                          transition-all
-                          duration-500
-                          ${
-                            fade
-                              ? "opacity-100 translate-y-0"
-                              : "opacity-0 translate-y-6"
-                          }
-                        `}
+                        className="h-full w-full rounded-xl object-cover"
                     />
                 </div>
             
