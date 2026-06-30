@@ -88,33 +88,33 @@ const handleAnimationIteration = () => {
                 <span
                   className="
                     block
-                    font-['Playfair_Display']
-                    font-black
+                    font-['Bodoni_Moda']
+                    font-bold
                     text-[#222]
-                    leading-none
+                    leading-[0.95]
                     tracking-[-0.03em]
                     text-[clamp(3rem,6vw,4.8rem)]
                   "
                 >
-                  Mars Group
+                  MARS GROUP
                 </span>
               
                 <span
                   className="
                     mt-2
                     block
-                    font-['Playfair_Display']
-                    italic
+                    font-['Bodoni_Moda']
                     font-bold
+                    italic
                     text-[#7c142b]
-                    leading-[0.92]
+                    leading-[0.9]
                     tracking-[-0.02em]
                     text-[clamp(2.5rem,5vw,4rem)]
                   "
                 >
-                    Kiến Tạo
-                    <br />
-                    Dấu Ấn Thương Hiệu
+                  Kiến Tạo
+                  <br />
+                  Dấu Ấn Thương Hiệu
                 </span>
               </h1>
 
