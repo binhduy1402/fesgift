@@ -343,8 +343,9 @@ try {
               <div className="absolute inset-0 bg-gradient-to-t from-primary-brand/80 via-charcoal-text/90 to-charcoal-text/95 mix-blend-multiply" />
             </div>
 
-            <div className="relative z-10">
+            <div className="relative z-10 mb-10">
               {/* Luxury Seal badge styling */}
+                
               <div className="w-14 h-14 border border-muted-gold/40 rounded-full flex items-center justify-center bg-white/5 mb-8">
                 <span className="font-serif text-sm font-semibold tracking-widest text-muted-gold leading-none">Mars</span>
               </div>
