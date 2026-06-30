@@ -50,7 +50,7 @@ export default function Collections({
             </h2>
 
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-600">
-            4 nhóm sản phẩm chủ lực giúp doanh nghiệp xây dựng hình ảnh thương hiệu, tri ân khách hàng và nâng cao trải nghiệm đội ngũ.
+            4 nhóm sản phẩm chủ lực giúp Mars Group xây dựng hình ảnh thương hiệu, tri ân và nâng cao trải nghiệm với khách hàng.
             </p>
           </div>
 
