@@ -35,30 +35,6 @@ export const NAVIGATION_LINKS = [
 { label: "Liên Hệ", href: "#contact" },
 ];
 
-export const PHILOSOPHY_ITEMS: PhilosophyItem[] = [
-  {
-    id: "mars-story",
-    title: "CÂU CHUYỆN MARS",
-    description:
-      "FESGift được phát triển từ kinh nghiệm nhiều năm trong lĩnh vực quà tặng doanh nghiệp và sản xuất theo yêu cầu. Mục tiêu là tạo ra những giải pháp quà tặng giúp doanh nghiệp xây dựng hình ảnh chuyên nghiệp và bền vững.",
-    iconName: "Building2",
-  },
-  {
-    id: "usp",
-    title: "ĐIỂM KHÁC BIỆT",
-    description:
-      "Tư vấn theo mục tiêu chiến dịch, thiết kế theo nhận diện thương hiệu, sản xuất linh hoạt và kiểm soát chất lượng xuyên suốt từ ý tưởng đến thành phẩm.",
-    iconName: "Sparkles",
-  },
-  {
-    id: "mission",
-    title: "LÝ DO TỒN TẠI",
-    description:
-      "Chúng tôi tin rằng một món quà được chuẩn bị đúng cách có thể tạo nên sự kết nối, ghi nhớ và giá trị lâu dài cho thương hiệu trong mắt khách hàng và đối tác.",
-    iconName: "HeartHandshake",
-  },
-];
-
 export const COLLECTIONS: Collection[] = [
 {
 id: "customer-gifts",
@@ -152,69 +128,6 @@ num: "03",
 title: "SẢN XUẤT & GIAO HÀNG",
 desc: "Triển khai sản xuất, kiểm soát chất lượng và giao hàng đúng tiến độ.",
 },
-];
-
-export const FEATURED_PROJECTS: Project[] = [
-  {
-    id: "proj1",
-    title: "Bộ Quà Trung Thu Song Ngư Cát Tường",
-    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop",
-    category: "Doanh Nghiệp",
-    longDescription: "Dự án thiết kế riêng hộp quà Trung Thu cho Tập đoàn Tài chính Tech Global, kết hợp tranh sớ Đông Hồ dát vàng và bánh nghệ nhân thượng hạng truyền thống.",
-    client: "Tech Global Corporation",
-    year: "2025",
-    components: ["Hộp gỗ sơn mài đỏ cherry", "Bộ ấm trà gốm Bát Tràng", "4 bánh trung thu nghệ nhân", "Trà tôm nõn Tân Cương"],
-  },
-  {
-    id: "proj2",
-    title: "Bộ Bình Ly Thép Không Gỉ Pastel Matte",
-    image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=800&auto=format&fit=crop",
-    category: "Sự Kiện",
-    longDescription: "Sản phẩm quà tặng sinh thái sang trọng đại hội thường niên với khả năng giữ nhiệt vượt trội lên đến 24h, hoàn thiện phủ sơn nhám cực kỳ sang trọng.",
-    client: "Green Future Fund",
-    year: "2025",
-    components: ["Bình giữ nhiệt 750ml dập nổi logo", "2 ly thủy tinh có ống hút chịu nhiệt", "Hộp quà bìa cứng Kraft ép kim vàng"],
-  },
-  {
-    id: "proj3",
-    title: "Hộp Quà Kỳ Ẩn Hoàng Gia Gốm Sứ",
-    image: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=800&auto=format&fit=crop",
-    category: "Doanh Nghiệp",
-    longDescription: "Sự kết hợp hoàn hảo giữa gốm men lam cao cấp và sản vật núi rừng Tây Bắc tạo nên set quà ấm lòng những đối tác nước ngoài quan trọng.",
-    client: "Vietnam Heritage Foundation",
-    year: "2024",
-    components: ["Hũ trà gốm vẽ tay", "Trà cổ thụ San Tuyết", "Bộ khay đĩa gỗ xà cừ", "Hộp quà da PU thêu dập nổi"],
-  },
-  {
-    id: "proj4",
-    title: "Bao Da Laptop & Sổ Tay Da Thuộc",
-    image: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=800&auto=format&fit=crop",
-    category: "Cá Nhân Hóa",
-    longDescription: "Thiết kế da bò Mill thật 100% may tay thủ công hoàn toàn, dập tên riêng của thành viên Hội đồng Quản trị bằng tiếng Pháp tinh tế.",
-    client: "Vilas International",
-    year: "2024",
-    components: ["Bao da Macbook Pro 14 inch", "Sổ tay da thay ruột cao cấp", "Bút ký kim loại khắc laser", "Bao đựng thẻ đồng bộ"],
-  },
-  {
-    id: "proj5",
-    title: "Hộp Hương Sắc Bình Yên Nến Thơm",
-    image: "https://images.unsplash.com/photo-1603006905003-be475563bc59?q=80&w=800&auto=format&fit=crop",
-    category: "Cá Nhân Hóa",
-    longDescription: "Bộ quà tặng mang lại không gian thư giãn an lành cho phái nữ với nến đậu nành thiên nhiên, xà phòng hữu cơ và hoa hồng khô organic.",
-    client: "Spa & Beauty Group",
-    year: "2025",
-    components: ["2 hũ nến tinh dầu 200g", "Xà phòng muối biển ép lạnh", "Khăn lụa tơ tằm Bảo Lộc", "Hộp quà sồi tự nhiên"],
-  },
-  {
-    id: "proj6",
-    title: "Bình Giữ Nhiệt Nordic Gradient Thủy Tinh",
-    image: "https://images.unsplash.com/photo-1618335829737-2228915674e0?q=80&w=800&auto=format&fit=crop",
-    category: "Sự Kiện",
-    longDescription: "Thiết kế mang hơi thở Bắc Âu hiện đại với dải màu gradient bắt mắt, là giải pháp quà tặng năng động tuyệt vời cho ngày hội sức khoẻ doanh nghiệp.",
-    client: "Active Life Lifestyle",
-    year: "2025",
-    components: ["Bình thể thao kim loại cao cấp 1L", "Bao silicone bảo vệ chống va đập", "Hộp kraft lót rơm thân thiện môi trường"],
-  },
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
