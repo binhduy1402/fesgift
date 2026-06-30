@@ -21,13 +21,16 @@ export default function Hero({
   const [currentImage, setCurrentImage] = useState(0);
   const heroRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+useEffect(() => {
   const element = heroRef.current;
 
   if (!element) return;
 
   const handleAnimationIteration = () => {
-    setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    // Khung vừa chạm đáy, đợi chút rồi đổi ảnh
+    setTimeout(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 200);
   };
 
   element.addEventListener(
@@ -42,7 +45,6 @@ export default function Hero({
     );
   };
 }, []);
-  
   return (
     <section className="gold-pattern relative overflow-hidden bg-gradient-to-b from-[#faf7f2] via-[#faf7f2] to-white pt-24 pb-20 md:pt-36 md:pb-28">
       
@@ -196,12 +198,15 @@ export default function Hero({
                           w-full
                           rounded-xl
                           object-cover
-                          transition-opacity
-                          duration-700
+                        
+                          transition-all
+                          duration-[900ms]
+                          ease-out
+                        
                           ${
                             currentImage === index
-                              ? "opacity-100"
-                              : "opacity-0"
+                              ? "opacity-100 translate-y-0 scale-100 z-10"
+                              : "opacity-0 -translate-y-12 scale-[1.03] z-0"
                           }
                         `}
                       />
