@@ -71,7 +71,7 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
 
     if (isSubmitting) return;
 
-    // Chặn gửi lại trong 5 phút
+    // Chặn gửi lại trong 2 phút
     const lastSubmit = localStorage.getItem("fesgift_last_submit");
     
     if (lastSubmit) {
@@ -176,7 +176,7 @@ try {
                 Nhận Báo Giá Quà Tặng Doanh Nghiệp
               </h2>
               <p className="text-xs sm:text-sm text-charcoal-text/65 leading-relaxed mt-2 font-light">
-                Chia sẻ nhu cầu của doanh nghiệp, đội ngũ FESGift sẽ liên hệ tư vấn và đề xuất giải pháp phù hợp trong vòng 2 giờ làm việc.
+                Chia sẻ nhu cầu của doanh nghiệp, đội ngũ Mars Group sẽ liên hệ tư vấn và đề xuất giải pháp phù hợp trong vòng 2 giờ làm việc.
               </p>
             </div>
 
@@ -187,7 +187,7 @@ try {
                   Gửi Yêu Cầu Thành Công!
                 </h3>
                 <p className="text-xs sm:text-sm text-emerald-800/80 font-light max-w-md mx-auto leading-relaxed">
-                  Cám ơn quý khách đã tin tưởng dịch vụ của FESGift. Chuyên viên của FESGift sẽ chủ động liên hệ trực tiếp đến quý khách qua số điện thoại/Zalo/Email trong thời gian sớm nhất.
+                  Cám ơn quý khách đã tin tưởng dịch vụ của Mars Group. Chuyên viên của Mars Group sẽ chủ động liên hệ trực tiếp đến quý khách qua số điện thoại/Zalo/Email trong thời gian sớm nhất.
                 </p>
                     <p className="text-sm text-emerald-700">
                       Quý khách có thể gửi yêu cầu mới sau
@@ -321,7 +321,7 @@ try {
                       {isSubmitting ? "Đang gửi..." : "Nhận tư vấn miễn phí"}
                     </button>
                   <p className="text-center text-[11px] text-charcoal-text/50 mt-3">
-                    Chuyên viên FESGift sẽ phản hồi trong vòng 2 giờ làm việc.
+                    Chuyên viên Mars Group sẽ phản hồi trong vòng 2 giờ làm việc.
                   </p>
                 </div>
 
@@ -346,15 +346,15 @@ try {
             <div className="relative z-10">
               {/* Luxury Seal badge styling */}
               <div className="w-14 h-14 border border-muted-gold/40 rounded-full flex items-center justify-center bg-white/5 mb-8">
-                <span className="font-serif text-sm font-semibold tracking-widest text-muted-gold leading-none">F</span>
+                <span className="font-serif text-sm font-semibold tracking-widest text-muted-gold leading-none">Mars</span>
               </div>
               <h3 className="font-serif text-2xl sm:text-3xl font-bold tracking-wide leading-tight">
                 Nhận Tư Vấn
                 <br />
-                Miễn Phí Từ FESGift
+                Miễn Phí Từ Mars Group
               </h3>
               <p className="text-sm text-white/75 leading-relaxed mt-4 max-w-sm">
-                Chia sẻ nhu cầu của doanh nghiệp, đội ngũ FESGift sẽ tư vấn giải pháp quà tặng phù hợp với ngân sách, thương hiệu và mục tiêu chiến dịch của bạn.
+                Chia sẻ nhu cầu của doanh nghiệp, đội ngũ Mars Group sẽ tư vấn giải pháp quà tặng phù hợp với ngân sách, thương hiệu và mục tiêu chiến dịch của bạn.
               </p>
 
               <div className="mt-6 space-y-3">
