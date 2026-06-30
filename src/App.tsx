@@ -46,18 +46,18 @@ export default function App() {
   },
 } as const;
   useEffect(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    },
-    {
-      threshold: 0.15,
-    }
-  );
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  },
+  {
+    rootMargin: "0px 0px -150px 0px",
+  }
+);
 
   document.querySelectorAll(".reveal").forEach((el) => {
     observer.observe(el);
