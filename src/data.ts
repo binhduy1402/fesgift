@@ -31,7 +31,7 @@ export const NAVIGATION_LINKS = [
 { label: "Năng Lực", href: "#our-story" },
 { label: "Sản Phẩm", href: "#collections" },
 { label: "Câu Chuyện", href: "#philosophy" },
-{ label: "Khách Hàng", href: "#capabilities" },
+{ label: "Dự Án", href: "#capabilities" },
 { label: "Liên Hệ", href: "#contact" },
 ];
 
