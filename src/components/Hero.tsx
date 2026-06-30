@@ -103,17 +103,18 @@ const handleAnimationIteration = () => {
                   className="
                     mt-2
                     block
-                    font-['DM_Serif_Display']
+                    font-['Playfair_Display']
                     italic
+                    font-bold
                     text-[#7c142b]
-                    leading-[0.95]
-                    tracking-[-0.01em]
+                    leading-[0.92]
+                    tracking-[-0.02em]
                     text-[clamp(2.5rem,5vw,4rem)]
                   "
                 >
-                  Kiến Tạo
-                  <br />
-                  Dấu Ấn Thương Hiệu
+                    Kiến Tạo
+                    <br />
+                    Dấu Ấn Thương Hiệu
                 </span>
               </h1>
 
