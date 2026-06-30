@@ -85,21 +85,20 @@ const handleAnimationIteration = () => {
               </div>
 
               <h1 className="mt-6">
-                  <span
-                    className="
-                      block
-                      font-['Lora']
-                      font-bold
-                      text-[#222]
-                  
-                      leading-none
-                  
-                      text-[2.8rem]
-                      sm:text-[3.2rem]
-                      md:text-[4rem]
-                      lg:text-[4.8rem]
-                    "
-                  >
+                    <span
+                      className="
+                        block
+                        font-['Lora']
+                        font-bold
+                        text-[#222]
+                        leading-[1]
+                    
+                        text-[2.35rem]
+                        sm:text-[2.8rem]
+                        md:text-[3.5rem]
+                        lg:text-[4rem]
+                      "
+                    >
                   Giải Pháp Quà Tặng
                 </span>
               
