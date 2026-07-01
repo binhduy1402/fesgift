@@ -26,14 +26,14 @@ export default function App() {
 
   const stories = {
   1: {
-    title: "Câu chuyện Sun Life",
+    title: "Gắn kết cùng Sun Life",
     image: story1,
     description:
       "Sun Life mong muốn mang đến những món quà ý nghĩa dành cho khách hàng và đối tác. MARS đồng hành từ khâu tư vấn, thiết kế đến sản xuất để tạo nên bộ quà tặng mang dấu ấn thương hiệu.",
   },
 
   2: {
-    title: "Câu chuyện Genarali",
+    title: "Kết nối cùng Generali",
     image: story2,
     description:
       "Với Mars Group, quà tặng không chỉ là một món quà mà còn là cầu nối giữa thương hiệu và khách hàng. Trong dự án cùng Generali, chúng tôi mang đến giải pháp quà tặng và vật phẩm sự kiện được thiết kế đồng bộ, góp phần lan tỏa thông điệp thương hiệu và tạo nên những khoảnh khắc đáng nhớ cho người tham dự.",
