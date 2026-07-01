@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 
-import hero1 from "../assets/hero01.jpg";
-import hero2 from "../assets/hero02.jpg";
-import hero3 from "../assets/hero03.jpg";
-import hero4 from "../assets/hero04.jpg";
+import hero01 from "../assets/hero01.avif";
+import hero02 from "../assets/hero02.avif";
+import hero03 from "../assets/hero03.avif";
+import hero04 from "../assets/hero04.avif";
 
 import zaloQR from "../assets/zalo-qr.png";
 
