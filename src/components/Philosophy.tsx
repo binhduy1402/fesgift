@@ -1,5 +1,6 @@
 import story1 from "../assets/story1.jpg";
 import story2 from "../assets/story2.jpg";
+import story3 from "../assets/story3.jpg";
 
 interface PhilosophyProps {
   onOpenStory: (storyId: number) => void;
@@ -111,19 +112,24 @@ return (
     onClick={() => onOpenStory(3)}
     className="reveal group overflow-hidden rounded-3xl bg-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
   >
-    <div className="flex h-64 items-center justify-center bg-[#f7f5f2]">
-      <div className="text-center">
-        <div className="text-5xl">🖼️</div>
-
-        <p className="mt-3 text-sm text-gray-400">
-          Hình sẽ cập nhật
-        </p>
-      </div>
+    <div className="overflow-hidden">
+      <img
+        src={story3}
+        alt="Story 3"
+        className="
+          h-64
+          w-full
+          object-cover
+          transition
+          duration-500
+          group-hover:scale-105
+        "
+      />
     </div>
 
     <div className="p-5">
       <h3 className="text-center text-xl font-bold text-[#7c142b]">
-        Câu chuyện 03
+        Câu Chuyện Mars Group
       </h3>
 
       <p className="mt-2 text-center text-sm text-gray-500">
