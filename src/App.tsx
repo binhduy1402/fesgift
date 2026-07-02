@@ -26,7 +26,6 @@ export default function App() {
   const [prefilledProduct, setPrefilledProduct] = useState("");
   const [selectedStory, setSelectedStory] = useState<number | null>(null);
   const [currentStoryImage, setCurrentStoryImage] = useState(0);
-  const [pauseStorySlide, setPauseStorySlide] = useState(false);
   const touchStartX = useRef(0);
 
   const stories = {
@@ -151,7 +150,6 @@ const handleTouchEnd = (
 
 useEffect(() => {
   if (!selectedStory) return;
-  if (pauseStorySlide) return;
 
   const story =
     stories[selectedStory as keyof typeof stories];
@@ -167,7 +165,6 @@ useEffect(() => {
   }, [
       selectedStory,
       currentStoryImage,
-      pauseStorySlide,
   ]);
 
 return (
@@ -410,8 +407,6 @@ return (
   >
       <div
           onClick={(e) => e.stopPropagation()}
-          onMouseEnter={() => setPauseStorySlide(true)}
-          onMouseLeave={() => setPauseStorySlide(false)}
           className="w-full max-w-xl overflow-hidden rounded-3xl bg-white shadow-2xl"
       >
       {stories[selectedStory as keyof typeof stories].images.length > 0 ? (
