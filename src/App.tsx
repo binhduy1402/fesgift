@@ -89,6 +89,18 @@ const observer = new IntersectionObserver(
     }
   };
 
+useEffect(() => {
+  if (selectedStory) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+
+  return () => {
+    document.body.style.overflow = "";
+  };
+}, [selectedStory]);
+
 const handleCollectionInquire = (title: string) => {
   setPrefilledProduct(`Báo giá sỉ bộ sản phẩm: ${title}`);
   setSelectedCollection(null);
@@ -412,8 +424,12 @@ return (
       {stories[selectedStory as keyof typeof stories].images.length > 0 ? (
        <>
             <div
-              onTouchStart={handleTouchStart}
-              onTouchEnd={handleTouchEnd}
+                style={{
+                  touchAction: "pan-y",
+                  overscrollBehavior: "contain",
+                }}
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
             >
               <img
                 src={
