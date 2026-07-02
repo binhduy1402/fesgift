@@ -163,7 +163,7 @@ try {
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-cream-bg rounded-sm border border-secondary-brand/10 shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+        <div className="bg-cream-bg rounded-sm border border-secondary-brand/10 shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 items-start">
           
           {/* Left: Contact Form UI */}
           <div className="lg:col-span-7 p-6 sm:p-12 relative flex flex-col justify-center">
