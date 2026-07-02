@@ -17,6 +17,7 @@ import story1 from "./assets/story1.jpg";
 import story1_2 from "./assets/story1-2.jpg";
 import story2 from "./assets/story2.jpg";
 import story3 from "./assets/story3.jpg";
+import story3_2 from "./assets/story3-2.jpg";
 
 export default function App() {
   const [selectedCollection, setSelectedCollection] =
@@ -52,6 +53,7 @@ export default function App() {
     title: "Sự chăm chút của Mars Group",
     images: [
         story3,
+        story3_2,
     ],
     description:
       "Với Mars Group, đúng tiến độ luôn đi cùng chất lượng. Đội ngũ chúng tôi không ngừng phối hợp và hoàn thiện từng sản phẩm bằng sự chỉn chu, để mỗi món quà khi trao đi đều thể hiện trọn vẹn giá trị và hình ảnh thương hiệu của doanh nghiệp.",
