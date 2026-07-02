@@ -121,7 +121,7 @@ export default function Footer() {
                   Website
                 </p>
                 <p className="text-white/80">
-                  www.fesgift.com
+                  www.mars-vn.com
                 </p>
               </div>
 
