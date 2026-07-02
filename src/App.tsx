@@ -15,6 +15,7 @@ import Footer from "./components/Footer";
 import { Collection } from "./types";
 import { X, Check, ArrowRight, ShieldCheck } from "lucide-react";
 import story1 from "./assets/story1.jpg";
+import story1_2 from "./assets/story1-2.jpg";
 import story2 from "./assets/story2.jpg";
 import story3 from "./assets/story3.jpg";
 
@@ -24,25 +25,33 @@ export default function App() {
 
   const [prefilledProduct, setPrefilledProduct] = useState("");
   const [selectedStory, setSelectedStory] = useState<number | null>(null);
+  const [currentStoryImage, setCurrentStoryImage] = useState(0);
 
   const stories = {
   1: {
     title: "Gắn kết cùng Sun Life",
-    image: story1,
+      images: [
+        story1,
+        story1_2,
+      ],
     description:
       "Sun Life mong muốn mang đến những món quà ý nghĩa dành cho khách hàng và đối tác. MARS đồng hành từ khâu tư vấn, thiết kế đến sản xuất để tạo nên bộ quà tặng mang dấu ấn thương hiệu.",
   },
 
   2: {
     title: "Kết nối cùng Generali",
-    image: story2,
+    images: [
+        story2,
+    ],
     description:
       "Với Mars Group, quà tặng không chỉ là một món quà mà còn là cầu nối giữa thương hiệu và khách hàng. Trong dự án cùng Generali, chúng tôi mang đến giải pháp quà tặng và vật phẩm sự kiện được thiết kế đồng bộ, góp phần lan tỏa thông điệp thương hiệu và tạo nên những khoảnh khắc đáng nhớ cho người tham dự.",
   },
 
   3: {
     title: "Sự chăm chút của Mars Group",
-    image: story3,
+    images: [
+        story3,
+    ],
     description:
       "Với Mars Group, đúng tiến độ luôn đi cùng chất lượng. Đội ngũ chúng tôi không ngừng phối hợp và hoàn thiện từng sản phẩm bằng sự chỉn chu, để mỗi món quà khi trao đi đều thể hiện trọn vẹn giá trị và hình ảnh thương hiệu của doanh nghiệp.",
   },
@@ -86,7 +95,24 @@ const handleCollectionInquire = (title: string) => {
 
 const closeStory = () => {
   setSelectedStory(null);
+  setCurrentStoryImage(0);
 };
+
+useEffect(() => {
+  if (!selectedStory) return;
+
+  const story =
+    stories[selectedStory as keyof typeof stories];
+
+  const timer = setInterval(() => {
+    setCurrentStoryImage((prev) =>
+      (prev + 1) % story.images.length
+    );
+  }, 4000);
+
+  return () => clearInterval(timer);
+
+}, [selectedStory]);
 
 return (
   <div className="relative min-h-screen bg-cream-bg text-charcoal-text selection:bg-primary-brand selection:text-white">
@@ -113,7 +139,10 @@ return (
       <About />
 
       <Philosophy
-        onOpenStory={(storyId) => setSelectedStory(storyId)}
+        onOpenStory={(storyId) => {
+          setSelectedStory(storyId);
+          setCurrentStoryImage(0);
+        }}
       />
 
       <Capabilities />
@@ -327,12 +356,33 @@ return (
       onClick={(e) => e.stopPropagation()}
       className="w-full max-w-xl overflow-hidden rounded-3xl bg-white shadow-2xl"
     >
-      {stories[selectedStory as keyof typeof stories].image ? (
-        <img
-          src={stories[selectedStory as keyof typeof stories].image}
-          alt={stories[selectedStory as keyof typeof stories].title}
-          className="h-64 w-full object-cover"
-        />
+      {stories[selectedStory as keyof typeof stories].images.length > 0 ? (
+        <>
+          <img
+            src={
+              stories[selectedStory as keyof typeof stories]
+                .images[currentStoryImage]
+            }
+            alt={stories[selectedStory as keyof typeof stories].title}
+            className="h-64 w-full object-cover"
+          />
+      
+          <div className="flex justify-center gap-2 py-4">
+            {stories[selectedStory as keyof typeof stories].images.map(
+              (_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentStoryImage(index)}
+                  className={`rounded-full transition-all duration-300 ${
+                    currentStoryImage === index
+                      ? "h-2 w-6 bg-[#7c142b]"
+                      : "h-2 w-2 bg-gray-300"
+                  }`}
+                />
+              )
+            )}
+          </div>
+        </>
       ) : (
         <div className="flex h-64 items-center justify-center bg-[#f7f5f2]">
           <span className="text-gray-400">
