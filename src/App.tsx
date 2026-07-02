@@ -1,5 +1,4 @@
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import LuxuryBackground from "./components/LuxuryBackground";
 
@@ -27,6 +26,7 @@ export default function App() {
   const [selectedStory, setSelectedStory] = useState<number | null>(null);
   const [currentStoryImage, setCurrentStoryImage] = useState(0);
   const [pauseStorySlide, setPauseStorySlide] = useState(false);
+  const touchStartX = useRef(0);
 
   const stories = {
   1: {
@@ -98,6 +98,54 @@ const closeStory = () => {
   setSelectedStory(null);
   setCurrentStoryImage(0);
 };
+
+const nextStoryImage = () => {
+  if (!selectedStory) return;
+
+  const story =
+    stories[selectedStory as keyof typeof stories];
+
+  setCurrentStoryImage((prev) =>
+    (prev + 1) % story.images.length
+  );
+};
+
+const prevStoryImage = () => {
+  if (!selectedStory) return;
+
+  const story =
+    stories[selectedStory as keyof typeof stories];
+
+  setCurrentStoryImage((prev) =>
+    prev === 0
+      ? story.images.length - 1
+      : prev - 1
+  );
+};
+
+const handleTouchStart = (
+  e: React.TouchEvent
+) => {
+  touchStartX.current = e.touches[0].clientX;
+};
+
+const handleTouchEnd = (
+  e: React.TouchEvent
+) => {
+  const distance =
+    touchStartX.current -
+    e.changedTouches[0].clientX;
+
+  if (Math.abs(distance) < 50) return;
+
+  if (distance > 0) {
+    nextStoryImage();
+  } else {
+    prevStoryImage();
+  }
+};
+
+  
 
 useEffect(() => {
   if (!selectedStory) return;
@@ -365,22 +413,25 @@ return (
           className="w-full max-w-xl overflow-hidden rounded-3xl bg-white shadow-2xl"
       >
       {stories[selectedStory as keyof typeof stories].images.length > 0 ? (
-        <>
-          <img
-            src={
-              stories[selectedStory as keyof typeof stories]
-                .images[currentStoryImage]
-            }
-            alt={stories[selectedStory as keyof typeof stories].title}
-            className="
-                h-64
-                w-full
-                rounded-b-2xl
-                object-cover
-                transition-all
-                duration-500
-            "
-          />
+       <>
+            <div
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
+              <img
+                src={
+                  stories[selectedStory as keyof typeof stories]
+                    .images[currentStoryImage]
+                }
+                alt={stories[selectedStory as keyof typeof stories].title}
+                className="
+                  h-64
+                  w-full
+                  rounded-b-2xl
+                  object-cover
+                "
+              />
+            </div>
       
           <div className="flex justify-center gap-2 py-4">
             {stories[selectedStory as keyof typeof stories].images.map(
