@@ -26,6 +26,7 @@ export default function App() {
   const [prefilledProduct, setPrefilledProduct] = useState("");
   const [selectedStory, setSelectedStory] = useState<number | null>(null);
   const [currentStoryImage, setCurrentStoryImage] = useState(0);
+  const [pauseStorySlide, setPauseStorySlide] = useState(false);
 
   const stories = {
   1: {
@@ -100,6 +101,7 @@ const closeStory = () => {
 
 useEffect(() => {
   if (!selectedStory) return;
+  if (pauseStorySlide) return;
 
   const story =
     stories[selectedStory as keyof typeof stories];
@@ -112,7 +114,11 @@ useEffect(() => {
 
   return () => clearInterval(timer);
 
-}, [selectedStory]);
+  }, [
+      selectedStory,
+      currentStoryImage,
+      pauseStorySlide,
+  ]);
 
 return (
   <div className="relative min-h-screen bg-cream-bg text-charcoal-text selection:bg-primary-brand selection:text-white">
@@ -352,10 +358,12 @@ return (
     className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 p-4"
     onClick={closeStory}
   >
-    <div
-      onClick={(e) => e.stopPropagation()}
-      className="w-full max-w-xl overflow-hidden rounded-3xl bg-white shadow-2xl"
-    >
+      <div
+          onClick={(e) => e.stopPropagation()}
+          onMouseEnter={() => setPauseStorySlide(true)}
+          onMouseLeave={() => setPauseStorySlide(false)}
+          className="w-full max-w-xl overflow-hidden rounded-3xl bg-white shadow-2xl"
+      >
       {stories[selectedStory as keyof typeof stories].images.length > 0 ? (
         <>
           <img
@@ -364,7 +372,14 @@ return (
                 .images[currentStoryImage]
             }
             alt={stories[selectedStory as keyof typeof stories].title}
-            className="h-64 w-full object-cover"
+            className="
+                h-64
+                w-full
+                rounded-b-2xl
+                object-cover
+                transition-all
+                duration-500
+            "
           />
       
           <div className="flex justify-center gap-2 py-4">
@@ -374,9 +389,9 @@ return (
                   key={index}
                   onClick={() => setCurrentStoryImage(index)}
                   className={`rounded-full transition-all duration-300 ${
-                    currentStoryImage === index
-                      ? "h-2 w-6 bg-[#7c142b]"
-                      : "h-2 w-2 bg-gray-300"
+                      currentStoryImage === index
+                      ? "h-2 w-8 bg-[#7c142b]"
+                      : "h-2 w-2 bg-gray-300 hover:bg-gray-400"
                   }`}
                 />
               )
