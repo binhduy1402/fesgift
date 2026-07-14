@@ -19,15 +19,15 @@ return (
 <div className="absolute left-0 top-0 h-64 w-64 rounded-full bg-[#7c142b]/5 blur-3xl" />
 <div className="absolute right-0 bottom-0 h-64 w-64 rounded-full bg-[#d4af37]/10 blur-3xl" />
 
-  <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+  <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 reveal">
 
-    <div className="max-w-4xl mx-auto text-center">
+    <div className="max-w-4xl mx-auto text-center reveal delay-150">
 
       <span className="mb-3 block text-[11px] font-bold tracking-[0.3em] uppercase text-[#7c142b]">
         CÂU CHUYỆN THƯƠNG HIỆU
       </span>
 
-      <h2 className="font-serif text-4xl md:text-5xl font-bold leading-[1.3] text-[#2c2c2c]">
+      <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.3] text-[#2c2c2c]">
         Mỗi Món Quà
 <span
   className="
@@ -50,7 +50,7 @@ return (
         chỉn chu và phù hợp với từng đối tượng nhận quà.
       </p>
 
-<div className="mt-16 grid gap-8 md:grid-cols-3">
+<div className="mt-12 grid gap-6 md:grid-cols-3 reveal delay-300">
 
   {/* STORY 1 */}
   <button

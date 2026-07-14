@@ -26,6 +26,7 @@ export default function App() {
   const [prefilledProduct, setPrefilledProduct] = useState("");
   const [selectedStory, setSelectedStory] = useState<number | null>(null);
   const [currentStoryImage, setCurrentStoryImage] = useState(0);
+  const [storyImageLoaded, setStoryImageLoaded] = useState(false);
   const touchStartX = useRef(0);
 
   const stories = {
@@ -136,18 +137,18 @@ const prevStoryImage = () => {
   );
 };
 
-const handleTouchStart = (
-  e: React.TouchEvent
-) => {
+const changeStoryImage = (index: number) => {
+  if (index === currentStoryImage) return;
+  setCurrentStoryImage(index);
+};
+
+const handleTouchStart = (e: React.TouchEvent) => {
   touchStartX.current = e.touches[0].clientX;
 };
 
-const handleTouchEnd = (
-  e: React.TouchEvent
-) => {
+const handleTouchEnd = (e: React.TouchEvent) => {
   const distance =
-    touchStartX.current -
-    e.changedTouches[0].clientX;
+    touchStartX.current - e.changedTouches[0].clientX;
 
   if (Math.abs(distance) < 50) return;
 
@@ -157,8 +158,6 @@ const handleTouchEnd = (
     prevStoryImage();
   }
 };
-
-  
 
 useEffect(() => {
   if (!selectedStory) return;
@@ -173,23 +172,24 @@ useEffect(() => {
   }, 4000);
 
   return () => clearInterval(timer);
+}, [selectedStory, currentStoryImage]);
 
-  }, [
-      selectedStory,
-      currentStoryImage,
-  ]);
+useEffect(() => {
+  setStoryImageLoaded(false);
+  const timer = window.setTimeout(() => {
+    setStoryImageLoaded(true);
+  }, 20);
 
-return (
-  <div className="relative min-h-screen bg-cream-bg text-charcoal-text selection:bg-primary-brand selection:text-white">
+  return () => window.clearTimeout(timer);
+}, [currentStoryImage]);
 
-    <LuxuryBackground />
-
-    <Navbar onInquireClick={scrollToContact} />
-
+  return (
+    <div className="relative min-h-screen bg-cream-bg text-charcoal-text selection:bg-primary-brand selection:text-white">
+      <LuxuryBackground />
+      <Navbar onInquireClick={scrollToContact} />
       <Hero
         onDiscoverClick={() => {
           const section = document.getElementById("collections");
-
           if (section) {
             section.scrollIntoView({
               behavior: "smooth",
@@ -199,7 +199,7 @@ return (
         onConsultClick={scrollToContact}
       />
 
-      <Collections />
+      <Collections onSelectCollection={setSelectedCollection} />
 
       <About />
 
@@ -388,11 +388,16 @@ return (
                   <ArrowRight className="h-4 w-4" />
                 </button>
 
-                <button
-                  onClick={() =>
-                    setSelectedCollection(null)
-                  }
+                <a
+                  href={selectedCollection.url}
+                  target="_blank"
+                  rel="noreferrer"
                   className="
+                    inline-flex
+                    flex-1
+                    items-center
+                    justify-center
+                    gap-2
                     rounded-xl
                     border
                     border-[#7c142b]/15
@@ -402,93 +407,95 @@ return (
                     font-bold
                     uppercase
                     tracking-widest
+                    text-[#7c142b]
+                    transition-all
+                    hover:bg-[#7c142b]/5
                   "
                 >
-                  Đóng
-                </button>
+                  Xem Trang Sản Phẩm
+                  <ArrowRight className="h-4 w-4" />
+                </a>
               </div>
             </div>
           </div>
         </div>
       )}
-{/* Story Modal */}
-{selectedStory && (
-  <div
-    className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 p-4"
-    onClick={closeStory}
-  >
-      <div
-          onClick={(e) => e.stopPropagation()}
-          className="w-full max-w-xl overflow-hidden rounded-3xl bg-white shadow-2xl"
-      >
-      {stories[selectedStory as keyof typeof stories].images.length > 0 ? (
-       <>
-            <div
-                style={{
-                  touchAction: "pan-y",
-                  overscrollBehavior: "contain",
-                }}
-                onTouchStart={handleTouchStart}
-                onTouchEnd={handleTouchEnd}
-            >
-              <img
-                src={
-                  stories[selectedStory as keyof typeof stories]
-                    .images[currentStoryImage]
-                }
-                alt={stories[selectedStory as keyof typeof stories].title}
-                className="
-                  h-64
-                  w-full
-                  rounded-b-2xl
-                  object-cover
-                "
-              />
-            </div>
-      
-          <div className="flex justify-center gap-2 py-4">
-            {stories[selectedStory as keyof typeof stories].images.map(
-              (_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentStoryImage(index)}
-                  className={`rounded-full transition-all duration-300 ${
-                      currentStoryImage === index
-                      ? "h-2 w-8 bg-[#7c142b]"
-                      : "h-2 w-2 bg-gray-300 hover:bg-gray-400"
-                  }`}
-                />
-              )
+      {/* Story Modal */}
+      {selectedStory && (
+        <div
+          className="fixed inset-0 z-[9999] overflow-y-auto bg-black/70 p-4"
+          onClick={closeStory}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="mx-auto w-full max-w-xl max-h-[calc(100vh-4rem)] overflow-hidden rounded-3xl bg-white shadow-2xl"
+          >
+            {stories[selectedStory as keyof typeof stories].images.length > 0 ? (
+              <>
+                <div
+                  style={{
+                    touchAction: "pan-y",
+                    overscrollBehavior: "contain",
+                  }}
+                  onTouchStart={handleTouchStart}
+                  onTouchEnd={handleTouchEnd}
+                  className="relative overflow-hidden"
+                >
+                  <img
+                    src={
+                      stories[selectedStory as keyof typeof stories]
+                        .images[currentStoryImage]
+                    }
+                    alt={stories[selectedStory as keyof typeof stories].title}
+                    className={`h-64 w-full object-cover transition-all duration-500 ease-out ${
+                      storyImageLoaded
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-3"
+                    }`}
+                  />
+                </div>
+
+                <div className="flex justify-center gap-2 py-4">
+                  {stories[selectedStory as keyof typeof stories].images.map(
+                    (_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => changeStoryImage(index)}
+                        className={`rounded-full transition-all duration-300 ${
+                          currentStoryImage === index
+                            ? "h-2 w-8 bg-[#7c142b] shadow-[0_0_0_4px_rgba(124,20,43,0.12)]"
+                            : "h-2 w-2 bg-gray-300 hover:bg-gray-400"
+                        }`}
+                      />
+                    )
+                  )}
+                </div>
+              </>
+            ) : (
+              <div className="flex h-64 items-center justify-center bg-[#f7f5f2]">
+                <span className="text-gray-400">Hình sẽ cập nhật</span>
+              </div>
             )}
+
+            <div className="p-6">
+              <h2 className="text-2xl font-bold text-[#7c142b]">
+                {stories[selectedStory as keyof typeof stories].title}
+              </h2>
+
+              <p className="mt-4 leading-7 text-gray-600">
+                {stories[selectedStory as keyof typeof stories].description}
+              </p>
+
+              <button
+                onClick={closeStory}
+                className="mt-8 w-full rounded-xl bg-[#7c142b] py-3 font-semibold text-white transition active:scale-95"
+              >
+                Đóng
+              </button>
+            </div>
           </div>
-        </>
-      ) : (
-        <div className="flex h-64 items-center justify-center bg-[#f7f5f2]">
-          <span className="text-gray-400">
-            Hình sẽ cập nhật
-          </span>
         </div>
       )}
-
-      <div className="p-6">
-        <h2 className="text-2xl font-bold text-[#7c142b]">
-          {stories[selectedStory as keyof typeof stories].title}
-        </h2>
-
-        <p className="mt-4 leading-7 text-gray-600">
-          {stories[selectedStory as keyof typeof stories].description}
-        </p>
-
-        <button
-          onClick={closeStory}
-          className="mt-8 w-full rounded-xl bg-[#7c142b] py-3 font-semibold text-white transition active:scale-95"
-        >
-          Đóng
-        </button>
-      </div>
-    </div>
-  </div>
-)}
     </div>
   );
 }

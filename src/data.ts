@@ -154,3 +154,36 @@ export const TESTIMONIALS: Testimonial[] = [
     company: "Vietnam Heritage Foundation",
   },
 ];
+
+export const FEATURED_PROJECTS = [
+  {
+    id: "p1",
+    title: "Quà Tặng Tết Doanh Nghiệp",
+    image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800&auto=format&fit=crop",
+    category: "Doanh Nghiệp",
+    longDescription: "Thiết kế và sản xuất bộ quà Tết cao cấp, đồng bộ theo nhận diện thương hiệu.",
+    client: "Tập đoàn ABC",
+    year: "2025",
+    components: ["Hộp quà", "Sổ da", "Bút ký", "Thiệp cảm ơn"],
+  },
+  {
+    id: "p2",
+    title: "Giftset Sự Kiện Cao Cấp",
+    image: "https://images.unsplash.com/photo-1523292567660-6ad889b7838a?q=80&w=800&auto=format&fit=crop",
+    category: "Sự Kiện",
+    longDescription: "Giftset đồng bộ cho sự kiện ra mắt sản phẩm, tối ưu trải nghiệm khách mời.",
+    client: "Generali",
+    year: "2024",
+    components: ["Hộp quà", "Bình giữ nhiệt", "Sổ tay", "Đèn LED"],
+  },
+  {
+    id: "p3",
+    title: "Quà VIP Cá Nhân Hóa",
+    image: "https://images.unsplash.com/photo-1515397133193-5a29f7f5fb2a?q=80&w=800&auto=format&fit=crop",
+    category: "Cá Nhân Hóa",
+    longDescription: "Quà VIP dành cho đối tác chiến lược, cá nhân hóa theo yêu cầu từng người nhận.",
+    client: "Mars Group",
+    year: "2025",
+    components: ["Ví da", "Bút ký", "Hộp quà độc quyền"],
+  },
+];

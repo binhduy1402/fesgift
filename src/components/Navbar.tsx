@@ -38,7 +38,7 @@ export default function Navbar({ onInquireClick }: NavbarProps) {
   <img
     src={logo}
     alt="Mars Group"
-    className="h-16 w-auto"
+    className="h-10 sm:h-12 md:h-16 w-auto"
   />
 </a>
           {/* Desktop Navigation Links */}
@@ -93,21 +93,15 @@ export default function Navbar({ onInquireClick }: NavbarProps) {
                 {link.label}
               </a>
             ))}
-            {/*
-            <div className="pt-4 px-3">
-              <button
-                onClick={() => {
-                  setIsOpen(false);
-                  onInquireClick();
-                }}
-                className="w-full inline-flex items-center justify-center px-5 py-3 bg-primary-brand text-white text-xs font-bold tracking-widest rounded-sm transition-all uppercase gap-2"
-                style={{ backgroundColor: "#7c142b" }}
-              >
-                Yêu Cầu Báo Giá
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-            */}
+            <button
+              onClick={() => {
+                onInquireClick();
+                setIsOpen(false);
+              }}
+              className="mt-2 w-full rounded-full bg-[#7c142b] px-4 py-3 text-sm font-semibold uppercase tracking-widest text-white transition hover:bg-[#701329]"
+            >
+              Yêu Cầu Báo Giá
+            </button>
           </div>
         </div>
       )}

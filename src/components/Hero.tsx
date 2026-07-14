@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { ArrowRight } from "lucide-react";
 
 import hero1 from "../assets/hero01.avif";
 import hero2 from "../assets/hero02.avif";
@@ -7,15 +8,21 @@ import hero4 from "../assets/hero04.avif";
 
 import zaloQR from "../assets/zalo-qr.png";
 
-  const heroImages = [
+const heroImages = [
           hero1,
           hero2,
           hero3,
           hero4,
         ];
 
-export default function Hero({
+interface HeroProps {
+  onDiscoverClick: () => void;
+  onConsultClick: () => void;
+}
 
+export default function Hero({
+  onDiscoverClick,
+  onConsultClick,
 }: HeroProps) {
   
   const [currentImage, setCurrentImage] = useState(0);
@@ -150,64 +157,19 @@ const handleAnimationIteration = () => {
             </div>
 
             {/* CTA */}
-            {/* <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:flex-wrap">
               <button
                 onClick={onConsultClick}
-                className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  gap-2
-                  rounded-md
-                  bg-[#7c142b]
-                  px-7
-                  py-3
-                  text-xs
-                  font-bold
-                  tracking-widest
-                  uppercase
-                  text-white
-                  shadow-lg
-                  transition-all
-                  duration-300
-                  hover:-translate-y-1
-                  hover:shadow-xl
-                "
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#7c142b] px-8 py-3.5 text-sm font-semibold tracking-[0.2em] uppercase text-white shadow-[0_18px_45px_rgba(124,20,43,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
               >
                 Nhận Báo Giá Ngay
                 <ArrowRight className="h-4 w-4" />
               </button>
-              */}
-
-              {/*<button
-                onClick={onDiscoverClick}
-                className="
-                  inline-flex
-                  items-center
-                  justify-center
-                  rounded-md
-                  border
-                  border-[#d4af37]
-                  px-7
-                  py-3
-                  text-xs
-                  font-bold
-                  tracking-widest
-                  uppercase
-                  text-[#7c142b]
-                  transition-all
-                  duration-300
-                  hover:bg-[#d4af37]
-                  hover:text-[#6b0d22]
-                "
-              >
-                Xem Bộ Sưu Tập
-              </button>
-            </div>*/}
+            </div>
           </div>
 
               {/* Right Image */}
-            <div className="lg:col-span-6">
+            <div className="lg:col-span-6 mt-10 lg:mt-0">
               <div
                   ref={heroRef}
                   className="relative hero-float"

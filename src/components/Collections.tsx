@@ -1,4 +1,5 @@
 import { COLLECTIONS } from "../data";
+import { Collection } from "../types";
 
 import {
   ArrowRight,
@@ -9,8 +10,11 @@ import {
   UsersRound,
 } from "lucide-react";
 
-export default function Collections()
- {
+interface CollectionsProps {
+  onSelectCollection: (collection: Collection) => void;
+}
+
+export default function Collections({ onSelectCollection }: CollectionsProps) {
     const getIcon = (icon?: string) => {
     switch (icon) {
       case "Users":
@@ -55,7 +59,7 @@ export default function Collections()
           {COLLECTIONS.map((col) => (
             <div
               key={col.id}
-              onClick={() => window.open(col.url, "_blank")}
+              onClick={() => onSelectCollection(col)}
               className="
                 reveal
                 group
@@ -64,11 +68,16 @@ export default function Collections()
                 flex-col
                 cursor-pointer
                 overflow-hidden
-                rounded-xl
+                rounded-[28px]
                 border
-                border-[#7c142b]/10
+                border-transparent
                 bg-white
-                shadow-sm
+                shadow-[0_15px_35px_rgba(15,15,15,0.06)]
+                transition-all
+                duration-500
+                hover:-translate-y-1
+                hover:border-[#d4af37]/30
+                hover:shadow-[0_30px_70px_rgba(124,20,43,0.12)]
               "
             >
               {/* Image */}
