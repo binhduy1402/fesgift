@@ -33,8 +33,8 @@ label: "Năm kinh nghiệm",
 ];
 
 export const NAVIGATION_LINKS = [
-{ label: "Năng Lực", href: "#our-story" },
 { label: "Sản Phẩm", href: "#collections" },
+{ label: "Năng Lực", href: "#our-story" },
 { label: "Câu Chuyện", href: "#philosophy" },
 { label: "Dự Án", href: "#capabilities" },
 { label: "Liên Hệ", href: "#contact" },
