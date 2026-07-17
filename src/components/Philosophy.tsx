@@ -1,6 +1,7 @@
 import story1 from "../assets/story1.jpg";
 import story2 from "../assets/story2.jpg";
 import story3 from "../assets/story3.jpg";
+import story4 from "../assets/story4.jpg";
 
 interface PhilosophyProps {
   onOpenStory: (storyId: number) => void;
@@ -50,7 +51,7 @@ return (
         chỉn chu và phù hợp với từng đối tượng nhận quà.
       </p>
 
-<div className="mt-12 grid gap-6 md:grid-cols-3 reveal delay-300">
+<div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4 reveal delay-300">
 
   {/* STORY 1 */}
   <button
@@ -135,15 +136,47 @@ return (
       <p className="mt-2 text-center text-sm text-gray-500">
         Chạm để xem câu chuyện
       </p>
-    </div>
-  </button>
+  </div>
+</button>    
+
+
+  {/* STORY 4 */}
+<button
+  onClick={() => onOpenStory(4)}
+  className="reveal group overflow-hidden rounded-3xl bg-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
+>
+  <div className="overflow-hidden">
+    <img
+      src={story4}
+      alt="Story 4"
+      className="
+        h-64
+        w-full
+        object-cover
+        transition
+        duration-500
+        group-hover:scale-105
+      "
+    />
+  </div>
+
+  <div className="p-5">
+    <h3 className="text-center text-xl font-bold text-[#7c142b]">
+      Câu Chuyện Manulife
+    </h3>
+
+    <p className="mt-2 text-center text-sm text-gray-500">
+      Chạm để xem câu chuyện
+    </p>
+  </div>
+</button>
 
 </div>
 
-    </div>
+</div>
 
-  </div>
-  
+</div>
+
 </section>
 );
 }

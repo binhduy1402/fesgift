@@ -18,6 +18,11 @@ import story1_2 from "./assets/story1-2.jpg";
 import story2 from "./assets/story2.jpg";
 import story3 from "./assets/story3.jpg";
 import story3_2 from "./assets/story3-2.jpg";
+import story4 from "./assets/story4.jpg";
+import story4_2 from "./assets/story4-2.jpg";
+import story4_3 from "./assets/story4-3.jpg";
+import story4_4 from "./assets/story4-4.jpg";
+import story4_5 from "./assets/story4-5.jpg";
 
 export default function App() {
   const [selectedCollection, setSelectedCollection] =
@@ -58,6 +63,19 @@ export default function App() {
     description:
       "Với Mars Group, đúng tiến độ luôn đi cùng chất lượng. Đội ngũ chúng tôi không ngừng phối hợp và hoàn thiện từng sản phẩm bằng sự chỉn chu, để mỗi món quà khi trao đi đều thể hiện trọn vẹn giá trị và hình ảnh thương hiệu của doanh nghiệp.",
   },
+  4: {
+  title: "Trải nghiệm cùng Manuli",
+  images: [
+    story4,
+    story4_2,
+    story4_3,
+    story4_4,
+    story4_5,
+  ],
+  description:
+    " Manulife mang đến các hoạt động trải nghiệm và cộng đồng nhằm khuyến khích lối sống khỏe mạnh và gắn kết mọi người. Mars Group góp phần hoàn thiện chương trình bằng những sản phẩm quà tặng chất lượng, được thiết kế đồng bộ với hình ảnh thương hiệu.",
+  },
+
 } as const;
   useEffect(() => {
 const observer = new IntersectionObserver(

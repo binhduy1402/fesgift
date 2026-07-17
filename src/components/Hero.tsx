@@ -24,31 +24,25 @@ export default function Hero({
   onDiscoverClick,
   onConsultClick,
 }: HeroProps) {
-  
   const [currentImage, setCurrentImage] = useState(0);
   const heroRef = useRef<HTMLDivElement>(null);
 
-useEffect(() => {
-  const element = heroRef.current;
+  useEffect(() => {
+    const element = heroRef.current;
 
-  if (!element) return;
+    if (!element) return;
 
-const handleAnimationIteration = () => {
-  setCurrentImage((prev) => (prev + 1) % heroImages.length);
-};
+    const handleAnimationIteration = () => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    };
 
-  element.addEventListener(
-    "animationiteration",
-    handleAnimationIteration
-  );
+    element.addEventListener("animationiteration", handleAnimationIteration);
 
-  return () => {
-    element.removeEventListener(
-      "animationiteration",
-      handleAnimationIteration
-    );
-  };
-}, []);
+    return () => {
+      element.removeEventListener("animationiteration", handleAnimationIteration);
+    };
+  }, []);
+
   return (
     <section className="gold-pattern relative overflow-hidden bg-gradient-to-b from-[#faf7f2] via-[#faf7f2] to-white pt-24 pb-20 md:pt-36 md:pb-28">
       
@@ -170,36 +164,21 @@ const handleAnimationIteration = () => {
 
               {/* Right Image */}
             <div className="lg:col-span-6 mt-10 lg:mt-0">
-              <div
-                  ref={heroRef}
-                  className="relative hero-float"
-                >
+              <div ref={heroRef} className="relative hero-float">
             
                 <div className="overflow-hidden rounded-2xl border border-[#7c142b]/10 bg-white p-2 shadow-2xl">
-                  <div className="relative aspect-[4/3] w-full">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl">
+                    <div className="pointer-events-none absolute inset-0 z-20 rounded-xl bg-gradient-to-t from-[#7c142b]/20 via-transparent to-white/20" />
                     {heroImages.map((image, index) => (
                       <img
                         key={index}
                         src={image}
                         alt={`Hero ${index + 1}`}
-                        className={`
-                          absolute
-                          inset-0
-                          h-full
-                          w-full
-                          rounded-xl
-                          object-cover
-                        
-                          transition-all
-                          duration-[900ms]
-                          ease-out
-                        
-                          ${
-                            currentImage === index
-                              ? "opacity-100 translate-y-0 scale-100 z-10"
-                              : "opacity-0 -translate-y-12 scale-[1.03] z-0"
-                          }
-                        `}
+                        className={`hero-image absolute inset-0 h-full w-full rounded-xl object-cover ${
+                          currentImage === index
+                            ? "hero-image--active z-10"
+                            : "hero-image--inactive z-0"
+                        }`}
                       />
                     ))}
                   </div>
