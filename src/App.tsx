@@ -381,70 +381,81 @@ useEffect(() => {
       {/* Story Modal */}
       {story && (
         <div
-          className="fixed inset-0 z-[9999] overflow-y-auto bg-black/70 p-4"
+          className="fixed inset-0 z-[9999] overflow-y-auto bg-black/70 p-4 sm:p-6"
           onClick={closeStory}
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="mx-auto w-full max-w-xl max-h-[calc(100vh-4rem)] overflow-hidden rounded-3xl bg-white shadow-2xl"
+            className="mx-auto flex min-h-[calc(100vh-2rem)] w-full max-w-2xl items-center justify-center"
           >
-            {story.images.length > 0 ? (
-              <>
-                <div
-                  style={{
-                    touchAction: "pan-y",
-                    overscrollBehavior: "contain",
-                  }}
-                  onTouchStart={handleTouchStart}
-                  onTouchEnd={handleTouchEnd}
-                  className="relative overflow-hidden"
-                >
-                  <img
-                    src={story.images[currentStoryImage]}
-                    alt={story.title}
-                    className={`h-64 w-full object-cover transition-all duration-500 ease-out ${
-                      storyImageLoaded
-                        ? "opacity-100 translate-y-0"
-                        : "opacity-0 translate-y-3"
-                    }`}
-                  />
+            <div className="w-full overflow-hidden rounded-[28px] bg-white shadow-[0_30px_90px_rgba(0,0,0,0.3)]">
+              <div className="px-5 pb-6 pt-7 sm:px-7 sm:pb-7 sm:pt-8">
+                <div className="mb-5 text-center">
+                  <h2 className="text-[2rem] font-bold leading-tight text-[#7c142b] sm:text-[2.15rem]">
+                    {story.title}
+                  </h2>
+                  <div className="mx-auto mt-4 h-px w-[70%] bg-[#7c142b]/10" />
                 </div>
 
-                <div className="flex justify-center gap-2 py-4">
-                  {story.images.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => changeStoryImage(index)}
-                      className={`rounded-full transition-all duration-300 ${
-                        currentStoryImage === index
-                          ? "h-2 w-8 bg-[#7c142b] shadow-[0_0_0_4px_rgba(124,20,43,0.12)]"
-                          : "h-2 w-2 bg-gray-300 hover:bg-gray-400"
-                      }`}
-                    />
-                  ))}
+                {story.images.length > 0 ? (
+                  <>
+                    <div
+                      style={{
+                        touchAction: "pan-y",
+                        overscrollBehavior: "contain",
+                      }}
+                      onTouchStart={handleTouchStart}
+                      onTouchEnd={handleTouchEnd}
+                      className="relative -mx-2 overflow-hidden rounded-xl bg-[#f7f5f2] sm:-mx-3"
+                    >
+                      <img
+                        src={story.images[currentStoryImage]}
+                        alt={story.title}
+                        className={`block h-[350px] w-full object-cover transition-all duration-500 ease-out sm:h-[430px] md:h-[460px] ${
+                          storyImageLoaded
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-3"
+                        }`}
+                      />
+                    </div>
+
+                    <div className="mt-3 flex justify-center gap-2 py-1">
+                      {story.images.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => changeStoryImage(index)}
+                          className={`rounded-full transition-all duration-300 ${
+                            currentStoryImage === index
+                              ? "h-2 w-8 bg-[#7c142b] shadow-[0_0_0_4px_rgba(124,20,43,0.12)]"
+                              : "h-2 w-2 bg-gray-300 hover:bg-gray-400"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <div className="flex h-[320px] items-center justify-center rounded-[22px] bg-[#f7f5f2] sm:h-[390px] md:h-[420px]">
+                    <span className="text-gray-400">Hình sẽ cập nhật</span>
+                  </div>
+                )}
+
+                <div className="mt-4 px-3 sm:px-5">
+                  <p className="text-[15px] leading-8 text-[#555] sm:text-[16px]">
+                    {story.description}
+                  </p>
                 </div>
-              </>
-            ) : (
-              <div className="flex h-64 items-center justify-center bg-[#f7f5f2]">
-                <span className="text-gray-400">Hình sẽ cập nhật</span>
+
+                <div className="mt-4 h-px w-full bg-[#7c142b]/10" />
+
+                <div className="mt-4 flex justify-center">
+                  <button
+                    onClick={closeStory}
+                    className="w-[50%] rounded-xl bg-[#7c142b] py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#661126] active:scale-[0.99]"
+                  >
+                    Đóng
+                  </button>
+                </div>
               </div>
-            )}
-
-            <div className="p-6">
-              <h2 className="text-2xl font-bold text-[#7c142b]">
-                {story.title}
-              </h2>
-
-              <p className="mt-4 leading-7 text-gray-600">
-                {story.description}
-              </p>
-
-              <button
-                onClick={closeStory}
-                className="mt-8 w-full rounded-xl bg-[#7c142b] py-3 font-semibold text-white transition active:scale-95"
-              >
-                Đóng
-              </button>
             </div>
           </div>
         </div>
