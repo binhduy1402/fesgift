@@ -13,16 +13,7 @@ import Footer from "./components/Footer";
 
 import { Collection } from "./types";
 import { X, Check, ArrowRight, ShieldCheck } from "lucide-react";
-import story1 from "./assets/story1.jpg";
-import story1_2 from "./assets/story1-2.jpg";
-import story2 from "./assets/story2.jpg";
-import story3 from "./assets/story3.jpg";
-import story3_2 from "./assets/story3-2.jpg";
-import story4 from "./assets/story4.jpg";
-import story4_2 from "./assets/story4-2.jpg";
-import story4_3 from "./assets/story4-3.jpg";
-import story4_4 from "./assets/story4-4.jpg";
-import story4_5 from "./assets/story4-5.jpg";
+import { stories } from "./data/stories";
 
 export default function App() {
   const [selectedCollection, setSelectedCollection] =
@@ -34,49 +25,7 @@ export default function App() {
   const [storyImageLoaded, setStoryImageLoaded] = useState(false);
   const touchStartX = useRef(0);
 
-  const stories = {
-  1: {
-    title: "Gắn kết cùng Sun Life",
-      images: [
-        story1,
-        story1_2,
-      ],
-    description:
-      "Sun Life mong muốn mang đến những món quà ý nghĩa dành cho khách hàng và đối tác. MARS đồng hành từ khâu tư vấn, thiết kế đến sản xuất để tạo nên bộ quà tặng mang dấu ấn thương hiệu.",
-  },
-
-  2: {
-    title: "Kết nối cùng Generali",
-    images: [
-        story2,
-    ],
-    description:
-      "Với Mars Group, quà tặng không chỉ là một món quà mà còn là cầu nối giữa thương hiệu và khách hàng. Trong dự án cùng Generali, chúng tôi mang đến giải pháp quà tặng và vật phẩm sự kiện được thiết kế đồng bộ, góp phần lan tỏa thông điệp thương hiệu và tạo nên những khoảnh khắc đáng nhớ cho người tham dự.",
-  },
-
-  3: {
-    title: "Sự chăm chút của Mars Group",
-    images: [
-        story3,
-        story3_2,
-    ],
-    description:
-      "Với Mars Group, đúng tiến độ luôn đi cùng chất lượng. Đội ngũ chúng tôi không ngừng phối hợp và hoàn thiện từng sản phẩm bằng sự chỉn chu, để mỗi món quà khi trao đi đều thể hiện trọn vẹn giá trị và hình ảnh thương hiệu của doanh nghiệp.",
-  },
-  4: {
-  title: "Trải nghiệm cùng Manuli",
-  images: [
-    story4,
-    story4_2,
-    story4_3,
-    story4_4,
-    story4_5,
-  ],
-  description:
-    " Manulife mang đến các hoạt động trải nghiệm và cộng đồng nhằm khuyến khích lối sống khỏe mạnh và gắn kết mọi người. Mars Group góp phần hoàn thiện chương trình bằng những sản phẩm quà tặng chất lượng, được thiết kế đồng bộ với hình ảnh thương hiệu.",
-  },
-
-} as const;
+  const story = stories.find((s) => s.id === selectedStory) ?? null;
   useEffect(() => {
 const observer = new IntersectionObserver(
   (entries) => {
@@ -132,10 +81,7 @@ const closeStory = () => {
 };
 
 const nextStoryImage = () => {
-  if (!selectedStory) return;
-
-  const story =
-    stories[selectedStory as keyof typeof stories];
+  if (!story) return;
 
   setCurrentStoryImage((prev) =>
     (prev + 1) % story.images.length
@@ -143,10 +89,7 @@ const nextStoryImage = () => {
 };
 
 const prevStoryImage = () => {
-  if (!selectedStory) return;
-
-  const story =
-    stories[selectedStory as keyof typeof stories];
+  if (!story) return;
 
   setCurrentStoryImage((prev) =>
     prev === 0
@@ -178,10 +121,7 @@ const handleTouchEnd = (e: React.TouchEvent) => {
 };
 
 useEffect(() => {
-  if (!selectedStory) return;
-
-  const story =
-    stories[selectedStory as keyof typeof stories];
+  if (!story) return;
 
   const timer = setInterval(() => {
     setCurrentStoryImage((prev) =>
@@ -190,7 +130,7 @@ useEffect(() => {
   }, 4000);
 
   return () => clearInterval(timer);
-}, [selectedStory, currentStoryImage]);
+}, [story, currentStoryImage]);
 
 useEffect(() => {
   setStoryImageLoaded(false);
@@ -439,7 +379,7 @@ useEffect(() => {
         </div>
       )}
       {/* Story Modal */}
-      {selectedStory && (
+      {story && (
         <div
           className="fixed inset-0 z-[9999] overflow-y-auto bg-black/70 p-4"
           onClick={closeStory}
@@ -448,7 +388,7 @@ useEffect(() => {
             onClick={(e) => e.stopPropagation()}
             className="mx-auto w-full max-w-xl max-h-[calc(100vh-4rem)] overflow-hidden rounded-3xl bg-white shadow-2xl"
           >
-            {stories[selectedStory as keyof typeof stories].images.length > 0 ? (
+            {story.images.length > 0 ? (
               <>
                 <div
                   style={{
@@ -460,11 +400,8 @@ useEffect(() => {
                   className="relative overflow-hidden"
                 >
                   <img
-                    src={
-                      stories[selectedStory as keyof typeof stories]
-                        .images[currentStoryImage]
-                    }
-                    alt={stories[selectedStory as keyof typeof stories].title}
+                    src={story.images[currentStoryImage]}
+                    alt={story.title}
                     className={`h-64 w-full object-cover transition-all duration-500 ease-out ${
                       storyImageLoaded
                         ? "opacity-100 translate-y-0"
@@ -474,19 +411,17 @@ useEffect(() => {
                 </div>
 
                 <div className="flex justify-center gap-2 py-4">
-                  {stories[selectedStory as keyof typeof stories].images.map(
-                    (_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => changeStoryImage(index)}
-                        className={`rounded-full transition-all duration-300 ${
-                          currentStoryImage === index
-                            ? "h-2 w-8 bg-[#7c142b] shadow-[0_0_0_4px_rgba(124,20,43,0.12)]"
-                            : "h-2 w-2 bg-gray-300 hover:bg-gray-400"
-                        }`}
-                      />
-                    )
-                  )}
+                  {story.images.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => changeStoryImage(index)}
+                      className={`rounded-full transition-all duration-300 ${
+                        currentStoryImage === index
+                          ? "h-2 w-8 bg-[#7c142b] shadow-[0_0_0_4px_rgba(124,20,43,0.12)]"
+                          : "h-2 w-2 bg-gray-300 hover:bg-gray-400"
+                      }`}
+                    />
+                  ))}
                 </div>
               </>
             ) : (
@@ -497,11 +432,11 @@ useEffect(() => {
 
             <div className="p-6">
               <h2 className="text-2xl font-bold text-[#7c142b]">
-                {stories[selectedStory as keyof typeof stories].title}
+                {story.title}
               </h2>
 
               <p className="mt-4 leading-7 text-gray-600">
-                {stories[selectedStory as keyof typeof stories].description}
+                {story.description}
               </p>
 
               <button
