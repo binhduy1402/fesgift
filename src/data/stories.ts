@@ -30,7 +30,7 @@ export const stories: Story[] = [
     cardImage: story1,
     images: [story1, story1_2],
     description:
-      "Sun Life mong muốn mang đến những món quà ý nghĩa dành cho khách hàng và đối tác. MARS đồng hành từ khâu tư vấn, thiết kế đến sản xuất để tạo nên bộ quà tặng mang dấu ấn thương hiệu.",
+      "Mỗi món quà là một lời cảm ơn. Đồng hành cùng Sun Life, Mars Group đã cùng xây dựng những bộ quà tặng dành cho khách hàng và đối tác với sự chỉn chu trong từng chi tiết. Từ ý tưởng đến thành phẩm, mỗi sản phẩm đều góp phần truyền tải sự trân trọng và giá trị mà Sun Life mong muốn gửi gắm.",
   },
   {
     id: 2,
@@ -48,7 +48,7 @@ export const stories: Story[] = [
     cardImage: story3,
     images: [story3, story3_2],
     description:
-      "Với Mars Group, đúng tiến độ luôn đi cùng chất lượng. Đội ngũ chúng tôi không ngừng phối hợp và hoàn thiện từng sản phẩm bằng sự chỉn chu, để mỗi món quà khi trao đi đều thể hiện trọn vẹn giá trị và hình ảnh thương hiệu của doanh nghiệp.",
+      "Phía sau mỗi sản phẩm là những ngày làm việc khẩn trương của đội ngũ Mars Group. Khi thời gian gấp rút, các bộ phận luôn sát cánh hỗ trợ nhau để hoàn thành từng công đoạn đúng kế hoạch, từ sản xuất, kiểm tra chất lượng đến đóng gói. Chính tinh thần đồng đội ấy giúp mỗi đơn hàng được bàn giao đúng tiến độ mà vẫn giữ trọn sự chỉn chu trong từng chi tiết.",
   },
   {
     id: 4,
