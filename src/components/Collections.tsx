@@ -107,22 +107,26 @@ export default function Collections({ onSelectCollection }: CollectionsProps) {
                     </span>
                   </div>
                 )}
-
-                {/* Title */}
-                <div className="absolute bottom-5 left-5 right-5">
-                  <h3 className="font-serif text-xl font-bold text-white">
-                    {col.title}
-                  </h3>
-                  <p className="mt-2 text-xs font-semibold tracking-[0.15em] uppercase text-[#d4af37]">{col.tagline}
-                  </p>
-                </div>
               </div>
 
               {/* Content */}
               <div className="flex flex-1 flex-col p-6">
-                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#7c142b]/10 text-[#7c142b]">{getIcon(col.icon)}
+                <div className="mb-4 flex items-start gap-3">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#7c142b]/10 text-[#7c142b]">
+                    {getIcon(col.icon)}
+                  </div>
+
+                  <div>
+                    <h3 className="font-serif text-xl font-bold text-[#2c2c2c]">
+                      {col.title}
+                    </h3>
+                    <p className="mt-1 text-[10px] font-semibold tracking-[0.18em] uppercase text-[#A8741A]">
+                      {col.tagline}
+                    </p>
+                  </div>
                 </div>
-               <p className="text-sm leading-relaxed text-gray-600">
+
+                <p className="text-sm leading-relaxed text-gray-600">
                   {col.description}
                 </p>
 
