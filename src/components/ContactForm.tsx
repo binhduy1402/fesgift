@@ -293,101 +293,120 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
             )}
           </div>
 
-          <div className="relative lg:col-span-5 overflow-hidden p-6 sm:p-8 lg:p-10 text-white bg-[#200b18] shadow-[0_40px_120px_rgba(0,0,0,0.25)]">
+          <div className="relative lg:col-span-5 overflow-hidden p-6 sm:p-8 lg:p-10 text-white bg-[#200b18] shadow-[0_40px_120px_rgba(0,0,0,0.25)] flex">
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-[#7c142b]/95 via-[#230b14]/95 to-[#0f050d]/100" />
             <div className="absolute left-[-20%] top-10 h-56 w-56 rounded-full bg-[#c9a227]/30 blur-3xl pointer-events-none" />
             <div className="absolute right-[-15%] bottom-0 h-72 w-72 rounded-full bg-[#7c142b]/30 blur-3xl pointer-events-none" />
 
-            <div className="relative z-10 mb-10">
-              <div className="inline-flex items-center justify-center rounded-full border border-[#c9a227]/35 bg-white/15 px-4 py-2 mb-8 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#ffebc9] shadow-sm">
-                ĐẶT NGAY – ƯU ĐÃI THƯƠNG HIỆU
+            <div className="relative z-10 flex flex-col h-full w-full">
+              {/* Header */}
+              <div>
+                <div className="inline-flex items-center justify-center rounded-full border border-[#c9a227]/35 bg-white/15 px-4 py-2 mb-8 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#ffebc9] shadow-sm">
+                  ĐẶT NGAY – ƯU ĐÃI THƯƠNG HIỆU
+                </div>
+
+                <h3 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
+                  Quà tặng doanh nghiệp
+                  <br />
+                  thiết kế chuẩn thương hiệu
+                </h3>
+
+                <p className="mt-4 max-w-md text-sm leading-relaxed text-white/70">
+                  Chúng tôi hỗ trợ lựa chọn quà tặng sáng tạo, đóng gói sang trọng và
+                  triển khai đúng tiến độ để thương hiệu của bạn được nâng tầm mỗi lần
+                  trao quà.
+                </p>
               </div>
 
-              <h3 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
-                Quà tặng doanh nghiệp
-                <br />
-                thiết kế chuẩn thương hiệu
-              </h3>
-              <p className="text-sm text-white/70 leading-relaxed mt-4 max-w-md">
-                Chúng tôi hỗ trợ lựa chọn quà tặng sáng tạo, đóng gói sang trọng và triển khai đúng tiến độ để thương hiệu của bạn được nâng tầm mỗi lần trao quà.
-              </p>
+              {/* Divider */}
+              <div className="my-10 h-px bg-gradient-to-r from-transparent via-[#c9a227]/20 to-transparent" />
 
-              <div className="mt-8 grid gap-3">
-                <div className="flex items-center gap-3 rounded-3xl border border-white/25 bg-white/15 px-4 py-3 shadow-lg shadow-black/20">
-                  <Phone className="w-4 h-4 text-[#c9a227]" />
+              {/* Contact */}
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#c9a227]/30 text-[#f7e2a8] shadow-lg shadow-black/20">
+                    <Phone className="w-4 h-4" />
+                  </div>
+
                   <div>
-                    <div className="text-[10px] uppercase tracking-widest text-white/85">Hotline</div>
-                    <div className="text-base font-semibold text-white">{BRAND_INFO.hotline}</div>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#ffe4b5]">
+                      HOTLINE
+                    </p>
+
+                    <a
+                      href={`tel:${BRAND_INFO.hotline}`}
+                      className="mt-1 block text-lg font-bold text-white hover:text-[#f8d48e] transition-colors"
+                    >
+                      {BRAND_INFO.hotline}
+                    </a>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 rounded-3xl border border-white/25 bg-white/15 px-4 py-3 shadow-lg shadow-black/20">
-                  <Mail className="w-4 h-4 text-[#c9a227]" />
+
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#c9a227]/20 shadow-lg shadow-black/15">
+                    <img
+                      src={zaloIcon}
+                      alt="Zalo"
+                      className="h-[24px] w-[24px] object-contain"
+                    />
+                  </div>
+
                   <div>
-                    <div className="text-[10px] uppercase tracking-widest text-white/85">Email</div>
-                    <div className="text-base font-semibold text-white">{BRAND_INFO.email}</div>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#ffe4b5]">
+                      ZALO
+                    </p>
+
+                    <a
+                      href="https://zalo.me/0931133790"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-1 block text-lg font-bold text-white hover:text-[#f8d48e] transition-colors"
+                    >
+                      0931 133 790
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#c9a227]/30 text-[#f7e2a8] shadow-lg shadow-black/20">
+                    <Mail className="w-4 h-4" />
+                  </div>
+
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#ffe4b5]">
+                      EMAIL
+                    </p>
+
+                    <a
+                      href={`mailto:${BRAND_INFO.email}`}
+                      className="mt-1 block text-sm text-white/90 hover:text-[#f8d48e] transition-colors"
+                    >
+                      {BRAND_INFO.email}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#c9a227]/30 text-[#f7e2a8] shadow-lg shadow-black/20">
+                    <HelpCircle className="w-4 h-4" />
+                  </div>
+
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#ffe4b5]">
+                      VĂN PHÒNG
+                    </p>
+
+                    <p className="mt-1 text-sm text-white/90">
+                      {BRAND_INFO.address}
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div className="relative z-10 space-y-4">
-              <div className="flex gap-3 justify-start items-center">
-                <div className="w-10 h-10 rounded-full bg-[#c9a227]/35 flex items-center justify-center text-[#f7e2a8] shadow-lg shadow-black/20">
-                  <Phone className="w-4.5 h-4.5" />
-                </div>
-                <div className="text-left">
-                  <p className="text-[9px] font-bold tracking-widest text-[#ffe4b5] uppercase leading-none">Hỗ trợ 24/7 Hotline</p>
-                  <a
-                    href={`tel:${BRAND_INFO.hotline}`}
-                    className="text-lg font-extrabold tracking-wide text-white hover:text-[#f8d48e] transition-colors block mt-1"
-                  >
-                    {BRAND_INFO.hotline}
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex gap-3 justify-start items-center">
-                <div className="w-10 h-10 rounded-full bg-[#c9a227]/20 flex items-center justify-center shadow-lg shadow-black/15">
-                  <img src={zaloIcon} alt="Zalo" className="w-[26px] h-[26px] object-contain" />
-                </div>
-                <div className="text-left">
-                  <p className="text-[9px] font-bold tracking-widest text-[#ffe4b5] uppercase leading-none">Zalo Tư Vấn</p>
-                  <a
-                    href="https://zalo.me/0931133790"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-lg font-extrabold tracking-wider text-white hover:text-[#f8d48e] transition-colors block mt-1"
-                  >
-                    0931 133 790
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex gap-3 justify-start items-center">
-                <div className="w-10 h-10 rounded-full bg-[#c9a227]/35 flex items-center justify-center text-[#f7e2a8] shadow-lg shadow-black/20">
-                  <Mail className="w-4.5 h-4.5" />
-                </div>
-                <div className="text-left">
-                  <p className="text-[9px] font-bold tracking-widest text-[#ffe4b5] uppercase leading-none">Email Phòng Giao dịch</p>
-                  <a href={`mailto:${BRAND_INFO.email}`} className="text-xs text-white/90 hover:text-[#f8d48e] transition-colors block mt-1 font-sans">
-                    {BRAND_INFO.email}
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex gap-3 justify-start items-center">
-                <div className="w-10 h-10 rounded-full bg-[#c9a227]/35 flex items-center justify-center text-[#f7e2a8] shadow-lg shadow-black/20">
-                  <HelpCircle className="w-4.5 h-4.5" />
-                </div>
-                <div className="text-left">
-                  <p className="text-[9px] font-bold tracking-widest text-[#ffe4b5] uppercase leading-none">Địa chỉ làm việc</p>
-                  <p className="text-xs font-medium text-white/95 mt-1">{BRAND_INFO.address}</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
+    </div>
     </section>
   );
+
 }
