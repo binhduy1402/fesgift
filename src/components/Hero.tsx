@@ -44,7 +44,7 @@ export default function Hero({
   }, []);
 
   return (
-    <section className="gold-pattern relative overflow-hidden bg-gradient-to-b from-[#faf7f2] via-[#faf7f2] to-white pt-24 pb-20 md:pt-36 md:pb-28">
+    <section className="gold-pattern relative overflow-hidden bg-gradient-to-b from-[#faf7f2] via-[#faf7f2] to-white pt-24 pb-16 md:pt-28 md:pb-24">
       
       {/* Background Effects */}
       <div className="absolute left-[-10%] top-1/2 h-[35rem] w-[35rem] -translate-y-1/2 rounded-full bg-[#7c142b]/5 blur-3xl pointer-events-none" />
@@ -127,12 +127,8 @@ export default function Hero({
                 </span>
               </h1>
 
-            <p className="mt-8 max-w-xl text-base leading-relaxed text-[#555]">
-            Mars Group đồng hành cùng doanh nghiệp kiến tạo những giải pháp quà tặng được thiết kế theo nhận diện thương hiệu, từ ý tưởng, sản xuất đến giao hàng trên toàn quốc.
-            </p>
-
             {/* USP */}
-            <div className="mt-6 grid grid-cols-2 gap-3">
+            <div className="mt-8 grid grid-cols-2 gap-3">
               <span className="flex items-center justify-center rounded-full border border-[#7c142b]/10 bg-white px-2 py-2 text-center text-[11px] font-semibold text-[#7c142b] shadow-sm">
                 ✓ Tư vấn miễn phí
               </span>
@@ -151,7 +147,7 @@ export default function Hero({
             </div>
 
             {/* CTA */}
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:flex-wrap">
+            <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:flex-wrap">
               <button
                 onClick={onConsultClick}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#7c142b] px-8 py-3.5 text-sm font-semibold tracking-[0.2em] uppercase text-white shadow-[0_18px_45px_rgba(124,20,43,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
@@ -182,21 +178,7 @@ export default function Hero({
                       />
                     ))}
                   </div>
-                </div>
-            
-                {/* Floating Card */}
-                {/*
-                <div className="absolute -bottom-6 left-6 hero-card-float rounded-xl border border-[#d4af37]/20 bg-white/95 px-6 py-5 shadow-xl backdrop-blur-md">
-                  <div className="text-2xl font-serif font-bold text-[#7c142b]">
-                    TƯ VẤN MIỄN PHÍ
-                  </div>
-            
-                  <div className="mt-1 text-xs font-semibold uppercase tracking-wider text-gray-500">
-                    THEO NHẬN DIỆN THƯƠNG HIỆU
-                  </div>
-                </div>
-                */}
-            
+                </div>         
               </div>
             </div>
         </div>

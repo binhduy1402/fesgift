@@ -46,10 +46,6 @@ export default function Collections({ onSelectCollection }: CollectionsProps) {
             <h2 className="font-serif text-3xl font-bold tracking-tight text-[#2c2c2c] sm:text-4xl">
               Giải Pháp Quà Tặng Theo Từng Mục Tiêu
             </h2>
-
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-gray-600">
-            4 nhóm sản phẩm chủ lực giúp Mars Group xây dựng hình ảnh thương hiệu, tri ân và nâng cao trải nghiệm với khách hàng.
-            </p>
           </div>
 
         </div>
