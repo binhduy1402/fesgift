@@ -1,7 +1,7 @@
 ﻿import { useState, useEffect, FormEvent } from "react";
 import { Phone, Mail, HelpCircle, CheckCircle2 } from "lucide-react";
 import { BRAND_INFO } from "../data";
-import zaloIcon from "../assets/zalo.svg";
+import zaloQr from "../assets/zalo-qr.png";
 
 interface ContactFormProps {
   prefilledProduct?: string;
@@ -298,7 +298,7 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
             <div className="absolute left-[-20%] top-10 h-56 w-56 rounded-full bg-[#c9a227]/30 blur-3xl pointer-events-none" />
             <div className="absolute right-[-15%] bottom-0 h-72 w-72 rounded-full bg-[#7c142b]/30 blur-3xl pointer-events-none" />
 
-            <div className="relative z-10 flex flex-col h-full w-full">
+            <div className="relative z-10 flex h-full w-full flex-col">
               {/* Header */}
               <div>
                 <div className="inline-flex items-center justify-center rounded-full border border-[#c9a227]/35 bg-white/15 px-4 py-2 mb-8 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#ffebc9] shadow-sm">
@@ -310,16 +310,10 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
                   <br />
                   thiết kế chuẩn thương hiệu
                 </h3>
-
-                <p className="mt-4 max-w-md text-sm leading-relaxed text-white/70">
-                  Chúng tôi hỗ trợ lựa chọn quà tặng sáng tạo, đóng gói sang trọng và
-                  triển khai đúng tiến độ để thương hiệu của bạn được nâng tầm mỗi lần
-                  trao quà.
-                </p>
               </div>
 
               {/* Divider */}
-              <div className="my-10 h-px bg-gradient-to-r from-transparent via-[#c9a227]/20 to-transparent" />
+              <div className="my-7 h-px bg-gradient-to-r from-transparent via-[#c9a227]/20 to-transparent" />
 
               {/* Contact */}
               <div className="space-y-6">
@@ -338,31 +332,6 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
                       className="mt-1 block text-lg font-bold text-white hover:text-[#f8d48e] transition-colors"
                     >
                       {BRAND_INFO.hotline}
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#c9a227]/20 shadow-lg shadow-black/15">
-                    <img
-                      src={zaloIcon}
-                      alt="Zalo"
-                      className="h-[24px] w-[24px] object-contain"
-                    />
-                  </div>
-
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#ffe4b5]">
-                      ZALO
-                    </p>
-
-                    <a
-                      href="https://zalo.me/0931133790"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-1 block text-lg font-bold text-white hover:text-[#f8d48e] transition-colors"
-                    >
-                      0931 133 790
                     </a>
                   </div>
                 </div>
@@ -402,10 +371,49 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
                   </div>
                 </div>
               </div>
+
+              <div className="mt-8 border-t border-[#c9a227]/15 pt-6">
+                <div className="mx-auto w-fit rounded-2xl bg-white p-4 shadow-[0_20px_60px_rgba(0,0,0,.35)]">
+                  <img
+                    src={zaloQr}
+                    alt="Mars Group Zalo"
+                    className="w-72 h-72 object-contain"
+                  />
+                </div>
+
+                <div className="mt-6 flex justify-center">
+                  <a
+                    href="https://zalo.me/0931133790"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="
+                      inline-flex
+                      items-center
+                      justify-center
+                      rounded-xl
+                      bg-[#c49b47]
+                      min-w-[260px]
+                      py-4
+                      text-sm
+                      font-bold
+                      uppercase
+                      tracking-[0.18em]
+                      text-[#231116]
+                      shadow-lg
+                      transition-all
+                      duration-300
+                      hover:-translate-y-0.5
+                      hover:brightness-110
+                    "
+                  >
+                    TRUY CẬP ZALO →
+                  </a>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
       </div>
-    </div>
     </section>
   );
 
