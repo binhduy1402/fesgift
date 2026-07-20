@@ -31,7 +31,7 @@ return (
 <section
   ref={sectionRef}
   id="our-story"
-  className="bg-[#f8f5f0] py-20"
+  className="reveal bg-[#f8f5f0] py-20"
 >
 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
