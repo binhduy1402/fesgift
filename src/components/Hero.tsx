@@ -3,8 +3,8 @@ import { ArrowRight } from "lucide-react";
 
 import hero1 from "../assets/hero01.avif";
 import hero2 from "../assets/hero02.avif";
-import hero3 from "../assets/hero03.avif";
-import hero4 from "../assets/hero04.avif";
+import hero3 from "../assets/hero03.jpg";
+import hero4 from "../assets/hero04.jpg";
 
 import zaloQR from "../assets/zalo-qr.png";
 
@@ -67,12 +67,12 @@ export default function Hero({
                     href="tel:0931133790"
                     className="mt-1 text-[1.3rem] font-bold leading-none text-[#7c142b]"
                   >
-                    0931 133 790
+                    0903 731 769
                   </a>
                 </div>
               
                 <a
-                  href="https://zalo.me/0931133790"
+                  href="https://zalo.me/2446504417439174890"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="ml-8 shrink-0"

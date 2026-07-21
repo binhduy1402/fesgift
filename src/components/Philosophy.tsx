@@ -48,18 +48,18 @@ export default function Philosophy({
                 onClick={() => onOpenStory(story.id)}
                 className="reveal group overflow-hidden rounded-3xl bg-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
               >
-                <div className="overflow-hidden">
-                  <img
-                    src={story.cardImage}
-                    alt={story.cardTitle}
-                    className="h-64 w-full object-cover transition duration-500 group-hover:scale-105"
-                  />
-                </div>
+              <div className="h-64 overflow-hidden rounded-t-3xl">
+                <img
+                  src={story.cardImage}
+                  alt={story.cardTitle}
+                  className="block h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
 
                 <div className="p-5">
-                  <h3 className="text-center text-xl font-bold text-[#7c142b]">
-                    {story.cardTitle}
-                  </h3>
+                <h3 className="h-[90px] flex items-center justify-center text-center text-xl font-bold leading-tight text-[#7c142b]">
+                  {story.cardTitle}
+                </h3>
 
                   <p className="mt-2 text-center text-sm text-gray-500">
                     Chạm để xem câu chuyện

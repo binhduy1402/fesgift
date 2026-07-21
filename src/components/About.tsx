@@ -51,21 +51,28 @@ return (
       </p>
     </div>
 
-    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-8">
       {COMPANY_STATS.map((item, index) => (
         <div
           key={item.label}
           style={{
             transitionDelay: `${index * 120}ms`,
           }}
-            className="
-              reveal
-              premium-card
-              p-8
-              text-center
-            "
+          className="
+            reveal
+            premium-card
+            px-6
+            py-8
+            text-center
+          "
         >
-        <div className="text-5xl font-bold text-[#7c142b]">
+        <div
+          className={`font-bold text-[#7c142b] leading-none tracking-tight ${
+            item.value.length >= 9
+              ? "text-4xl xl:text-[3rem]"
+              : "text-5xl"
+          }`}
+        >
           <CountUp
             value={item.value}
             start={startCount}

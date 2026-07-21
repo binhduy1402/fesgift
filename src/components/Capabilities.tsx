@@ -71,13 +71,13 @@ return (
           </h3>
 
           <p className="mt-4 text-gray-600 leading-relaxed">
-            Triển khai hơn 20.000 bộ quà tặng được thiết kế riêng theo
+            Triển khai hơn 10.000 bộ quà tặng được thiết kế riêng theo
             nhận diện thương hiệu cho chương trình tri ân khách hàng cuối năm.
           </p>
 
           <div className="mt-6 grid grid-cols-3 gap-4">
             <div className="text-center">
-              <div className="text-2xl font-bold text-[#7c142b]">20K+</div>
+              <div className="text-2xl font-bold text-[#7c142b]">10K+</div>
               <div className="text-xs leading-tight text-gray-500">
                 Bộ quà tặng
               </div>

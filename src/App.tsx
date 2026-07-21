@@ -26,6 +26,9 @@ export default function App() {
   const touchStartX = useRef(0);
 
   const story = stories.find((s) => s.id === selectedStory) ?? null;
+  const totalSlides =
+    (story?.images.length ?? 0) +
+    (story?.videos?.length ?? 0);
   useEffect(() => {
 const observer = new IntersectionObserver(
   (entries) => {
@@ -85,7 +88,7 @@ const nextStoryImage = () => {
   if (!story) return;
 
   setCurrentStoryImage((prev) =>
-    (prev + 1) % story.images.length
+    (prev + 1) % totalSlides
   );
 };
 
@@ -94,7 +97,7 @@ const prevStoryImage = () => {
 
   setCurrentStoryImage((prev) =>
     prev === 0
-      ? story.images.length - 1
+      ? totalSlides - 1
       : prev - 1
   );
 };
@@ -122,16 +125,21 @@ const handleTouchEnd = (e: React.TouchEvent) => {
 };
 
 useEffect(() => {
-  if (!story) return;
+  if (!story || totalSlides <= 1) return;
 
-  const timer = setInterval(() => {
-    setCurrentStoryImage((prev) =>
-      (prev + 1) % story.images.length
-    );
-  }, 4000);
+  const isVideo =
+    story.videos &&
+    currentStoryImage >= story.images.length;
 
-  return () => clearInterval(timer);
-}, [story, currentStoryImage]);
+  // Nếu đang là video thì không dùng timer
+  if (isVideo) return;
+
+  const timer = setTimeout(() => {
+    nextStoryImage();
+  }, 1500);
+
+  return () => clearTimeout(timer);
+}, [story, currentStoryImage, totalSlides]);
 
 useEffect(() => {
   setStoryImageLoaded(false);
@@ -398,7 +406,7 @@ useEffect(() => {
                   <div className="mx-auto mt-4 h-px w-[70%] bg-[#7c142b]/10" />
                 </div>
 
-                {story.images.length > 0 ? (
+                {totalSlides > 0 ? (
                   <>
                     <div
                       style={{
@@ -407,21 +415,42 @@ useEffect(() => {
                       }}
                       onTouchStart={handleTouchStart}
                       onTouchEnd={handleTouchEnd}
-                      className="relative -mx-2 overflow-hidden rounded-xl bg-[#f7f5f2] sm:-mx-3"
+                      className="relative -mx-2 aspect-[4/3] overflow-hidden rounded-xl bg-[#f7f5f2] sm:-mx-3"
                     >
+                    {story.videos && story.videos.length > 0 ? (
+                      currentStoryImage === 0 ? (
+                        <img
+                          src={story.images[0]}
+                          alt={story.title}
+                          className="absolute inset-0 h-full w-full object-cover"
+                        />
+                      ) : (
+                      <video
+                        key={currentStoryImage}
+                        src={story.videos[currentStoryImage - 1]}
+                        className="absolute inset-0 h-full w-full object-cover"
+                        controls
+                        autoPlay
+                        muted
+                        playsInline
+                        onEnded={nextStoryImage}
+                      />
+                      )
+                    ) : (
                       <img
                         src={story.images[currentStoryImage]}
                         alt={story.title}
-                        className={`block h-[350px] w-full object-cover transition-all duration-500 ease-out sm:h-[430px] md:h-[460px] ${
-                          storyImageLoaded
-                            ? "opacity-100 translate-y-0"
-                            : "opacity-0 translate-y-3"
+                        className={`absolute inset-0 h-full w-full ${
+                          story.imageFit === "contain"
+                            ? "object-contain bg-[#f7f5f2]"
+                            : "object-cover"
                         }`}
                       />
+                    )}
                     </div>
 
                     <div className="mt-3 flex justify-center gap-2 py-1">
-                      {story.images.map((_, index) => (
+                      {Array.from({ length: totalSlides }).map((_, index) => (
                         <button
                           key={index}
                           onClick={() => changeStoryImage(index)}

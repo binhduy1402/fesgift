@@ -8,8 +8,8 @@ import collection4 from "./assets/collection/collection4.jpg";
 export const BRAND_INFO = {
   name: "Mars Group",
   tagline: "Heritage & Grace",
-  hotline: "0931 133 790",
-  email: "fesgift@mars-vn.com",
+  hotline: "0903 731 769",
+  email: "tina@mars-vn.com",
   address: "District 2, Ho Chi Minh City, VietNam",
 };
 
@@ -19,15 +19,15 @@ value: "34",
 label: "Tỉnh thành phục vụ",
 },
 {
-value: "200+",
-label: "Khách hàng doanh nghiệp",
+value: "298+",
+label: "Doanh nghiệp",
 },
 {
-value: "50.000+",
+value: "1.000.000+",
 label: "Quà tặng mỗi năm",
 },
 {
-value: "8+",
+value: "18+",
 label: "Năm kinh nghiệm",
 },
 ];
@@ -110,80 +110,3 @@ highlights: [
 },
 ];
 
-export const WORKFLOW_STEPS: WorkflowStep[] = [
-{
-id: "step1",
-num: "01",
-title: "TRAO ĐỔI NHU CẦU",
-desc: "Chia sẻ ngân sách, số lượng, đối tượng nhận quà và mục tiêu chương trình.",
-},
-{
-id: "step2",
-num: "02",
-title: "THIẾT KẾ & BÁO GIÁ",
-desc: "FESGift đề xuất giải pháp, thiết kế và gửi báo giá phù hợp với yêu cầu.",
-},
-{
-id: "step3",
-num: "03",
-title: "SẢN XUẤT & GIAO HÀNG",
-desc: "Triển khai sản xuất, kiểm soát chất lượng và giao hàng đúng tiến độ.",
-},
-];
-
-export const TESTIMONIALS: Testimonial[] = [
-  {
-    id: "t1",
-    content: "FESGift đã thực sự thay đổi cách chúng tôi nhìn nhận về quà tặng doanh nghiệp. Từ khâu tư vấn đến sản phẩm cuối cùng đều mang lại sự tử tế và chuyên nghiệp. Đối tác của chúng tôi cực kỳ ấn tượng với bộ quà Tết năm nay.",
-    author: "Ms. Phương Thảo",
-    role: "Giám đốc Marketing",
-    company: "Tech Global Corp",
-  },
-  {
-    id: "t2",
-    content: "Dịch vụ của FESGift vô cùng hoàn hảo nhờ vào khả năng lắng nghe và hiện thực hóa cực tốt ý tưởng của thương hiệu. Khách hàng thân thiết của chúng tôi khen ngợi bao da laptop khắc tên thật sự đẳng cấp và hữu dụng.",
-    author: "Mr. Minh Khang",
-    role: "Giám đốc Nhân sự",
-    company: "Vilas International",
-  },
-  {
-    id: "t3",
-    content: "Rất hiếm đơn vị quà tặng nào tại Việt Nam có gu thẩm mỹ thanh lịch đậm chất di sản mà vẫn trẻ trung như FESGift. Việc sản xuất 1000 bộ quà tặng đạt tỷ lệ hoàn mỹ 100% là một nỗ lực tuyệt vời từ phòng QC.",
-    author: "Ms. Hồng Vân",
-    role: "Quản lý Thương hiệu",
-    company: "Vietnam Heritage Foundation",
-  },
-];
-
-export const FEATURED_PROJECTS = [
-  {
-    id: "p1",
-    title: "Quà Tặng Tết Doanh Nghiệp",
-    image: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800&auto=format&fit=crop",
-    category: "Doanh Nghiệp",
-    longDescription: "Thiết kế và sản xuất bộ quà Tết cao cấp, đồng bộ theo nhận diện thương hiệu.",
-    client: "Tập đoàn ABC",
-    year: "2025",
-    components: ["Hộp quà", "Sổ da", "Bút ký", "Thiệp cảm ơn"],
-  },
-  {
-    id: "p2",
-    title: "Giftset Sự Kiện Cao Cấp",
-    image: "https://images.unsplash.com/photo-1523292567660-6ad889b7838a?q=80&w=800&auto=format&fit=crop",
-    category: "Sự Kiện",
-    longDescription: "Giftset đồng bộ cho sự kiện ra mắt sản phẩm, tối ưu trải nghiệm khách mời.",
-    client: "Generali",
-    year: "2024",
-    components: ["Hộp quà", "Bình giữ nhiệt", "Sổ tay", "Đèn LED"],
-  },
-  {
-    id: "p3",
-    title: "Quà VIP Cá Nhân Hóa",
-    image: "https://images.unsplash.com/photo-1515397133193-5a29f7f5fb2a?q=80&w=800&auto=format&fit=crop",
-    category: "Cá Nhân Hóa",
-    longDescription: "Quà VIP dành cho đối tác chiến lược, cá nhân hóa theo yêu cầu từng người nhận.",
-    client: "Mars Group",
-    year: "2025",
-    components: ["Ví da", "Bút ký", "Hộp quà độc quyền"],
-  },
-];
