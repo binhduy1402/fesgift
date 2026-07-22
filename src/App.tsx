@@ -127,12 +127,15 @@ const handleTouchEnd = (e: React.TouchEvent) => {
 useEffect(() => {
   if (!story || totalSlides <= 1) return;
 
-  const timer = setInterval(() => {
-    setCurrentStoryImage((prev) => (prev + 1) % totalSlides);
-  }, 4000);
+  // Nếu đang phát video thì không dùng timer
+  if (story.videos && currentStoryImage > 0) return;
 
-  return () => clearInterval(timer);
-}, [story, totalSlides]);
+  const timer = setTimeout(() => {
+    nextStoryImage();
+  }, 2000);
+
+  return () => clearTimeout(timer);
+}, [story, totalSlides, currentStoryImage]);
 
 useEffect(() => {
   setStoryImageLoaded(false);
@@ -417,16 +420,18 @@ useEffect(() => {
                           alt={story.title}
                           className="absolute inset-0 h-full w-full object-cover"
                         />
-                      ) : (
-                  <video
-                    key={currentStoryImage}
-                    src={story.videos[currentStoryImage - 1]}
-                    className="absolute inset-0 h-full w-full object-cover"
-                    controls
-                    autoPlay
-                    muted
-                    playsInline
-                  />
+                        ) : (
+                      <video
+                        key={currentStoryImage}
+                        src={story.videos[currentStoryImage - 1]}
+                        className="absolute inset-0 h-full w-full object-cover"
+                        controls
+                        autoPlay
+                        muted
+                        playsInline
+                        preload="metadata"
+                        onEnded={nextStoryImage}
+                      />
                       )
                     ) : (
                       <img
