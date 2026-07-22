@@ -421,17 +421,19 @@ useEffect(() => {
                           className="absolute inset-0 h-full w-full object-cover"
                         />
                         ) : (
-                      <video
-                        key={currentStoryImage}
-                        src={story.videos[currentStoryImage - 1]}
-                        className="absolute inset-0 h-full w-full object-cover"
-                        controls
-                        autoPlay
-                        muted
-                        playsInline
-                        preload="metadata"
-                        onEnded={nextStoryImage}
-                      />
+                        <video
+                          key={currentStoryImage}
+                          src={story.videos[currentStoryImage - 1]}
+                          className="absolute inset-0 h-full w-full object-cover"
+                          autoPlay
+                          muted
+                          playsInline
+                          preload="auto"
+                          disablePictureInPicture
+                          controlsList="nodownload nofullscreen noremoteplayback"
+                          style={{ pointerEvents: "none" }}
+                          onEnded={nextStoryImage}
+                        />
                       )
                     ) : (
                       <img
