@@ -127,19 +127,12 @@ const handleTouchEnd = (e: React.TouchEvent) => {
 useEffect(() => {
   if (!story || totalSlides <= 1) return;
 
-  const isVideo =
-    story.videos &&
-    currentStoryImage >= story.images.length;
+  const timer = setInterval(() => {
+    setCurrentStoryImage((prev) => (prev + 1) % totalSlides);
+  }, 4000);
 
-  // Nếu đang là video thì không dùng timer
-  if (isVideo) return;
-
-  const timer = setTimeout(() => {
-    nextStoryImage();
-  }, 1500);
-
-  return () => clearTimeout(timer);
-}, [story, currentStoryImage, totalSlides]);
+  return () => clearInterval(timer);
+}, [story, totalSlides]);
 
 useEffect(() => {
   setStoryImageLoaded(false);
@@ -417,24 +410,23 @@ useEffect(() => {
                       onTouchEnd={handleTouchEnd}
                       className="relative -mx-2 aspect-[4/3] overflow-hidden rounded-xl bg-[#f7f5f2] sm:-mx-3"
                     >
-                    {story.videos && story.videos.length > 0 ? (
-                      currentStoryImage === 0 ? (
-                        <img
-                          src={story.images[0]}
+                      {story.videos && story.videos.length > 0 ? (
+                        currentStoryImage === 0 ? (
+                          <img
+                            src={story.images[0]}
                           alt={story.title}
                           className="absolute inset-0 h-full w-full object-cover"
                         />
                       ) : (
-                      <video
-                        key={currentStoryImage}
-                        src={story.videos[currentStoryImage - 1]}
-                        className="absolute inset-0 h-full w-full object-cover"
-                        controls
-                        autoPlay
-                        muted
-                        playsInline
-                        onEnded={nextStoryImage}
-                      />
+                  <video
+                    key={currentStoryImage}
+                    src={story.videos[currentStoryImage - 1]}
+                    className="absolute inset-0 h-full w-full object-cover"
+                    controls
+                    autoPlay
+                    muted
+                    playsInline
+                  />
                       )
                     ) : (
                       <img

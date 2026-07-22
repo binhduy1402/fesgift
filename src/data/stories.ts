@@ -38,18 +38,18 @@ export const stories: Story[] = [
   },
   {
     id: 2,
-    title: "365 ngày - Không bỏ lỡ một sinh nhật",
-    cardTitle: "365 ngày - Không bỏ lỡ một sinh nhật",
+    title: "365 ngày - Không bỏ lỡ một sinh nhật nào",
+    cardTitle: "365 ngày - Không bỏ lỡ một sinh nhật nào",
     cardImage: story2,
     images: [story2, story2_2, story2_3, story2_4, story2_5],
     imageFit: "cover",
     description:
-      "Với hệ thống quản lý ngày đặc biệt và mạng lưới giao hoa tại 34 tỉnh thành, Mars Group đảm bảo mỗi khách hàng VIP của quý khách đều nhận được món quà đúng ngày sinh nhật – thay mặt quý khách, mang thương hiệu đến gần trái tim khách hàng hơn.",
+      "Mỗi món quà được gửi đúng dịp không chỉ là lời chúc mừng mà còn là cầu nối giữa doanh nghiệp và khách hàng. Với hệ thống quản lý ngày đặc biệt cùng mạng lưới giao hoa tại 34 tỉnh thành, Mars Group giúp thương hiệu của quý khách luôn hiện diện trong những khoảnh khắc ý nghĩa.",
   },
   {
     id: 3,
     title: "Sự chăm chút của Mars Group",
-    cardTitle: "Câu Chuyện Mars Group",
+    cardTitle: "Sự chăm chút của Mars Group",
     cardImage: story3,
     images: [story3, story3_2],
     imageFit: "cover",
@@ -58,8 +58,8 @@ export const stories: Story[] = [
   },
   {
     id: 4,
-    title: "Từ ý tưởng đến sản phẩm hoàn thiện",
-    cardTitle: "Từ ý tưởng đến sản phẩm hoàn thiện",
+    title: "Biến ý tưởng thành biểu tượng thương hiệu",
+    cardTitle: "Biến ý tưởng thành biểu tượng thương hiệu",
     cardImage: story41,
     images: [story4],
     videos: [
@@ -68,6 +68,6 @@ export const stories: Story[] = [
   ],
     imageFit: "cover",
     description:
-      "Nhân Dịp 30/4 kỉ niệm 51 năm giải phóng miền Nam thống nhất đất nước, Mars Group cùng khách hàng tạo nên sản phẩm tuyệt vời – mỗi mascot là một phiên bản được customize theo đúng bộ nhận diện thương hiệu của quý khách.",
+      "Nhân dịp kỷ niệm 51 năm Ngày Giải phóng miền Nam, thống nhất đất nước (30/4), Mars Group đã đồng hành cùng khách hàng tạo nên những mẫu mascot được thiết kế riêng theo bộ nhận diện thương hiệu, mang đậm dấu ấn doanh nghiệp và tinh thần của sự kiện.",
   },
 ];

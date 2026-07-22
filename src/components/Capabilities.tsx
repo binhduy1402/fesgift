@@ -84,7 +84,7 @@ return (
             </div>
 
             <div className="text-center">
-              <div className="text-2xl font-bold text-[#7c142b]">45</div>
+              <div className="text-2xl font-bold text-[#7c142b]">35</div>
               <div className="text-xs leading-tight text-gray-500">
                 Ngày triển khai
               </div>

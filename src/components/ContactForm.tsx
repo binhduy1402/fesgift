@@ -209,7 +209,7 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
                     required
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
-                    placeholder="Nguyễn Văn A"
+                    placeholder="Nhập họ và tên"
                     className="w-full px-4 py-3 bg-white border border-secondary-brand/10 hover:border-primary-brand/30 focus:border-primary-brand focus:outline-none rounded-sm text-sm text-charcoal-text font-light tracking-wide transition-all"
                   />
                 </div>
@@ -224,7 +224,7 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
                       required
                       value={company}
                       onChange={(e) => setCompany(e.target.value)}
-                      placeholder="Công ty ABC"
+                      placeholder="Tên doanh nghiệp của bạn"
                       className="w-full px-4 py-3 bg-white border border-secondary-brand/10 hover:border-primary-brand/30 focus:border-primary-brand focus:outline-none rounded-sm text-sm text-charcoal-text font-light tracking-wide transition-all"
                     />
                   </div>
@@ -237,7 +237,7 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
                       required
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      placeholder="0901234567"
+                      placeholder="Số điện thoại liên hệ"
                       className="w-full px-4 py-3 bg-white border border-secondary-brand/10 hover:border-primary-brand/30 focus:border-primary-brand focus:outline-none rounded-sm text-sm text-charcoal-text font-light tracking-wide transition-all"
                     />
                   </div>
@@ -251,7 +251,7 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="contact@company.com"
+                    placeholder="Email nhận báo giá"
                     className="w-full px-4 py-3 bg-white border border-secondary-brand/10 hover:border-primary-brand/30 focus:border-primary-brand focus:outline-none rounded-sm text-sm text-charcoal-text font-light tracking-wide transition-all"
                   />
                 </div>
@@ -271,7 +271,7 @@ export default function ContactForm({ prefilledProduct, onClearPrefill }: Contac
                     rows={4}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Yêu cầu riêng về màu sắc, in dập logo, số lượng set hay ngân sách chi tiết..."
+                    placeholder="Mô tả nhu cầu của doanh nghiệp để nhận giải pháp và báo giá phù hợp."
                     className="w-full px-4 py-3 bg-white border border-secondary-brand/10 hover:border-primary-brand/30 focus:border-primary-brand focus:outline-none rounded-sm text-sm text-charcoal-text font-light tracking-wide transition-all"
                   />
                 </div>
