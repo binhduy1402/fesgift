@@ -25,6 +25,7 @@ export default function Hero({
   onConsultClick,
 }: HeroProps) {
   const [currentImage, setCurrentImage] = useState(0);
+  const [previousImage, setPreviousImage] = useState(0);
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -33,15 +34,20 @@ export default function Hero({
     if (!element) return;
 
     const handleAnimationIteration = () => {
+      setPreviousImage(currentImage);
+
       setCurrentImage((prev) => (prev + 1) % heroImages.length);
     };
 
     element.addEventListener("animationiteration", handleAnimationIteration);
 
     return () => {
-      element.removeEventListener("animationiteration", handleAnimationIteration);
+      element.removeEventListener(
+        "animationiteration",
+        handleAnimationIteration
+      );
     };
-  }, []);
+  }, [currentImage]);
 
   return (
     <section className="gold-pattern relative overflow-hidden bg-gradient-to-b from-[#faf7f2] via-[#faf7f2] to-white pt-24 pb-16 md:pt-28 md:pb-24">
