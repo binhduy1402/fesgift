@@ -100,7 +100,7 @@ export default function About() {
                   />
 
                   <div
-                    className={`font-bold leading-none tracking-tight text-[#7c142b] ${
+                    className={`font-['Cormorant_Garamond'] font-bold leading-none tracking-tight text-[#7c142b] ${
                       item.value.length >= 9
                         ? "text-3xl xl:text-4xl"
                         : "text-4xl xl:text-5xl"
