@@ -210,7 +210,7 @@ export default function Collections({ onSelectCollection }: CollectionsProps) {
           <div className="order-1 relative flex justify-center pr-10 pb-6 md:order-2 md:justify-end md:pr-12">
             {/* Hint kéo */}
             <div className="absolute -top-8 right-2 flex items-center gap-1.5 text-[11px] font-semibold tracking-widest text-gray-400 uppercase">
-              Kéo để xem
+              Trượt để xem
               <MoveHorizontal className="h-3.5 w-3.5" />
             </div>
 
