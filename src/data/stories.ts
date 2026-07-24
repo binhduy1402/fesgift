@@ -22,6 +22,7 @@ export interface Story {
   title: string;
   cardTitle: string;
   cardImage: string;
+  tag: string;
   images: string[];
   videos?: string[];
   imageFit?: "cover" | "contain";
@@ -34,6 +35,7 @@ export const stories: Story[] = [
     title: "Kết nối cùng Generali",
     cardTitle: "Kết nối cùng Generali",
     cardImage: story1,
+    tag: "Đối tác",
     images: [story1, story1_2, story1_3],
     imageFit: "contain",
     description:
@@ -44,6 +46,7 @@ export const stories: Story[] = [
     title: "365 ngày - Không bỏ lỡ một sinh nhật nào",
     cardTitle: "365 ngày - Không bỏ lỡ một sinh nhật nào",
     cardImage: story2,
+    tag: "Khách hàng",
     images: [story2, story2_2, story2_3, story2_4, story2_5],
     imageFit: "cover",
     description:
@@ -54,6 +57,7 @@ export const stories: Story[] = [
     title: "Sự chăm chút của Mars Group",
     cardTitle: "Sự chăm chút của Mars Group",
     cardImage: story3,
+    tag: "Nội bộ",
     images: [story3_2, story3_3, story3_4, story3_5],
     imageFit: "cover",
     description:
@@ -64,6 +68,7 @@ export const stories: Story[] = [
     title: "Biến ý tưởng thành biểu tượng thương hiệu",
     cardTitle: "Biến ý tưởng thành biểu tượng thương hiệu",
     cardImage: story41,
+    tag: "Thương hiệu",
     images: [story4],
     videos: [
       story4video1,

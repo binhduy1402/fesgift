@@ -10,7 +10,7 @@ export default function Philosophy({ onOpenStory }: PhilosophyProps) {
       <div className="absolute left-0 top-0 h-64 w-64 rounded-full bg-[#7c142b]/5 blur-3xl" />
       <div className="absolute right-0 bottom-0 h-64 w-64 rounded-full bg-[#d4af37]/10 blur-3xl" />
 
-      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 reveal">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 reveal">
         <div className="max-w-4xl mx-auto text-center reveal delay-150">
           <span className="mb-3 inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.3em] uppercase text-[#7c142b]">
             <span className="h-px w-6 bg-[#7c142b]/50" />
@@ -34,7 +34,7 @@ export default function Philosophy({ onOpenStory }: PhilosophyProps) {
         </div>
 
         <div className="mt-12 grid gap-5 sm:gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 reveal delay-300">
-          {stories.map((story, index) => (
+          {stories.map((story) => (
             <button
               key={story.id}
               onClick={() => onOpenStory(story.id)}
@@ -45,21 +45,22 @@ export default function Philosophy({ onOpenStory }: PhilosophyProps) {
                 <img
                   src={story.cardImage}
                   alt={story.cardTitle}
-                  className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover object-center transition-transform duration-[3000ms] ease-out group-hover:scale-110"
                 />
-                {/* gradient tối dần phía dưới để badge/chữ luôn đọc được */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-black/0" />
               </div>
 
               {/* Nội dung */}
               <div className="flex flex-1 flex-col p-5">
-                <h3 className="min-h-[3.25rem] text-lg sm:text-xl font-bold leading-snug text-[#7c142b] line-clamp-2">
+                <h3 className="min-h-[4.5rem] text-lg sm:text-xl font-bold leading-snug text-[#7c142b] line-clamp-3">
                   {story.cardTitle}
                 </h3>
 
                 <div className="mt-3 flex items-center justify-between border-t border-gray-100 pt-3">
-                  <span className="text-sm text-gray-500">Xem câu chuyện</span>
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#7c142b]/5 text-[#7c142b] transition-all duration-300 group-hover:bg-[#7c142b] group-hover:text-white group-hover:translate-x-0.5">
+                  <span className="text-sm text-gray-500 transition-transform duration-300 group-hover:translate-x-1">
+                    Xem câu chuyện
+                  </span>
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#7c142b]/5 text-[#7c142b] transition-all duration-300 group-hover:bg-[#7c142b] group-hover:text-white group-hover:translate-x-1">
                     <svg
                       width="14"
                       height="14"
