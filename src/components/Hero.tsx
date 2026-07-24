@@ -10,6 +10,8 @@ import zaloQR from "../assets/zalo-qr.png";
 
 const heroImages = [hero1, hero2, hero3, hero4];
 
+const avatarColors = ["#7c142b", "#a63a52", "#c9a227", "#5a3d40"];
+
 interface HeroProps {
   onDiscoverClick: () => void;
   onConsultClick: () => void;
@@ -68,12 +70,12 @@ export default function Hero({
                 </a>
               </div>
 
-                <a
-                  href="https://zalo.me/2446504417439174890"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="ml-8 flex shrink-0 flex-col items-center gap-1"
-                >
+              <a
+                href="https://zalo.me/2446504417439174890"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-8 flex shrink-0 flex-col items-center gap-1"
+              >
                 <img
                   src={zaloQR}
                   alt="QR Zalo"
@@ -82,7 +84,19 @@ export default function Hero({
               </a>
             </div>
 
-            <h1 className="mt-6">
+            {/* Kicker line */}
+            <div className="mt-7 flex items-center gap-2.5">
+              <span className="h-px w-8 bg-gradient-to-r from-[#7c142b] to-[#d4af37]" />
+              <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#7c142b]">
+                Mars Group
+              </span>
+              <span className="text-[11px] text-[#c9a227]">•</span>
+              <span className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#8d8d8d]">
+                Quà tặng doanh nghiệp
+              </span>
+            </div>
+
+            <h1 className="mt-3">
               <span className="block font-['Lora'] font-bold text-[#222] leading-[1] text-[2.35rem] sm:text-[2.8rem] md:text-[3.5rem] lg:text-[4rem]">
                 Giải Pháp Quà Tặng
               </span>
@@ -122,6 +136,7 @@ export default function Hero({
               </button>
             </div>
 
+
           </div>
 
           <div className="lg:col-span-6 mt-10 lg:mt-0">
@@ -158,11 +173,41 @@ export default function Hero({
                 </div>
               </div>
 
+              {/* Gold corner brackets - gallery frame effect */}
+              <svg
+                className="pointer-events-none absolute -left-2.5 -top-2.5 h-8 w-8"
+                viewBox="0 0 32 32"
+                fill="none"
+              >
+                <path d="M2 14V2H14" stroke="#d4af37" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+              <svg
+                className="pointer-events-none absolute -right-2.5 -top-2.5 h-8 w-8"
+                viewBox="0 0 32 32"
+                fill="none"
+              >
+                <path d="M30 14V2H18" stroke="#d4af37" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+              <svg
+                className="pointer-events-none absolute -left-2.5 -bottom-2.5 h-8 w-8"
+                viewBox="0 0 32 32"
+                fill="none"
+              >
+                <path d="M2 18V30H14" stroke="#d4af37" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+              <svg
+                className="pointer-events-none absolute -right-2.5 -bottom-2.5 h-8 w-8"
+                viewBox="0 0 32 32"
+                fill="none"
+              >
+                <path d="M30 18V30H18" stroke="#d4af37" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+
             </div>
-          </div>
           </div>
 
         </div>
+      </div>
     </section>
   );
 }
