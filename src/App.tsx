@@ -10,6 +10,7 @@ import Collections from "./components/Collections";
 import Capabilities from "./components/Capabilities";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
+import BackToTop from "./components/BackToTop";
 
 import { Collection } from "./types";
 import { X, Check, ArrowRight, ShieldCheck } from "lucide-react";
@@ -181,7 +182,7 @@ useEffect(() => {
       />
 
       <Footer />
-
+      <BackToTop />
       {/* Collection Modal */}
       {selectedCollection && (
         <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto p-4">

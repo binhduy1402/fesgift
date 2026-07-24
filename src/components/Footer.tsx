@@ -1,5 +1,5 @@
 import logo from "../assets/logo_mars.png";
-import { Globe, ShieldCheck, Mail, Phone, MapPin, ArrowUp } from "lucide-react";
+import { Globe, ShieldCheck, Mail, Phone, MapPin} from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -179,14 +179,6 @@ export default function Footer() {
               Tiếng Việt
             </a>
 
-            <button
-              type="button"
-              onClick={scrollToTop}
-              aria-label="Về đầu trang"
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-white/15 text-white/60 transition-all duration-300 hover:border-[#d4af37]/50 hover:text-[#d4af37]"
-            >
-              <ArrowUp className="h-3.5 w-3.5" />
-            </button>
           </div>
         </div>
 
